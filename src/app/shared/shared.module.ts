@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -98,7 +99,8 @@ import { SharedRoutingModule } from './shared-routing.module';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    TranslateModule
   ],
   exports: [
     A11yModule,
@@ -146,7 +148,8 @@ import { SharedRoutingModule } from './shared-routing.module';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }
