@@ -9,18 +9,26 @@ import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 
 // import ngx-translate and the http loader
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppInitService } from './core/services/app-init.service';
+import { StoreModule } from '@ngrx/store';
+import { AppRoutingModule } from './app-routing.module';
 
-export function initApp(appLoadService: AppInitService) {
+export function InitApp(appLoadService: AppInitService) {
   return () => appLoadService.init();
 }
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
+}
+
+export class TranslateHandler implements MissingTranslationHandler {
+  handle(params: MissingTranslationHandlerParams) {
+    return params.key;
+  }
 }
 
 @NgModule({
@@ -30,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
@@ -44,14 +53,19 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      }
-    })
+      },
+      isolate: false,
+      missingTranslationHandler: [{
+        provide: MissingTranslationHandler, useClass: TranslateHandler
+      }]
+    }),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [
     AppInitService,
     {
       provide: APP_INITIALIZER,
-      useFactory: initApp,
+      useFactory: InitApp,
       deps: [AppInitService],
       multi: true
     }

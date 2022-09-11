@@ -46,12 +46,18 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { SafePipe } from './pipes/safe.pipe';
 import { SharedRoutingModule } from './shared-routing.module';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
     SafePipe
   ],
   imports: [
+    NgtUniversalModule,
+    NgxMaskModule.forRoot(options),
     CommonModule,
     SharedRoutingModule,
     A11yModule,

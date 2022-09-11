@@ -1,6 +1,7 @@
 import { FooterComponent } from "./footer/footer.component";
 import { ForgetpwdComponent } from "./forgetpwd/forgetpwd.component";
 import { HeaderComponent } from "./header/header.component";
+import { LoadingComponent } from "./loading/loading.component";
 import { LoginComponent } from "./login/login.component";
 import { NavbarLeftComponent } from "./navbar-left/navbar-left.component";
 import { NavbarRightComponent } from "./navbar-right/navbar-right.component";
@@ -15,7 +16,8 @@ export const COMPONENTS = [
     NavbarLeftComponent,
     NavbarRightComponent,
     Page404Component,
-    RegisterComponent
+    RegisterComponent,
+    LoadingComponent
 ];
 
 export * from "./footer/footer.component";
@@ -26,3 +28,4 @@ export * from "./navbar-left/navbar-left.component";
 export * from "./navbar-right/navbar-right.component";
 export * from "./page404/page404.component";
 export * from "./register/register.component";
+export * from "./loading/loading.component";

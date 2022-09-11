@@ -7,6 +7,10 @@ declare var window: any;
 export const environment = {
   production: false,
 
+  // TEMP
+  title: "Local Environment",
+  apiUrl: "",
+
   get environment() {
     return window.config.environment;
   },
