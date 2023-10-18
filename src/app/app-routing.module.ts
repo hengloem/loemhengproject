@@ -7,7 +7,7 @@ import { Page404Component } from './layout/components';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
