@@ -6,6 +6,9 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
     ResumeComponent,
     HomeComponent,
     AboutMeComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    PortfolioComponent,
+    BlogComponent,
+    BlogPostComponent
   ],
   imports: [
     CommonModule,
