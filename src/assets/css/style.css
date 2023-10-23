@@ -269,17 +269,17 @@ body.light hr.separator {
   }
 
   body.light.portfolio .slideshow nav span.nav-next {
-    background-image: url("./../projects/navigation/right-arrow.png");
+    background-image: url("./../img/projects/navigation/right-arrow.png");
     background-size: cover;
   }
 
   body.light.portfolio .slideshow nav span.nav-prev {
-    background-image: url("./../projects/navigation/left-arrow.png");
+    background-image: url("./../img/projects/navigation/left-arrow.png");
     background-size: cover;
   }
 
   body.light.portfolio .slideshow nav span.nav-close {
-    background-image: url("./../projects/navigation/close-button.png");
+    background-image: url("./../img/projects/navigation/close-button.png");
     background-size: cover;
   }
 
@@ -536,7 +536,7 @@ body.light hr.separator {
 }
 
 .home .bg {
-  background-image: url("./../temp/LHP_610_x_1020.png");
+  background-image: url("./../img/photos/01_610_x_1020.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

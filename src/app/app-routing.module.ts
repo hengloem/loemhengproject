@@ -7,6 +7,7 @@ import { AboutMeComponent } from './page/components/about-me/about-me.component'
 import { PortfolioComponent } from './page/components/portfolio/portfolio.component';
 import { BlogComponent } from './page/components/blog/blog.component';
 import { ContactMeComponent } from './page/components/contact-me/contact-me.component';
+import { BlogPostComponent } from './page/components';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent
+  },
+  {
+    path: 'sblog-post',
+    component: BlogPostComponent
   },
   {
     path: '**',

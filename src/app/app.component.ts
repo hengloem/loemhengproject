@@ -16,47 +16,64 @@ export class AppComponent {
     private localStorage: SharedService,
     private router: Router
   ) {
-    this.translate.addLangs(['en', 'kh']);
-    this.translate.setDefaultLang('en');
+    // Add supported languages
+    translate.addLangs(['en', 'kh']);
+
+    // Get the user's language preference from local storage
     const lang = this.localStorage.get('lang');
-    if (lang == 'en') {
+
+    if (lang === 'en' || lang === 'kh') {
+      // Use the user's preference if it's 'en' or 'kh'
+      this.translate.setDefaultLang(lang);
+    } else {
+      // Default to 'en' if the user's preference is invalid
       this.translate.setDefaultLang('en');
       this.localStorage.set('lang', 'en');
-    } else {
-      this.translate.setDefaultLang('kh');
-      this.localStorage.set('lang', 'kh');
     }
   }
 
   ngOnInit(): void {
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => { });
+    // Subscribe to language change events
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      // You can add your custom code here to react to language changes
+      // For example, you can update the user interface based on the new language.
+    });
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Check the current route and set classes accordingly
         const currentRoute = this.router.url;
+        const bodyClasses = ['home', 'about', 'portfolio', 'contact', 'blog', 'blog-post'];
+        const routeClasses = ['', '', '', '', '', ''];
+
         if (currentRoute.includes('/home')) {
-          // For the "home" page
-          document.body.classList.remove('about', 'portfolio', 'contact', 'blog');
-          document.body.classList.add('home', 'light');
+          routeClasses[0] = 'home';
         } else if (currentRoute.includes('/about')) {
-          // For the "about" page
-          document.body.classList.remove('home', 'portfolio', 'contact', 'blog');
-          document.body.classList.add('about', 'light');
+          routeClasses[1] = 'about';
         } else if (currentRoute.includes('/portfolio')) {
-          // For the "portfolio" page
-          document.body.classList.remove('home', 'about', 'contact', 'blog');
-          document.body.classList.add('portfolio', 'light');
+          routeClasses[2] = 'portfolio';
         } else if (currentRoute.includes('/contact')) {
-          // For the "contact" page
-          document.body.classList.remove('home', 'about', 'portfolio', 'blog');
-          document.body.classList.add('contact', 'light');
+          routeClasses[3] = 'contact';
         } else if (currentRoute.includes('/blog')) {
-          // For the "blog" page
-          document.body.classList.remove('home', 'about', 'portfolio', 'contact', 'blog');
-          document.body.classList.add('blog', 'light');
+          routeClasses[4] = 'blog';
+        } else if (currentRoute.includes('/sblog-post')) {
+          routeClasses[5] = 'blog-post';
         }
+
+        // Remove all route-specific classes
+        bodyClasses.forEach((cls, index) => {
+          if (routeClasses[index] === '') {
+            document.body.classList.remove(cls);
+          }
+        });
+
+        // Add the appropriate route-specific classes
+        bodyClasses.forEach((cls, index) => {
+          if (routeClasses[index] !== '') {
+            document.body.classList.add(routeClasses[index], 'light');
+          }
+        });
       }
     });
+
   }
 }
