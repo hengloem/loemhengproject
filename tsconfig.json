@@ -26,6 +26,15 @@
       "@app/*": [
         "app/*"
       ],
+      "@layout/*": [
+        "app/layout/*"
+      ],
+      "@page/*": [
+        "app/page/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
       "@env": [
         "src/environments/environment"
       ]

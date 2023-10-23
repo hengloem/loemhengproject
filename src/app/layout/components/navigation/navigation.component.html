@@ -2,7 +2,7 @@
 <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
     <li class="icon-box" *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
         <i class="{{ menu.icon }}"></i>
-        <a [routerLink]="menu.route">
+        <a [href]="menu.route">
             <h2>{{ menu.title }}</h2>
         </a>
     </li>
@@ -18,7 +18,7 @@
         <span></span>
         <ul class="list-unstyled" id="menu">
             <li *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
-                <a [routerLink]="menu.route">
+                <a [href]="menu.route">
                     <i class="{{ menu.icon }}"></i>
                     <span>{{ menu.title }}</span>
                 </a>
