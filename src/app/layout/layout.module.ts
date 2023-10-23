@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
-import { ProfileComponent } from './components/profile/profile.component';
-
+import { COMPONENTS } from './components';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    SharedModule
+  ],
+  exports: [
+    ...COMPONENTS
   ]
 })
 export class LayoutModule { }

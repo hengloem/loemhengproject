@@ -1,29 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PageRoutingModule } from './page-routing.module';
-import { ResumeComponent } from './components/resume/resume.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { BlogPostComponent } from './components/blog-post/blog-post.component';
-
+import { COMPONENTS } from './components';
+import { SharedModule } from '../shared/shared.module';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [
-    ResumeComponent,
-    HomeComponent,
-    AboutMeComponent,
-    ContactMeComponent,
-    PortfolioComponent,
-    BlogComponent,
-    BlogPostComponent
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule,
+    LayoutModule,
+    SharedModule
+  ],
+  exports: [
+    ...COMPONENTS
   ]
 })
 export class PageModule { }

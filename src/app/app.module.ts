@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppInitService } from './core/services/app-init.service';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
+import { PageModule } from './page/page.module';
 
 export function InitApp(appLoadService: AppInitService) {
   return () => appLoadService.init();
@@ -48,6 +49,7 @@ export class TranslateHandler implements MissingTranslationHandler {
     BrowserAnimationsModule,
     LayoutModule,
     SharedModule,
+    PageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
