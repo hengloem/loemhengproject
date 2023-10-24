@@ -3,3 +3,13 @@ export interface MenuItem {
     icon: string;
     route: string;
 }
+
+export interface PortfolioItem {
+    title: string;
+    category: string;
+    client: string;
+    languages: string;
+    previewLink: string;
+    imageUrl: string;
+    videoUrl?: string;
+}
