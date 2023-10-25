@@ -34,13 +34,13 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/preloader.min.css",
               "src/assets/css/circle.css",
-              "src/assets/css/font-awesome.min.css",
               "src/assets/css/fm.revealator.jquery.min.css",
               "src/assets/css/style.css",
               "src/assets/css/skins/green.css",
               "src/styles.scss"
             ],
             "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/modernizr.custom.js",
               "src/assets/js/jquery-3.5.0.min.js",
               "src/assets/js/preloader.min.js",
@@ -51,7 +51,6 @@
               "src/assets/js/cbpGridGallery.js",
               "src/assets/js/jquery.hoverdir.js",
               "src/assets/js/popper.min.js",
-              "src/assets/js/bootstrap.js",
               "src/assets/js/custom.js"
             ],
             "serviceWorker": true,
