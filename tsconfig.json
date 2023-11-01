@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": false,
@@ -22,9 +22,15 @@
       "es2020",
       "dom"
     ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
       "@app/*": [
         "app/*"
+      ],
+      "@core/*": [
+        "app/core/*"
       ],
       "@layout/*": [
         "app/layout/*"
@@ -37,6 +43,9 @@
       ],
       "@env": [
         "src/environments/environment"
+      ],
+      "@data/*": [
+        "app/data/*"
       ]
     },
     "useDefineForClassFields": false

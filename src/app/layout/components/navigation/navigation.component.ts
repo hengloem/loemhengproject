@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MENUS } from 'src/app/shared/js/static-data';
-import { MenuItem } from 'src/app/shared/models/utils.model';
 import { Router } from '@angular/router';
+import { MENUS } from '@app/shared/js/static-data';
+import { MenuItem } from '@app/shared/models/utils.model';
 
 @Component({
   selector: 'app-navigation',
