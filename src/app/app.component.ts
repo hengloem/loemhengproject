@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { SharedService } from './core/services/shared.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 @Component({
   selector: 'app-root',
