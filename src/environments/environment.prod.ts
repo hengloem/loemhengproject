@@ -1,17 +1,20 @@
-declare var window: any;
+declare global {
+  interface Window {
+    config: {
+      environment: string;
+      server: string;
+    };
+  }
+}
 
 export const environment = {
   production: true,
-
-  // TEMP
-  title: "Production Environment",
-  apiUrl: "",
 
   get environment() {
     return window.config.environment;
   },
 
-  get feServerUrl() {
-    return window.config.feServerUrl;
+  get server() {
+    return window.config.server;
   }
 };

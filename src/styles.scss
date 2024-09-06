@@ -1,4 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// Import pre-built themes and other styles
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Import custom styles
+@import 'assets/scss/preloader';
+@import 'assets/scss/base';
+@import 'assets/scss/circle';
+@import 'assets/scss/theme';

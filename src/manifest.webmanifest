@@ -1,6 +1,7 @@
 {
-  "name": "loemhengproject",
-  "short_name": "loemhengproject",
+  "name": "Loem Heng Project",
+  "short_name": "loemheng",
+  "description": "A personal website featuring a fully responsive and well-organized Angular structure project that could align with what you're seeking.",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
