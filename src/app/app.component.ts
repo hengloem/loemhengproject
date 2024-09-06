@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { SharedService } from './core/services/shared.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'loemhengproject';
+  private routerSubscription: Subscription;
 
   constructor(
     private translate: TranslateService,
@@ -17,63 +19,55 @@ export class AppComponent {
     private router: Router
   ) {
     // Add supported languages
-    translate.addLangs(['en', 'kh']);
+    this.translate.addLangs(['en', 'kh']);
 
     // Get the user's language preference from local storage
     const lang = this.localStorage.get('lang');
 
-    if (lang === 'en' || lang === 'kh') {
-      // Use the user's preference if it's 'en' or 'kh'
-      this.translate.setDefaultLang(lang);
-    } else {
-      // Default to 'en' if the user's preference is invalid
-      this.translate.setDefaultLang('en');
+    // Use the user's preference or default to 'en'
+    const preferredLang = lang === 'en' || lang === 'kh' ? lang : 'en';
+    this.translate.setDefaultLang(preferredLang);
+
+    // Save default language to local storage if needed
+    if (!lang) {
       this.localStorage.set('lang', 'en');
     }
   }
 
   ngOnInit(): void {
-    // Subscribe to language change events
+    // Subscribe to language change events if needed
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      // You can add your custom code here to react to language changes
-      // For example, you can update the user interface based on the new language.
+      // React to language change if required
     });
 
-    this.router.events.subscribe((event) => {
+    // Efficiently handle route changes
+    const routeClassMap = {
+      '/home': 'home',
+      '/about': 'about',
+      '/portfolio': 'portfolio',
+      '/contact': 'contact',
+      '/blog': 'blog',
+      '/blog-post': 'blog-post'
+    };
+
+    this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentRoute = this.router.url;
-        const bodyClasses = ['home', 'about', 'portfolio', 'contact', 'blog', 'blog-post'];
-        const routeClasses = ['', '', '', '', '', ''];
+        const bodyClasses = Object.values(routeClassMap);
 
-        if (currentRoute.includes('/home')) {
-          routeClasses[0] = 'home';
-        } else if (currentRoute.includes('/about')) {
-          routeClasses[1] = 'about';
-        } else if (currentRoute.includes('/portfolio')) {
-          routeClasses[2] = 'portfolio';
-        } else if (currentRoute.includes('/contact')) {
-          routeClasses[3] = 'contact';
-        } else if (currentRoute.includes('/blog')) {
-          routeClasses[4] = 'blog';
-        } else if (currentRoute.includes('/sblog-post')) {
-          routeClasses[5] = 'blog-post';
-        }
+        // Find matching route class
+        const activeClass = Object.keys(routeClassMap).find(key => currentRoute.includes(key)) || '';
 
-        // Remove all route-specific classes
-        bodyClasses.forEach((cls, index) => {
-          if (routeClasses[index] === '') {
-            document.body.classList.remove(cls);
-          }
-        });
-
-        // Add the appropriate route-specific classes
-        bodyClasses.forEach((cls, index) => {
-          if (routeClasses[index] !== '') {
-            document.body.classList.add(routeClasses[index], 'light');
-          }
-        });
+        // Update body class
+        document.body.className = bodyClasses.includes(routeClassMap[activeClass]) ? routeClassMap[activeClass] + ' light' : 'light';
       }
     });
+  }
 
+  ngOnDestroy(): void {
+    // Unsubscribe from router events to prevent memory leaks
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
   }
 }

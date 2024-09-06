@@ -4,30 +4,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 
 // import ngx-translate and the http loader
-import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppInitService } from './core/services/app-init.service';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { PageModule } from './page/page.module';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
+// App initialization function
 export function InitApp(appLoadService: AppInitService) {
   return () => appLoadService.init();
 }
 
-// Required for AOT compilation
+// HttpLoader factory for ngx-translate
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
+// Custom missing translation handler
 export class TranslateHandler implements MissingTranslationHandler {
-  handle(params: MissingTranslationHandlerParams) {
+  handle(params: any) {
     return params.key;
   }
 }
@@ -39,17 +43,20 @@ export class TranslateHandler implements MissingTranslationHandler {
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    BrowserAnimationsModule,
     LayoutModule,
+    CoreModule,
     SharedModule,
     PageModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    // Lazy load Service Worker immediately after app stabilizes
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
+    }),
+    // Translation module with efficient loader and missing translation handler
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -61,7 +68,8 @@ export class TranslateHandler implements MissingTranslationHandler {
         provide: MissingTranslationHandler, useClass: TranslateHandler
       }]
     }),
-    StoreModule.forRoot({}, {}),
+    // StoreModule with root state
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     AppInitService,
