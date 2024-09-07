@@ -48,12 +48,39 @@ import { SafePipe } from './pipes/safe.pipe';
 import { SharedRoutingModule } from './shared-routing.module';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faPlus,
+  faEdit,
+  faTrash,
+  faTimes,
+  faCaretUp,
+  faCaretDown,
+  faExclamationTriangle,
+  faFilter,
+  faTasks,
+  faCheck,
+  faSquare,
+  faLanguage,
+  faPaintBrush,
+  faLightbulb,
+  faWindowMaximize,
+  faStream,
+  faBook,
+  faUserCircle,
+  faAsterisk
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
-    SafePipe
+    SafePipe,
+    ControlMessagesComponent,
+    SpinnerComponent
   ],
   imports: [
     NgtUniversalModule,
@@ -106,7 +133,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule
+    TranslateModule,
+    FontAwesomeModule
   ],
   exports: [
     A11yModule,
@@ -155,7 +183,34 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule
+    TranslateModule,
+    FontAwesomeModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  constructor(faIconLibrary: FaIconLibrary) {
+    faIconLibrary.addIcons(
+      faGithub,
+      faMediumM,
+      faPlus,
+      faEdit,
+      faTrash,
+      faTimes,
+      faCaretUp,
+      faCaretDown,
+      faExclamationTriangle,
+      faFilter,
+      faTasks,
+      faCheck,
+      faSquare,
+      faLanguage,
+      faPaintBrush,
+      faLightbulb,
+      faWindowMaximize,
+      faStream,
+      faBook,
+      faUserCircle,
+      faAsterisk
+    );
+  }
+}
