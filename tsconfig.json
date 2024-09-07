@@ -4,7 +4,7 @@
     "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": false, // Enable all strict type-checking options
+    "strict": false, // Consider enabling all strict type-checking options
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -47,7 +47,7 @@
         "app/data/*"
       ]
     },
-    "useDefineForClassFields": true // Set to true to align with ES2022 features
+    "useDefineForClassFields": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

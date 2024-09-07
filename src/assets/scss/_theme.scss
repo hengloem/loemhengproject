@@ -16,6 +16,10 @@ $background-color_4: #666;
 $background-color_5: #f2f2f2;
 $background-color_6: transparent;
 $background-color_7: #252525;
+$bg-img: "./../img/photos/1A0A9386.jpg";
+$nav-next-img: "./../img/projects/navigation/right-arrow.png";
+$nav-prev-img: "./../img/projects/navigation/left-arrow.png";
+$nav-close-img: "./../img/projects/navigation/close-button.png";
 
 /*** Light Body ***/
 /*** Buttons ***/
@@ -332,7 +336,7 @@ body.light.blog-post {
 		top: -50%;
 	}
 	.bg {
-		background-image: url("./../img/photos/01_610_x_1020.png");
+		background-image: url($bg-img);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
@@ -1164,17 +1168,17 @@ body.light.blog-post {
 					}
 				}
 				span.nav-next {
-					background-image: url("./../img/projects/navigation/right-arrow.png");
+					background-image: url($nav-next-img);
 					background-size: cover;
 					top: 51px;
 				}
 				span.nav-prev {
-					background-image: url("./../img/projects/navigation/left-arrow.png");
+					background-image: url($nav-prev-img);
 					background-size: cover;
 					top: 51px;
 				}
 				span.nav-close {
-					background-image: url("./../img/projects/navigation/close-button.png");
+					background-image: url($nav-close-img);
 					background-size: cover;
 				}
 			}
