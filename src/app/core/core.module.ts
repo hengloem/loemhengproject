@@ -5,9 +5,12 @@ import { AuthGuard } from './guard/auth.guard';
 import { NoAuthGuard } from './guard/no-auth.guard';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { throwIfAlreadyLoaded } from './guard/module-import.guard';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SafeUrlPipe
+  ],
   imports: [
     CommonModule
   ],
@@ -19,6 +22,9 @@ import { throwIfAlreadyLoaded } from './guard/module-import.guard';
       useClass: TokenInterceptor,
       multi: true
     }
+  ],
+  exports: [
+    SafeUrlPipe // Export the pipe to make it available in other modules
   ]
 })
 export class CoreModule {
