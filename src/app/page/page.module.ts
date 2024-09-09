@@ -9,6 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { CoreModule } from '@app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     CommonModule,
     PageRoutingModule,
     LayoutModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   exports: [
     HomeComponent,
