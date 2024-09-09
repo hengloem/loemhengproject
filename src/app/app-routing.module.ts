@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactMeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog-post', component: BlogPostComponent },
-  { path: '**', component: Page404Component } // single wildcard for 404 page
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({
