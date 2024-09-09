@@ -44,7 +44,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { SafePipe } from './pipes/safe.pipe';
 import { SharedRoutingModule } from './shared-routing.module';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
@@ -73,12 +72,13 @@ import {
   faAsterisk
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
+import { CoreModule } from '@app/core/core.module';
+import { PageModule } from '@app/page/page.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
-    SafePipe,
     ControlMessagesComponent,
     SpinnerComponent
   ],
@@ -134,7 +134,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatTooltipModule,
     MatTreeModule,
     TranslateModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CoreModule
   ],
   exports: [
     A11yModule,
