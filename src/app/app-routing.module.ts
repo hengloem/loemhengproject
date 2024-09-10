@@ -11,14 +11,39 @@ import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutMeComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'contact', component: ContactMeComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog-post', component: BlogPostComponent },
-  { path: '**', component: Page404Component }
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'about', component:
+      AboutMeComponent
+  },
+  {
+    path: 'portfolio',
+    component: PortfolioComponent
+  },
+  {
+    path: 'contact',
+    component: ContactMeComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'blog-post',
+    component: BlogPostComponent
+  },
+  {
+    path: '**',
+    component: Page404Component
+  }
 ];
 
 @NgModule({
