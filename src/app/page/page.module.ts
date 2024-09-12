@@ -10,6 +10,9 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CoreModule } from '@app/core/core.module';
+import { SkillComponent } from './skill/skill.component';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { CoreModule } from '@app/core/core.module';
     PortfolioComponent,
     ContactMeComponent,
     BlogComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    SkillComponent,
+    EducationComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,

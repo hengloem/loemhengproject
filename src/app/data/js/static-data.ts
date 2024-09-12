@@ -7,7 +7,7 @@ export const MENUS = [
 ];
 
 export const aboutMe = {
-    name: "Heng",
+    name: "Heng LOEM",
     location: "Koh Kong Province, Cambodia",
     education: "Web Programming, University of Puthisastra",
     profession: "Systems Development Supervisor",
