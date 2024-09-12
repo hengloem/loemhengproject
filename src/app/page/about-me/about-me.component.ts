@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AboutMeComponent implements OnInit {
   ageInYears: string;
   ExpInYears: number;
+  
 
   constructor() { }
 
@@ -17,7 +18,7 @@ export class AboutMeComponent implements OnInit {
   }
 
   calculateAge(): void {
-    const dateOfBirth = new Date('1997-05-07'); // Static date of birth
+    const dateOfBirth = new Date('1995-05-07'); // Static date of birth
     this.ageInYears = this.calculateAgeFromDateOfBirth(dateOfBirth);
   }
 

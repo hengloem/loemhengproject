@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MENUS } from '@app/shared/js/static-data';
+import { MENUS } from '@app/data/js/static-data';
 import { MenuItem } from '@app/shared/models/utils.model';
 
 @Component({

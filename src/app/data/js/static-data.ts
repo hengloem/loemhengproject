@@ -7,7 +7,7 @@ export const MENUS = [
 ];
 
 export const aboutMe = {
-    name: "Heng",
+    name: "Heng LOEM",
     location: "Koh Kong Province, Cambodia",
     education: "Web Programming, University of Puthisastra",
     profession: "Systems Development Supervisor",
@@ -91,9 +91,11 @@ export const services = "IT Consulting";
 
 export const blog = "Embracing Knowledge Sharing";
 
-export const contact = {
+export const contactInfo = {
     email: "hengloem.pnc@gmail.com",
     mobilePhone: "(+855) 962 204 505",
+    handPhone: "(+855) 762 226 505",
+    telegram: "https://t.me/hengloem"
 };
 
 export const ratingSkills = {
