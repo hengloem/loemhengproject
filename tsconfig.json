@@ -25,27 +25,13 @@
       "node_modules/@types"
     ],
     "paths": {
-      "@app/*": [
-        "app/*"
-      ],
-      "@core/*": [
-        "app/core/*"
-      ],
-      "@layout/*": [
-        "app/layout/*"
-      ],
-      "@page/*": [
-        "app/page/*"
-      ],
-      "@shared/*": [
-        "app/shared/*"
-      ],
-      "@env": [
-        "src/environments/environment"
-      ],
-      "@data/*": [
-        "app/data/*"
-      ]
+      "@app/*": ["app/*"],
+      "@core/*": ["app/core/*"],
+      "@layout/*": ["app/layout/*"],
+      "@page/*": ["app/page/*"],
+      "@shared/*": ["app/shared/*"],
+      "@env": ["src/environments/environment"],
+      "@data/*": ["app/data/*"]
     },
     "useDefineForClassFields": true
   },
