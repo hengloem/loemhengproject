@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
-
+  dummyVdo: string = "https://via.placeholder.com/895x552.jpg";
 }

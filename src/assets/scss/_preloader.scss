@@ -1,6 +1,4 @@
-$preloader-bg-color: #111;
-$black-wall-bg-color: #222;
-$loader-bg-color: #FFC41F;
+@import './_colors.scss';
 
 .preloader {
   position: fixed;
