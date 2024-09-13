@@ -1,0 +1,47 @@
+$color_1: white;
+$background-color_1: #f9f9f9;
+$background-color_2: #28a745;
+$background-color_3: #218838;
+$background-color_4: #e9ecef;
+
+.loan-calculator {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: $background-color_1;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+label {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+input {
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 1em;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+button {
+	padding: 10px;
+	background-color: $background-color_2;
+	color: $color_1;
+	font-size: 1em;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	&:hover {
+		background-color: $background-color_3;
+	}
+}
+.result {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: $background-color_4;
+	border-radius: 5px;
+}

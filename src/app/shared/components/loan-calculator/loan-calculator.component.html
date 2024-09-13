@@ -1,0 +1,19 @@
+<div class="loan-calculator">
+    <h2>Loan Calculator</h2>
+    <form (ngSubmit)="calculateLoan()">
+        <label>Loan Amount</label>
+        <input type="number" [(ngModel)]="loanAmount" name="amount" required />
+
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" [(ngModel)]="annualInterestRate" name="interestRate" required />
+
+        <label>Loan Term (Years)</label>
+        <input type="number" [(ngModel)]="loanTerm" name="term" required />
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div *ngIf="monthlyPayment !== null" class="result">
+        <p>Monthly Payment: {{ monthlyPayment | currency }}</p>
+    </div>
+</div>
