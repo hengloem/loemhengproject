@@ -13,6 +13,8 @@ import { CoreModule } from '@app/core/core.module';
 import { SkillComponent } from './skill/skill.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ExperienceComponent } from './experience/experience.component';
     BlogPostComponent,
     SkillComponent,
     EducationComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,12 @@ import { ExperienceComponent } from './experience/experience.component';
     PortfolioComponent,
     ContactMeComponent,
     BlogComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    SkillComponent,
+    EducationComponent,
+    ExperienceComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent
   ]
 })
 export class PageModule { }

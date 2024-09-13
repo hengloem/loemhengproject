@@ -9,6 +9,8 @@ import { BlogComponent } from './page/blog/blog.component';
 import { ContactMeComponent } from './page/contact-me/contact-me.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
+import { CalculatorComponent } from './shared/components/calculator/calculator.component';
+import { LoanCalculatorComponent } from './shared/components/loan-calculator/loan-calculator.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,14 @@ const routes: Routes = [
   {
     path: 'blog-post',
     component: BlogPostComponent
+  },
+  {
+    path: 'calculator',
+    component: CalculatorComponent
+  },
+  {
+    path: 'loan-calculator',
+    component: LoanCalculatorComponent
   },
   {
     path: '**',
