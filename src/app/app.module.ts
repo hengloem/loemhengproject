@@ -52,10 +52,10 @@ export class TranslateHandler implements MissingTranslationHandler {
     BrowserAnimationsModule,
     NoopAnimationsModule,
     // Lazy load Service Worker immediately after app stabilizes
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
-    }),
+    // ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: environment.production,
+    //   registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
+    // }),
     // Translation module with efficient loader and missing translation handler
     TranslateModule.forRoot({
       loader: {
