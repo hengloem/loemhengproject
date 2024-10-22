@@ -73,18 +73,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 import { CoreModule } from '@app/core/core.module';
-import { PageModule } from '@app/page/page.module';
-import { CalculatorComponent } from './components/calculator/calculator.component';
-import { LoanCalculatorComponent } from './components/loan-calculator/loan-calculator.component';
+import { COMPONENTS } from './components';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
+    ...COMPONENTS,
     ControlMessagesComponent,
-    SpinnerComponent,
-    CalculatorComponent,
-    LoanCalculatorComponent
+    SpinnerComponent
   ],
   imports: [
     NgtUniversalModule,

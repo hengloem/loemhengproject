@@ -7,6 +7,11 @@ import { AboutMeComponent } from './page/about-me/about-me.component';
 import { PortfolioComponent } from './page/portfolio/portfolio.component';
 import { BlogComponent } from './page/blog/blog.component';
 import { ContactMeComponent } from './page/contact-me/contact-me.component';
+import { EducationComponent } from './page/education/education.component';
+import { ExperienceComponent } from './page/experience/experience.component';
+import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
+import { SkillComponent } from './page/skill/skill.component';
+import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-service.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
 
@@ -21,8 +26,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about', component:
-      AboutMeComponent
+    path: 'about',
+    component: AboutMeComponent
   },
   {
     path: 'portfolio',
@@ -34,15 +39,41 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    children: [
+      {
+        path: 'reading',
+        component: BlogPostComponent
+      }
+    ]
   },
   {
-    path: 'blog-post',
-    component: BlogPostComponent
+    path: 'skills',
+    component: SkillComponent
+  },
+  {
+    path: 'education',
+    component: EducationComponent
+  },
+  {
+    path: 'experience',
+    component: ExperienceComponent
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
+  },
+  {
+    path: 'terms-of-service',
+    component: TermsOfServiceComponent
+  },
+  {
+    path: 'tool',
+    loadChildren: () => import('@shared/shared.module').then(m => m.SharedModule) // Lazy load the SharedModule
   },
   {
     path: '**',
-    component: Page404Component
+    component: Page404Component // Catch-all route for 404 pages
   }
 ];
 
