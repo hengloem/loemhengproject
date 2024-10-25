@@ -6,6 +6,7 @@ import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.co
 import { LoanCalculatorComponent } from './loan-calculator/loan-calculator.component';
 import { ToolHomeComponent } from './tool-home/tool-home.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { LayoutModule } from '@app/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from '@app/shared/shared.module';
   imports: [
     CommonModule,
     MathToolsRoutingModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ]
 })
 export class MathToolsModule { }

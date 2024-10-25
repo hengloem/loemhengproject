@@ -91,27 +91,6 @@ This convention applies to all types of variable declarations, including style, 
    - Document components, services, and complex logic using JSDoc or similar commenting styles.
    - Maintain an updated `README.md` for overall project documentation.
 
-## Folder Structure
-
-app
- ├── core # Contains constants, guards, interceptors, pipes, and services
- ├── data # Contains JS schema
- ├── layout # Layout components
- ├── math-tools # Important folder: includes basic calculator, loan calculator, and more
- ├── modules # Feature modules
- ├── page # Page components
- └── shared # Shared components and services
-
-assets
- ├── API # API-related files
- ├── fonts # Font files
- ├── i18n # Internationalization files
- ├── img # Image assets
- ├── js # JavaScript files
- └── scss # SCSS files
-environment # Environment-specific settings
-styles # Global styles
-
 ## Math Tools
 
 This project also includes various math tools that are designed to assist students, which are free to access.
