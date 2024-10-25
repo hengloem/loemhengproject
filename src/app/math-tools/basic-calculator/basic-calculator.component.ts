@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-calculator',
-  templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss']
+  selector: 'app-basic-calculator',
+  templateUrl: './basic-calculator.component.html',
+  styleUrls: ['./basic-calculator.component.scss']
 })
-export class CalculatorComponent {
+export class BasicCalculatorComponent {
   displayValue = '0';
   buttons = [
     '7', '8', '9', '/',

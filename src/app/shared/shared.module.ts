@@ -73,13 +73,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 import { CoreModule } from '@app/core/core.module';
-import { COMPONENTS } from './components';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
-    ...COMPONENTS,
     ControlMessagesComponent,
     SpinnerComponent
   ],

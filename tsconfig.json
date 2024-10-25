@@ -30,8 +30,9 @@
       "@layout/*": ["app/layout/*"],
       "@page/*": ["app/page/*"],
       "@shared/*": ["app/shared/*"],
-      "@env": ["src/environments/environment"],
-      "@data/*": ["app/data/*"]
+      "@env": ["environments/environment"],
+      "@data/*": ["app/data/*"],
+      "@math-tools/*": ["app/math-tools/*"]
     },
     "useDefineForClassFields": true
   },
