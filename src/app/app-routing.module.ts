@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeComponent } from './page/home/home.component';
 import { AboutMeComponent } from './page/about-me/about-me.component';
 import { PortfolioComponent } from './page/portfolio/portfolio.component';
 import { BlogComponent } from './page/blog/blog.component';
 import { ContactMeComponent } from './page/contact-me/contact-me.component';
-import { EducationComponent } from './page/education/education.component';
-import { ExperienceComponent } from './page/experience/experience.component';
 import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
-import { SkillComponent } from './page/skill/skill.component';
 import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-service.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
+import { NoAuthGuard } from './core/guard/no-auth.guard';
 
 const routes: Routes = [
   {
@@ -39,25 +36,11 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    component: BlogComponent,
-    children: [
-      {
-        path: 'reading',
-        component: BlogPostComponent
-      }
-    ]
+    component: BlogComponent
   },
   {
-    path: 'skills',
-    component: SkillComponent
-  },
-  {
-    path: 'education',
-    component: EducationComponent
-  },
-  {
-    path: 'experience',
-    component: ExperienceComponent
+    path: 'blog/:id',
+    component: BlogPostComponent
   },
   {
     path: 'privacy-policy',
@@ -68,8 +51,8 @@ const routes: Routes = [
     component: TermsOfServiceComponent
   },
   {
-    path: 'tool',
-    loadChildren: () => import('@shared/shared.module').then(m => m.SharedModule) // Lazy load the SharedModule
+    path: 'math-tools',
+    loadChildren: () => import('@math-tools/math-tools.module').then(m => m.MathToolsModule)
   },
   {
     path: '**',
