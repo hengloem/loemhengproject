@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageModule } from './page/page.module';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { MathToolsModule } from './math-tools/math-tools.module';
 
 // App initialization function
 export function InitApp(appLoadService: AppInitService) {
@@ -51,11 +52,12 @@ export class TranslateHandler implements MissingTranslationHandler {
     PageModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    MathToolsModule,
     // Lazy load Service Worker immediately after app stabilizes
-    // ServiceWorkerModule.register('ngsw-worker.js', {
-    //   enabled: environment.production,
-    //   registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
-    // }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
+    }),
     // Translation module with efficient loader and missing translation handler
     TranslateModule.forRoot({
       loader: {

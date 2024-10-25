@@ -47,12 +47,14 @@ export class AppComponent implements OnInit, OnDestroy {
       '/portfolio': 'portfolio',
       '/contact': 'contact',
       '/blog': 'blog',
-      '/blog-post': 'blog-post'
+      '/blog-post': 'blog-post',
+      '/math-tools': 'math-tools'
     };
 
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentRoute = this.router.url;
+
         const bodyClasses = Object.values(routeClassMap);
 
         // Find matching route class
