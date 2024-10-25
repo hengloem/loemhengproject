@@ -3,7 +3,8 @@ export const MENUS = [
     { title: 'About', icon: 'fa fa-user', route: '/about' },
     { title: 'Portfolio', icon: 'fa fa-briefcase', route: '/portfolio' },
     { title: 'Contact', icon: 'fa fa-envelope-open', route: '/contact' },
-    { title: 'Blog', icon: 'fa fa-comments', route: '/blog' }
+    { title: 'Blog', icon: 'fa fa-comments', route: '/blog' },
+    { title: 'Tool', icon: 'fa fa-smile-o', route: '/math-tools' }
 ];
 
 export const aboutMe = {
