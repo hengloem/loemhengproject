@@ -72,7 +72,6 @@ import {
   faAsterisk
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
-import { CoreModule } from '@app/core/core.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -133,8 +132,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatTooltipModule,
     MatTreeModule,
     TranslateModule,
-    FontAwesomeModule,
-    CoreModule
+    FontAwesomeModule
   ],
   exports: [
     A11yModule,
