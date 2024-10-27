@@ -1,0 +1,33 @@
+<div class="calculator">
+    <h2>Logarithm Calculator</h2>
+
+    <div class="explanation">
+        <p><strong>What is a Logarithm?</strong></p>
+        <p>A logarithm is the power to which a number (the base) must be raised to produce a given number. For example,
+            log<sub>2</sub>(8) = 3 because 2<sup>3</sup> = 8.</p>
+        <p>This calculator allows you to compute the logarithm of any number to any base. Simply enter the number and
+            the base to see the result.</p>
+        <p><strong>Formula:</strong> log<sub>base</sub>(number) = log(number) / log(base)</p>
+        <p>Example: log<sub>10</sub>(100) = 2 because 10<sup>2</sup> = 100.</p>
+    </div>
+
+    <div class="input-group">
+        <label for="number">Number (x):</label>
+        <input type="number" [(ngModel)]="number" id="number" placeholder="Enter the number" />
+    </div>
+
+    <div class="input-group">
+        <label for="base">Base (b):</label>
+        <input type="number" [(ngModel)]="base" id="base" placeholder="Enter the base" />
+    </div>
+
+    <button (click)="calculateLog()">Calculate log<sub>base</sub>(number)</button>
+
+    <div *ngIf="result !== null">
+        <h3>Result: {{ result }}</h3>
+    </div>
+
+    <div *ngIf="errorMessage">
+        <p class="error">{{ errorMessage }}</p>
+    </div>
+</div>
