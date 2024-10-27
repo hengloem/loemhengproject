@@ -1,0 +1,80 @@
+<div class="calculator-container">
+    <h2>Scientific Calculator for Your Site</h2>
+    <p>
+        Feel free to use our Scientific Calculator on your website. The example
+        implementation is shown below. You can alter colors, fonts, and layout to
+        fit your website style.
+    </p>
+
+    <div id="sciout">{{ showValue }}</div>
+
+    <!-- Function Buttons -->
+    <div class="buttons">
+        <!-- Trigonometric functions and constants -->
+        <button (click)="applyFunction('sin')">sin</button>
+        <button (click)="applyFunction('cos')">cos</button>
+        <button (click)="applyFunction('tan')">tan</button>
+        <button (click)="toggleDegRad()">Deg/Rad</button>
+
+        <button (click)="applyFunction('asin')">sin⁻¹</button>
+        <button (click)="applyFunction('acos')">cos⁻¹</button>
+        <button (click)="applyFunction('atan')">tan⁻¹</button>
+        <button (click)="appendConstant('π')">π</button>
+        <button (click)="appendConstant('e')">e</button>
+
+        <!-- Powers and roots -->
+        <button (click)="setOperator('^')">xʸ</button>
+        <button (click)="applyFunction('x3')">x³</button>
+        <button (click)="applyFunction('x2')">x²</button>
+        <button (click)="applyFunction('exp')">eˣ</button>
+        <button (click)="applyFunction('10x')">10ˣ</button>
+
+        <!-- Advanced functions -->
+        <button (click)="applyFunction('yroot')">ʸ√x</button>
+        <button (click)="applyFunction('cuberoot')">³√x</button>
+        <button (click)="applyFunction('sqrt')">√x</button>
+        <button (click)="applyFunction('ln')">ln</button>
+        <button (click)="applyFunction('log')">log</button>
+
+        <!-- Basic math operations -->
+        <button (click)="appendSymbol('(')">(</button>
+        <button (click)="appendSymbol(')')">)</button>
+        <button (click)="applyFunction('inverse')">1/x</button>
+        <button (click)="applyFunction('percent')">%</button>
+        <button (click)="applyFunction('factorial')">n!</button>
+
+        <!-- Memory operations -->
+        <button (click)="memoryStore()">MS</button>
+        <button (click)="memoryAdd()">M+</button>
+        <button (click)="memorySubtract()">M-</button>
+        <button (click)="memoryRecall()">MR</button>
+        <button (click)="memoryClear()">MC</button>
+
+        <!-- Digits and decimal point -->
+        <button (click)="appendNumber('7')">7</button>
+        <button (click)="appendNumber('8')">8</button>
+        <button (click)="appendNumber('9')">9</button>
+        <button (click)="setOperator('+')">+</button>
+
+        <button (click)="appendNumber('4')">4</button>
+        <button (click)="appendNumber('5')">5</button>
+        <button (click)="appendNumber('6')">6</button>
+        <button (click)="setOperator('-')">–</button>
+
+        <button (click)="appendNumber('1')">1</button>
+        <button (click)="appendNumber('2')">2</button>
+        <button (click)="appendNumber('3')">3</button>
+        <button (click)="setOperator('*')">×</button>
+
+        <button (click)="appendNumber('0')">0</button>
+        <button (click)="appendSymbol('.')">.</button>
+        <button (click)="applyFunction('exp')">EXP</button>
+        <button (click)="setOperator('/')">÷</button>
+
+        <!-- Sign change, rounding, clear, and equals -->
+        <button (click)="toggleSign()">±</button>
+        <button (click)="applyFunction('round')">RND</button>
+        <button (click)="clear()">C</button>
+        <button (click)="calculate()">=</button>
+    </div>
+</div>

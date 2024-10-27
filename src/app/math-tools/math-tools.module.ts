@@ -7,12 +7,18 @@ import { LoanCalculatorComponent } from './loan-calculator/loan-calculator.compo
 import { ToolHomeComponent } from './tool-home/tool-home.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { LayoutModule } from '@app/layout/layout.module';
+import { LogarithmCalculatorComponent } from './logarithm-calculator/logarithm-calculator.component';
+import { ScientificCalculatorComponent } from './scientific-calculator/scientific-calculator.component';
+import { ScientificCalculatorAdvanceComponent } from './scientific-calculator-advance/scientific-calculator-advance.component';
 
 @NgModule({
   declarations: [
     ToolHomeComponent,
     BasicCalculatorComponent,
     LoanCalculatorComponent,
+    LogarithmCalculatorComponent,
+    ScientificCalculatorComponent,
+    ScientificCalculatorAdvanceComponent,
   ],
   imports: [
     CommonModule,

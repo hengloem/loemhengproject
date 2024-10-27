@@ -1,3 +1,41 @@
 <app-header></app-header>
+<section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
+  <h1>MATH <span>TOOLS</span></h1>
+  <span class="title-bg">CALCULATOR</span>
+</section>
+<section class="main-content revealator-slideup revealator-once revealator-delay1">
+  <div class="container">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          MATH
+        </ng-template>
+        <div>
+          <app-basic-calculator></app-basic-calculator>
+          <app-loan-calculator></app-loan-calculator>
+          <app-logarithm-calculator></app-logarithm-calculator>
+          <app-scientific-calculator></app-scientific-calculator>
+          <app-scientific-calculator-advance></app-scientific-calculator-advance>
+        </div>
+      </mat-tab>
 
-<app-basic-calculator></app-basic-calculator>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          HEALTH
+        </ng-template>
+        Content 2
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          FINANCIAL
+        </ng-template>
+
+        Content 3
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>

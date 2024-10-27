@@ -1,0 +1,33 @@
+$background-color_1: #e0e0e0;
+$background-color_2: #f1f1f1;
+$background-color_3: #d0d0d0;
+
+#sciout {
+	font-size: 1.5rem;
+	padding: 10px;
+	background-color: $background-color_1;
+	text-align: right;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 5px;
+}
+button {
+	padding: 10px;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: $background-color_2;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	&:hover {
+		background-color: $background-color_1;
+	}
+	&:active {
+		background-color: $background-color_3;
+	}
+}

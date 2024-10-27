@@ -1,0 +1,30 @@
+<div id="sciout">{{ showValue }}</div>
+<div class="buttons">
+  <!-- Number Buttons -->
+  <button (click)="appendNumber('1')">1</button>
+  <button (click)="appendNumber('2')">2</button>
+  <button (click)="appendNumber('3')">3</button>
+  <button (click)="appendNumber('4')">4</button>
+  <button (click)="appendNumber('5')">5</button>
+  <button (click)="appendNumber('6')">6</button>
+  <button (click)="appendNumber('7')">7</button>
+  <button (click)="appendNumber('8')">8</button>
+  <button (click)="appendNumber('9')">9</button>
+  <button (click)="appendNumber('0')">0</button>
+
+  <!-- Operator Buttons -->
+  <button (click)="setOperator('+')">+</button>
+  <button (click)="setOperator('-')">-</button>
+  <button (click)="setOperator('*')">×</button>
+  <button (click)="setOperator('/')">÷</button>
+
+  <!-- Scientific Functions -->
+  <button (click)="applyFunction('sin')">sin</button>
+  <button (click)="applyFunction('cos')">cos</button>
+  <button (click)="applyFunction('tan')">tan</button>
+  <button (click)="applyFunction('sqrt')">√</button>
+
+  <!-- Other Controls -->
+  <button (click)="clear()">C</button>
+  <button (click)="calculate()">=</button>
+</div>
