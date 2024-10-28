@@ -1,5 +1,12 @@
 {
     "app": {
         "title": "Loem Heng Project"
+    },
+    "home": {
+        "learn-more": "Learn More"
+    },
+    "about": {
+        "title": "About Me",
+        "personal-information": "Personal Information"
     }
 }
