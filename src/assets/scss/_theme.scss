@@ -1,3 +1,4 @@
+// Color Variables
 $color_1: #fff;
 $color_2: #666;
 $color_3: #777;
@@ -7,8 +8,13 @@ $color_6: #ffffff;
 $color_7: rgba(255, 255, 255, 0.07);
 $color_8: #ddd;
 $color_9: #eee;
+
+// Font Variables
 $font-family_1: 'Poppins', sans-serif;
 $font-family_2: FontAwesome;
+$font-family_3: 'Battambang', sans-serif; // Add Khmer font here
+
+// Background Color Variables
 $background-color_1: #111;
 $background-color_2: #fff;
 $background-color_3: #eee;
@@ -16,6 +22,8 @@ $background-color_4: #666;
 $background-color_5: #f2f2f2;
 $background-color_6: transparent;
 $background-color_7: #252525;
+
+// Image Variables
 $bg-img: "./../img/photos/03_610_x_1020.jpg";
 $nav-next-img: "./../img/projects/navigation/right-arrow.png";
 $nav-prev-img: "./../img/projects/navigation/left-arrow.png";
@@ -25,8 +33,17 @@ html {
 	overflow-x: hidden;
 	height: 100%;
 }
+
+.language-english {
+	font-family: $font-family_1 !important;
+}
+
+.language-khmer {
+	font-family: $font-family_3 !important;
+}
+
 body {
-	font-family: $font-family_1;
+	// font-family: $font-family_1;
 	font-size: 15px;
 	color: $color_1;
 	font-weight: 500;
@@ -38,6 +55,7 @@ body {
 	width: 100%;
 	background-color: $background-color_1;
 }
+
 hr.separator {
 	border-top: 1px solid #252525;
 	margin: 70px auto 55px;
