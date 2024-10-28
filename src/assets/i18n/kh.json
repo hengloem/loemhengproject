@@ -1,5 +1,12 @@
 {
     "app": {
-        "title": "គម្រោងលឹម ហេង"
+        "title": "Loem Heng Project"
+    },
+    "home": {
+        "learn-more": "ស្វែងយល់បន្ថែម"
+    },
+    "about": {
+        "title": "About Me",
+        "personal-information": "Personal Information"
     }
 }
