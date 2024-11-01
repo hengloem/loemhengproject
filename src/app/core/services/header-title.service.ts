@@ -16,6 +16,7 @@ export class HeaderTitleService {
 
   setDocTitle(title: string) {
     this.translate.get(title).subscribe((res: string) => {
+      console.log(res);
       this.titleService.setTitle(res);
     });
   }
