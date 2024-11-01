@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tool-home.component.scss']
 })
 export class ToolHomeComponent {
+  constructor() {}
 
+  
 }

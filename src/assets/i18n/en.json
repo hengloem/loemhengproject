@@ -1,6 +1,12 @@
 {
     "app": {
-        "title": "Loem Heng Project"
+        "title": "Loem Heng Project",
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact",
+        "blog": "Blog",
+        "tool": "Tool"
     },
     "home": {
         "i-am-heng": "I'm Heng LOEM ",
@@ -13,5 +19,10 @@
         "title-2": "Me",
         "resume": "Resume",
         "personal-information": "Personal Information"
+    },
+    "math-tool": {
+        "title-1": "Math",
+        "title-2": "Tools",
+        "calculator": "Calculator"
     }
 }
