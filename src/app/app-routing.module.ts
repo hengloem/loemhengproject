@@ -10,8 +10,6 @@ import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.com
 import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-service.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
-import { TitleResolver } from './core/resolvers/title.resolver';
-import { LanguageGuard } from './core/guard/language.guard';
 
 const routes: Routes = [
   {
@@ -21,17 +19,11 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-    canActivate: [LanguageGuard],
-    resolve: {
-      title: TitleResolver
-    },
-    data: { titleKey: 'app.title' }
+    component: HomeComponent
   },
   {
     path: 'about',
-    component: AboutMeComponent,
-    data: { title: 'about.title' }
+    component: AboutMeComponent
   },
   {
     path: 'portfolio',

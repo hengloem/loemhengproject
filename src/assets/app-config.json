@@ -1,4 +1,6 @@
 {
     "environment": "local",
-    "server": "http://localhost:8080"
+    "server": "http://localhost:8080",
+    "googleClientId": "1088156184863-dsmpolsrntp3d21h1fntj28hnurqr4di.apps.googleusercontent.com",
+    "apiUrl": "https://www.googleapis.com/blogger/v3/blogs/YOUR_BLOG_ID/posts"
 }

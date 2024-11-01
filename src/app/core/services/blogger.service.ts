@@ -8,7 +8,7 @@ import { GoogleAuthService } from './google-auth.service';
   providedIn: 'root',
 })
 export class BloggerService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = environment.bloggerApiUrl;
 
   constructor(private http: HttpClient, private authService: GoogleAuthService) {}
 
