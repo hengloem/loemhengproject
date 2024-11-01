@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '@env';
 import { loadGapiInsideDOM, gapi } from 'gapi-script';
 
+declare const gapi: any;  // Allows TypeScript to recognize `gapi` globally
+
 @Injectable({
   providedIn: 'root',
 })

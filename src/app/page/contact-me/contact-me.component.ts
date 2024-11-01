@@ -1,3 +1,4 @@
+import { HeaderTitleService } from '@app/core/services/header-title.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ContactService } from '@app/core/services/contact.service';
@@ -13,13 +14,16 @@ export class ContactMeComponent implements OnInit {
 
   constructor(
     private contactService: ContactService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private headerTitleService: HeaderTitleService
   ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    this.headerTitleService.setTitle('app.contact');
+
     this.contactService.sendContactForm(this.contactData).subscribe(
       response => {
         this.responseMessage = 'Email sent successfully!';

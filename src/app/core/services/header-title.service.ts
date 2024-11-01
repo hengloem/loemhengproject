@@ -1,27 +1,46 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeaderTitleService {
-  title = new BehaviorSubject('app.title');
+  title = new BehaviorSubject<string>('');
+  private languageSubscription: Subscription;
 
   constructor(
     private translate: TranslateService,
     private titleService: Title
-  ) { }
+  ) {
+    // Subscribe to language changes to update the title dynamically
+    this.languageSubscription = this.translate.onLangChange.subscribe(() => {
+      const currentTitle = this.title.getValue();
+      console.log(currentTitle);
 
-  setDocTitle(title: string) {
-    this.translate.get(title).subscribe((res: string) => {
-      console.log(res);
-      this.titleService.setTitle(res);
+      this.setDocTitle(currentTitle);
     });
   }
 
-  setTitle(title: string) {
-    this.title.next(title);
+  // Set document title with translation key
+  setDocTitle(titleKey: string) {
+    this.translate.get(titleKey).subscribe((translatedTitle: string) => {
+      console.log(`Setting document title: ${translatedTitle}`);
+      this.titleService.setTitle(translatedTitle);
+    });
+  }
+
+  // Set title key and update document title
+  setTitle(titleKey: string) {
+    this.title.next(titleKey);
+    this.setDocTitle(titleKey); // Apply the title in current language
+  }
+
+  // Clean up the subscription on service destroy
+  ngOnDestroy(): void {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
   }
 }
