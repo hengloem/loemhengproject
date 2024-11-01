@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { IpLocationService } from './core/services/ip-location.service';
 import { LanguageService } from './core/services/language.service';
 import { TranslateService } from '@ngx-translate/core';
+import { HeaderTitleService } from './core/services/header-title.service';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +18,12 @@ export class AppComponent implements OnInit, OnDestroy {
     private translate: TranslateService,
     private router: Router,
     private ipLocationService: IpLocationService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private headerTitleService: HeaderTitleService
   ) { }
 
   ngOnInit(): void {
+    this.headerTitleService.setTitle('app.title');
     // Set an immediate fallback language (e.g., English)
     this.translate.setDefaultLang('en');
     this.translate.use('en'); // Load English until detection completes
@@ -45,12 +48,15 @@ export class AppComponent implements OnInit, OnDestroy {
           // Default to English if IP detection fails
           document.body.classList.add('language-english');
           this.languageService.setLanguage('en');
-          this.translate.use('en')
+          this.translate.use('en');
+          this.headerTitleService.setDocTitle('app.title');
         }
       });
     } else {
       // Use already set language from service and skip loading spinner
-      this.translate.use(this.languageService.getLanguage());
+      const savedLang = this.languageService.getLanguage();
+      this.translate.use(savedLang);
+      this.headerTitleService.setDocTitle('app.title');
     }
 
 

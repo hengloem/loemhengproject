@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderTitleService } from '@app/core/services/header-title.service';
 
 declare var $: any; // Declare $ to use jQuery
 
@@ -64,9 +65,12 @@ export class PortfolioComponent implements OnInit {
     // Add more items as needed
   ];
 
-  constructor() { }
+  constructor(
+    private headerTitleService: HeaderTitleService
+  ) { }
 
   ngOnInit(): void {
+    this.headerTitleService.setTitle('app.portfolio');
   }
 
 }
