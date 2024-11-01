@@ -3,7 +3,7 @@
     <li class="icon-box" *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
         <i class="{{ menu.icon }}"></i>
         <a [href]="menu.route">
-            <h2>{{ menu.title }}</h2>
+            <h2>{{ menu.title | translate }}</h2>
         </a>
     </li>
 </ul>
@@ -20,7 +20,7 @@
             <li *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
                 <a [href]="menu.route">
                     <i class="{{ menu.icon }}"></i>
-                    <span>{{ menu.title }}</span>
+                    <span>{{ menu.title | translate }}</span>
                 </a>
             </li>
         </ul>
