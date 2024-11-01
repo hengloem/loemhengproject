@@ -1073,6 +1073,7 @@ body.light.blog-post {
 				height: 50px;
 				&:hover {
 					h2 {
+						min-width: 125px;
 						opacity: 1;
 						right: 27px;
 						margin: 0;

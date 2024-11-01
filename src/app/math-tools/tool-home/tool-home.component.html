@@ -1,7 +1,7 @@
 <app-header></app-header>
 <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
-  <h1>MATH <span>TOOLS</span></h1>
-  <span class="title-bg">CALCULATOR</span>
+  <h1>{{ 'math-tool.title-1' | translate }} <span> {{ 'math-tool.title-2' | translate }}</span></h1>
+  <span class="title-bg">{{ 'math-tool.calculator' | translate }}</span>
 </section>
 <section class="main-content revealator-slideup revealator-once revealator-delay1">
   <div class="container">
@@ -9,32 +9,46 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-          MATH
+          Basic Calculator
         </ng-template>
-        <div>
+        <div class="container">
           <app-basic-calculator></app-basic-calculator>
-          <app-loan-calculator></app-loan-calculator>
-          <app-logarithm-calculator></app-logarithm-calculator>
-          <app-scientific-calculator></app-scientific-calculator>
-          <app-scientific-calculator-advance></app-scientific-calculator-advance>
         </div>
       </mat-tab>
 
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-          HEALTH
+          Loan Calculator
         </ng-template>
-        Content 2
+        <div>
+          <app-loan-calculator></app-loan-calculator>
+        </div>
       </mat-tab>
 
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-          FINANCIAL
+          Logarithm Calculator
         </ng-template>
 
-        Content 3
+        <app-logarithm-calculator></app-logarithm-calculator>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          Basic Scientific Calculator
+        </ng-template>
+        <app-scientific-calculator></app-scientific-calculator>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          Advance Scientific Calculator
+        </ng-template>
+        <app-scientific-calculator-advance></app-scientific-calculator-advance>
       </mat-tab>
     </mat-tab-group>
   </div>

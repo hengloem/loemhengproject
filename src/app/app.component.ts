@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IpLocationService } from './core/services/ip-location.service';
 import { LanguageService } from './core/services/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +11,21 @@ import { LanguageService } from './core/services/language.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'loemhengproject';
   private routerSubscription: Subscription;
 
   constructor(
+    private translate: TranslateService,
     private router: Router,
     private ipLocationService: IpLocationService,
     private languageService: LanguageService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    // Check if language is already set in the session
+    // Set an immediate fallback language (e.g., English)
+    this.translate.setDefaultLang('en');
+    this.translate.use('en'); // Load English until detection completes
+
+    // Check if language is already set in session
     if (!this.languageService.getLanguage()) {
       // Detect user location and set language based on IP location
       this.ipLocationService.getUserCountry().subscribe({
@@ -29,26 +34,25 @@ export class AppComponent implements OnInit, OnDestroy {
           const preferredLang = userCountry === 'KH' ? 'kh' : 'en';
 
           // Set language in CSS
-          const body = document.body;
-          body.classList.remove('language-english');
-          body.classList.add('language-khmer');
+          document.body.classList.toggle('language-khmer', preferredLang === 'kh');
+          document.body.classList.toggle('language-english', preferredLang === 'en');
 
-          // Set language in LanguageService
+          // Set detected language in LanguageService
           this.languageService.setLanguage(preferredLang);
+          this.translate.use(preferredLang);
         },
         error: () => {
-          const body = document.body;
-          body.classList.remove('language-khmer');
-          body.classList.add('language-english');
-          
-          // Handle errors by defaulting to English
+          // Default to English if IP detection fails
+          document.body.classList.add('language-english');
           this.languageService.setLanguage('en');
+          this.translate.use('en')
         }
       });
     } else {
-      // Use the already set language in the service
-      this.languageService.setLanguage(this.languageService.getLanguage());
+      // Use already set language from service and skip loading spinner
+      this.translate.use(this.languageService.getLanguage());
     }
+
 
     // Route handling for body classes
     const routeClassMap = {
@@ -66,7 +70,7 @@ export class AppComponent implements OnInit, OnDestroy {
         const currentRoute = this.router.url;
 
         const bodyClasses = Object.values(routeClassMap);
-        
+
         // Find matching route class
         const activeClass = Object.keys(routeClassMap).find(key => currentRoute.includes(key)) || '';
 

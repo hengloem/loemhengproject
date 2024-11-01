@@ -10,21 +10,28 @@ import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.com
 import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-service.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
-import { NoAuthGuard } from './core/guard/no-auth.guard';
+import { TitleResolver } from './core/resolvers/title.resolver';
+import { LanguageGuard } from './core/guard/language.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [LanguageGuard],
+    resolve: {
+      title: TitleResolver
+    },
+    data: { titleKey: 'app.title' }
   },
   {
     path: 'about',
-    component: AboutMeComponent
+    component: AboutMeComponent,
+    data: { title: 'about.title' }
   },
   {
     path: 'portfolio',
