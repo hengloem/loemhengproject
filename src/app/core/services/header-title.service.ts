@@ -17,8 +17,6 @@ export class HeaderTitleService {
     // Subscribe to language changes to update the title dynamically
     this.languageSubscription = this.translate.onLangChange.subscribe(() => {
       const currentTitle = this.title.getValue();
-      console.log(currentTitle);
-
       this.setDocTitle(currentTitle);
     });
   }
@@ -26,7 +24,6 @@ export class HeaderTitleService {
   // Set document title with translation key
   setDocTitle(titleKey: string) {
     this.translate.get(titleKey).subscribe((translatedTitle: string) => {
-      console.log(`Setting document title: ${translatedTitle}`);
       this.titleService.setTitle(translatedTitle);
     });
   }

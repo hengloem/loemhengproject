@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { IpLocationService } from '@app/core/services/ip-location.service';
+import { SharedService } from '@app/core/services/shared.service';
 import { MENUS } from '@app/data/js/static-data';
 import { MenuItem } from '@app/shared/models/utils.model';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,21 +13,35 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavigationComponent {
   menus: MenuItem[] = [];
+  isKh: string = '';
 
   constructor(
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private localStorage: SharedService
   ) { }
 
   ngOnInit(): void {
     this.menus = MENUS;
-
-    const userLanguage = navigator.language === 'km' ? 'kh' : 'en';
-    this.translate.use(userLanguage);
+    this.isKh = this.localStorage.get('lang') == 'kh' ? 'app.eng' : 'app.kh';
   }
 
   menuIsActive(route: string): string {
     return this.router.url === route ? "active" : "";
-  }  
+  }
 
+  preLang() {
+    // Toggle between Khmer and English
+    const newLang = this.localStorage.get('lang') === 'kh' ? 'en' : 'kh';
+    this.localStorage.set('lang', newLang);
+
+    // Update the displayed text
+    this.isKh = newLang === 'kh' ? 'app.eng' : 'app.kh';
+
+    // Update the language used by the TranslateService
+    this.translate.use(newLang);
+
+    // Update document body class for styling if needed
+    document.body.classList.toggle(newLang === 'kh' ? 'language-khmer' : 'language-english');
+  }
 }
