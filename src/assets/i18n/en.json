@@ -6,7 +6,9 @@
         "portfolio": "Portfolio",
         "contact": "Contact",
         "blog": "Blog",
-        "tool": "Tool"
+        "tool": "Tool",
+        "eng": "English",
+        "kh": "Khmer"
     },
     "home": {
         "i-am-heng": "Mr. Heng LOEM ",
