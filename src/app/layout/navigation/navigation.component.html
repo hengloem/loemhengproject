@@ -1,9 +1,12 @@
 <!-- Fixed Navigation Starts -->
 <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
-    <!-- <li class="icon-box">
-        <i class="fa fa-lang"> KH / ENG </i>
-    </li> -->
-    
+    <li class="icon-box">
+        <i class="fa fa-language"></i>
+        <a href="javascript:void(0)" (click)="preLang()">
+            <h2>{{ this.isKh| translate }}</h2>
+        </a>
+    </li>
+
     <li class="icon-box" *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
         <i class="{{ menu.icon }}"></i>
         <a [href]="menu.route">
