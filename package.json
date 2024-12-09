@@ -46,6 +46,7 @@
     "ngx-gallery": "^5.10.0",
     "ngx-mask": "^14.0.3",
     "ngx-masonry": "^14.0.1",
+    "ngx-quill": "^21.0.2",
     "nodemailer": "^6.9.15",
     "retry": "^0.13.1",
     "rxjs": "~7.5.0",

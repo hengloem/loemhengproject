@@ -7,9 +7,8 @@ import { HeaderTitleService } from '@app/core/services/header-title.service';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-  ageInYears: string;
-  ExpInYears: number;
-
+  lh_AgeInYears: string;
+  lh_ExpInYears: number;
 
   constructor(
     private headerTitleService: HeaderTitleService
@@ -24,21 +23,21 @@ export class AboutMeComponent implements OnInit {
 
   calculateAge(): void {
     const dateOfBirth = new Date('1995-05-07'); // Static date of birth
-    this.ageInYears = this.calculateAgeFromDateOfBirth(dateOfBirth);
+    this.lh_AgeInYears = this.calculateAgeFromDateOfBirth(dateOfBirth);
   }
 
   calculateExperience(): void {
     const startDate = new Date('2017-06-19'); // Static start date of work
-    this.ExpInYears = this.calculateYearsOfExperience(startDate);
+    this.lh_ExpInYears = this.calculateYearsOfExperience(startDate);
   }
 
   calculateAgeFromDateOfBirth(dateOfBirth: Date): string {
     const currentDate = new Date();
     const timeDifference = Math.abs(currentDate.getTime() - dateOfBirth.getTime());
-    const ageInYears = Math.floor(timeDifference / (1000 * 3600 * 24 * 365));
-    const suffix = ageInYears === 1 ? ageInYears + ' year old' : ageInYears + ' years old';
-    this.ageInYears = suffix;
-    return this.ageInYears;
+    const lh_AgeInYear = Math.floor(timeDifference / (1000 * 3600 * 24 * 365));
+    const suffix = lh_AgeInYear === 1 ? lh_AgeInYear + ' year old' : lh_AgeInYear + ' years old';
+    this.lh_AgeInYears = suffix;
+    return this.lh_AgeInYears;
   }
 
   calculateYearsOfExperience(startDate: Date): number {
