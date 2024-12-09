@@ -50,6 +50,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import {
   faPlus,
   faEdit,

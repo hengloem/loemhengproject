@@ -8,7 +8,6 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 
-// import ngx-translate and the http loader
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -20,17 +19,14 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { MathToolsModule } from './math-tools/math-tools.module';
 
-// App initialization function
 export function InitApp(appLoadService: AppInitService) {
   return () => appLoadService.init();
 }
 
-// HttpLoader factory for ngx-translate
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
-// Custom missing translation handler
 export class TranslateHandler implements MissingTranslationHandler {
   handle(params: any) {
     return params.key;
@@ -53,12 +49,10 @@ export class TranslateHandler implements MissingTranslationHandler {
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MathToolsModule,
-    // Lazy load Service Worker immediately after app stabilizes
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:5000' // Register SW 5 seconds after app stabilizes
+      registrationStrategy: 'registerWhenStable:5000'
     }),
-    // Translation module with efficient loader and missing translation handler
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -67,10 +61,10 @@ export class TranslateHandler implements MissingTranslationHandler {
       },
       isolate: false,
       missingTranslationHandler: [{
-        provide: MissingTranslationHandler, useClass: TranslateHandler
+        provide: MissingTranslationHandler, 
+        useClass: TranslateHandler
       }]
     }),
-    // StoreModule with root state
     StoreModule.forRoot({}, {})
   ],
   providers: [
