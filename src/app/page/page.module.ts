@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageRoutingModule } from './page-routing.module';
-import { SharedModule } from '../shared/shared.module'; // Optional: If you are using shared components
-import { LayoutModule } from '../layout/layout.module'; // Optional: If you are using layout components
+import { SharedModule } from '../shared/shared.module';
+import { LayoutModule } from '../layout/layout.module';
 import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -14,7 +14,7 @@ import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
-import { CoreModule } from '@app/core/core.module'; // Optional: If you are using core services
+import { CoreModule } from '@app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -33,9 +33,9 @@ import { CoreModule } from '@app/core/core.module'; // Optional: If you are usin
   imports: [
     CommonModule,
     PageRoutingModule,
-    LayoutModule,   // Optional: Use only if needed
-    SharedModule,   // Optional: Use only if needed
-    CoreModule      // Optional: Use only if needed
+    LayoutModule,
+    SharedModule, 
+    CoreModule
   ]
 })
 export class PageModule { }
