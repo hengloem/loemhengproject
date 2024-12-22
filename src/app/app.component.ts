@@ -37,6 +37,8 @@ export class AppComponent implements OnInit, OnDestroy {
       // Detect user's country if no language is set in localStorage
       this.ipLocationService.getUserCountry().subscribe({
         next: (data) => {
+          console.log(data);
+          
           const lang = data.country === 'KH' ? 'kh' : 'en';
 
           // Set language in localStorage and apply it
@@ -45,9 +47,6 @@ export class AppComponent implements OnInit, OnDestroy {
           this.translate.use(lang);
         }
       });
-
-      // Update document body class for styling if needed
-      document.body.classList.toggle(this.isKh === 'kh' ? 'language-khmer' : 'language-english');
     }
 
     // Route handling for body classes

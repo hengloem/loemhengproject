@@ -3,7 +3,7 @@
     <li class="icon-box">
         <i class="fa fa-language"></i>
         <a href="javascript:void(0)" (click)="preLang()">
-            <h2>{{ this.isKh| translate }}</h2>
+            <h2>{{ this.isKh | translate }}</h2>
         </a>
     </li>
 
@@ -24,6 +24,13 @@
         <span></span>
         <span></span>
         <ul class="list-unstyled" id="menu">
+            <li>
+                <a href="javascript:void(0)" (click)="preLang()">
+                    <i class="fa fa-language"></i>
+                    <span>{{ this.isKh | translate }}</span>
+                </a>
+            </li>
+
             <li *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
                 <a [href]="menu.route">
                     <i class="{{ menu.icon }}"></i>

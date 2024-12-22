@@ -1,9 +1,6 @@
-// Import pre-built themes and other styles
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~font-awesome/css/font-awesome.css';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-// Import custom styles
 @import 'assets/scss/preloader';
 @import 'assets/scss/base';
 @import 'assets/scss/circle';
