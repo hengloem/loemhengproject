@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Gilroy Regular";
+    src: url(./../fonts/gilroy-regular-webfont.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Khmer OS Siemreap Regular";
+    src: url(./../fonts/khmer-os-siemreap-regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 // Color Variables
 $color_1: #fff;
 $color_2: #666;
@@ -8,11 +23,6 @@ $color_6: #ffffff;
 $color_7: rgba(255, 255, 255, 0.07);
 $color_8: #ddd;
 $color_9: #eee;
-
-// Font Variables
-$font-family_1: 'Poppins', sans-serif;
-$font-family_2: FontAwesome;
-$font-family_3: 'Battambang', sans-serif; // Add Khmer font here
 
 // Background Color Variables
 $background-color_1: #111;
@@ -29,21 +39,17 @@ $nav-next-img: "./../img/projects/navigation/right-arrow.png";
 $nav-prev-img: "./../img/projects/navigation/left-arrow.png";
 $nav-close-img: "./../img/projects/navigation/close-button.png";
 
+// Font Variables
+$font-eng: 'Gilroy Regular';
+$font-km: 'Khmer OS Siemreap Regular';
+
 html {
 	overflow-x: hidden;
 	height: 100%;
 }
 
-.language-english {
-	font-family: $font-family_1 !important;
-}
-
-.language-khmer {
-	font-family: $font-family_3 !important;
-}
-
 body {
-	// font-family: $font-family_1;
+	font-family: $font-eng, $font-km, sans-serif !important;
 	font-size: 15px;
 	color: $color_1;
 	font-weight: 500;
@@ -867,7 +873,7 @@ body.light.blog-post {
 		.output_message.success {
 			background: #28a745;
 			&:before {
-				font-family: $font-family_2;
+				font-family: FontAwesome;
 				content: "\f14a";
 				padding-right: 10px;
 			}
@@ -875,7 +881,7 @@ body.light.blog-post {
 		.output_message.error {
 			background: #dc3545;
 			&:before {
-				font-family: $font-family_2;
+				font-family: FontAwesome;
 				content: "\f071";
 				padding-right: 10px;
 			}
