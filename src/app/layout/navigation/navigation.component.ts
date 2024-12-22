@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IpLocationService } from '@app/core/services/ip-location.service';
 import { SharedService } from '@app/core/services/shared.service';
 import { MENUS } from '@app/data/js/static-data';
 import { MenuItem } from '@app/shared/models/utils.model';
@@ -40,8 +39,5 @@ export class NavigationComponent {
 
     // Update the language used by the TranslateService
     this.translate.use(newLang);
-
-    // Update document body class for styling if needed
-    document.body.classList.toggle(newLang === 'kh' ? 'language-khmer' : 'language-english');
   }
 }
