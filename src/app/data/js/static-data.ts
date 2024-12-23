@@ -53,7 +53,7 @@ export const lh_experiences = [
             'Start-ups Management',
             'Early Stage Ventures',
         ],
-        icon: '/assets/icons/heng-coding-service.svg', // Example path
+        icon: '/assets/img/icons/ftl.svg', // Example path
     },
     {
         title: 'President',
@@ -65,7 +65,7 @@ export const lh_experiences = [
         location: 'Sen Sokh, Phnom Penh, Cambodia · Hybrid',
         description: 'Coordinate all Association planning and action, working closely with the Board of Directors. Presides at meetings, ensures diplomatic roles, and takes disciplinary actions as needed.',
         skills: ['Team Coordination', 'Strategic Planning', 'Leadership'],
-        icon: '/assets/icons/pncaa.svg',
+        icon: '/assets/img/icons/pncaa.svg',
     },
     {
         title: 'System Development Supervisor',
@@ -91,7 +91,7 @@ export const lh_experiences = [
             'Figma',
             'Social Media Marketing',
         ],
-        icon: '/assets/icons/fortune-life-insurance.svg',
+        icon: '/assets/img/icons/fortune-life-insurance.svg',
     },
     {
         title: 'Founder',
@@ -109,7 +109,7 @@ export const lh_experiences = [
             'Start-up Leadership',
             'Start-ups Management',
         ],
-        icon: '/assets/icons/in-time-gaming.svg',
+        icon: '/assets/img/icons/in-time-gaming.svg',
     },
     {
         title: 'Senior Web Developer',
@@ -133,7 +133,7 @@ export const lh_experiences = [
             'Marketing Strategy',
             'OOP',
         ],
-        icon: '/assets/icons/hrinc.svg',
+        icon: '/assets/img/icons/hrinc.svg',
     },
     {
         title: 'Communication Coordinator',
@@ -145,7 +145,7 @@ export const lh_experiences = [
         location: 'Sen Sokh, Phnom Penh, Cambodia · Hybrid',
         description: 'Participated in meetings, developed action plans for projects, and led volunteer teams. Ensured that projects were well-planned and implemented effectively.',
         skills: ['Communication', 'Team Coordination', 'Project Planning', 'Sponsorship'],
-        icon: '/assets/icons/pncaa.svg',
+        icon: '/assets/img/icons/pncaa.svg',
     },
     {
         title: 'Information Technology Officer',
@@ -157,7 +157,7 @@ export const lh_experiences = [
         location: 'Chamkar Mon, Phnom Penh, Cambodia · On-site',
         description: 'Participated in development utilizing the CodeIgniter framework and MySQL. Executed system analysis and documented project details.',
         skills: ['HTML5', 'CSS', 'JavaScript', 'PHP', 'Data Analysis', 'SQL Server 2012', 'Algorithms', 'OOP'],
-        icon: '/assets/icons/sahaka.svg',
+        icon: '/assets/img/icons/sahaka.svg',
     },
     {
         title: 'Web Developer Intern',
@@ -169,7 +169,7 @@ export const lh_experiences = [
         location: 'Phnom Penh, Cambodia · On-site',
         description: 'Restructured network cables and installed cameras. Established connections and maintained server room organization.',
         skills: ['HTML5', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'SQL Server 2012', 'Algorithms', 'Problem solving', 'OOP'],
-        icon: '/assets/icons/self-employed.svg',
+        icon: '/assets/img/icons/self-employed.svg',
     },
     {
         title: 'President',
@@ -181,7 +181,7 @@ export const lh_experiences = [
         location: 'Sen Sokh, Phnom Penh, Cambodia · On-site',
         description: 'Acted as an ambassador for the organization, engaged with students and faculty, and supervised the team while promoting knowledge exchange.',
         skills: ['Leadership', 'Time Management', 'Motivational Speaking', 'Problem solving'],
-        icon: '/assets/icons/pnc.svg',
+        icon: '/assets/img/icons/pnc.svg',
     },
     {
         title: 'Club Coordinator',
@@ -193,7 +193,7 @@ export const lh_experiences = [
         location: 'Sen Sokh, Phnom Penh, Cambodia · On-site',
         description: 'Facilitated club activities, mentored students, and maintained strong ties with club leaders.',
         skills: ['Leadership', 'Time Management', 'Motivational Speaking', 'Problem solving'],
-        icon: '/assets/icons/pnc.svg',
+        icon: '/assets/img/icons/pnc.svg',
     },
 ];
 
