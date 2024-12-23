@@ -50,7 +50,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { QuillModule } from 'ngx-quill';
 import {
   faPlus,
   faEdit,
@@ -133,7 +133,23 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatTooltipModule,
     MatTreeModule,
     TranslateModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    QuillModule.forRoot({
+      modules: {
+        syntax: false,
+        toolbar: [
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          ['blockquote', 'code-block'],
+          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
+          [{ 'direction': 'rtl' }],                         // text direction
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+          [{ 'align': [] }],
+          ['clean']                                         // remove formatting button
+        ]
+      }
+    })
   ],
   exports: [
     A11yModule,
@@ -183,7 +199,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatTooltipModule,
     MatTreeModule,
     TranslateModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    QuillModule
   ]
 })
 export class SharedModule {
