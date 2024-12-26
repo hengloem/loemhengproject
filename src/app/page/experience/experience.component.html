@@ -1,3 +1,10 @@
+<!-- <mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option>One fish</mat-chip-option>
+    <mat-chip-option>Two fish</mat-chip-option>
+    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+    <mat-chip-option color="warn">Warn fish</mat-chip-option>
+</mat-chip-listbox> -->
+
 <div class="resume-box">
     <ul *ngFor="let item of lh_expData;">
         <li>
@@ -20,8 +27,7 @@
             <div class="details">
                 <span class="time text-uppercase">
                     {{ item?.employmentType }} ·
-                    {{ item?.workModel }} ·
-                    {{ item?.location }}
+                    {{ item?.workModel }}
                 </span>
             </div>
 

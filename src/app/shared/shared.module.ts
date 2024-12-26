@@ -1,5 +1,5 @@
 import { TranslateModule } from '@ngx-translate/core';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -51,6 +51,7 @@ import { ControlMessagesComponent } from './components/control-messages/control-
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { QuillModule } from 'ngx-quill';
+
 import {
   faPlus,
   faEdit,
@@ -77,6 +78,7 @@ import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     ControlMessagesComponent,
     SpinnerComponent
