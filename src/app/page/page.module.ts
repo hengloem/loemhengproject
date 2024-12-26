@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageRoutingModule } from './page-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +17,7 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
 import { CoreModule } from '@app/core/core.module';
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     HomeComponent,
     AboutMeComponent,
@@ -34,8 +35,9 @@ import { CoreModule } from '@app/core/core.module';
     CommonModule,
     PageRoutingModule,
     LayoutModule,
-    SharedModule, 
+    SharedModule,
     CoreModule
-  ]
+  ],
+  bootstrap: [ExperienceComponent]
 })
 export class PageModule { }

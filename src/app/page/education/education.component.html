@@ -1,54 +1,32 @@
 <div class="resume-box">
-    <ul>
+    <ul *ngFor="let item of lh_eduData;">
         <li>
+            <!-- Icon Section -->
             <div class="icon">
-                <i class="fa fa-graduation-cap"></i>
+                <i [class]="item?.icon"></i>
             </div>
-            <span class="time text-uppercase">2017 - 2019</span>
-            <h5 class="text-uppercase">Bachelor Degree <span class="place">University of
-                    Puthisastra</span>
+
+            <!-- Details Section -->
+            <div class="details">
+                <span class="time text-uppercase">
+                    {{ item?.startDate }} - {{ item?.endDate }}
+                </span>
+            </div>
+
+            <div class="details">
+                <span class="time text-uppercase">
+                    {{ item?.studyType }}
+                </span>
+            </div>
+
+            <!-- Educateion Title and Company -->
+            <h5 class="text-uppercase">
+                {{ item?.title }}
+                <span class="place">{{ item?.company }}</span>
             </h5>
-            <p class="">Computer Science in Web Programming.</p>
-        </li>
-        <li>
-            <div class="icon">
-                <i class="fa fa-graduation-cap"></i>
-            </div>
-            <span class="time text-uppercase">2015 - 2017</span>
-            <h5 class="text-uppercase">Associate Degree <span class="place">Passerelles Numeriques
-                    Cambodia</span></h5>
-            <p class="">Computer Science in Web Programming.</p>
-        </li>
-        <li>
-            <div class="icon">
-                <i class="fa fa-graduation-cap"></i>
-            </div>
-            <span class="time text-uppercase">2012 - 2015</span>
-            <h5 class="text-uppercase">Baccalauréat
-                <span class="place">Koh Kong High
-                    School</span>
-            </h5>
-            <p class="">Upper Secondary Education. Grades 10-12.</p>
-        </li>
-        <li>
-            <div class="icon">
-                <i class="fa fa-graduation-cap"></i>
-            </div>
-            <span class="time text-uppercase">2009 - 2012</span>
-            <h5 class="text-uppercase">Diplôme
-                <span class="place">Chi Phat Secondary
-                    School</span>
-            </h5>
-            <p class="">Lower Secondary Education. Grades 7-9.</p>
-        </li>
-        <li>
-            <div class="icon">
-                <i class="fa fa-graduation-cap"></i>
-            </div>
-            <span class="time text-uppercase">2003 - 2009</span>
-            <h5 class="text-uppercase">General Knowledge <span class="place">Chi Phat Primary School</span>
-            </h5>
-            <p class="">Primary Education. Grades 1-6.</p>
+
+            <!-- Education Description -->
+            <p [innerHTML]="item.description"></p>
         </li>
     </ul>
 </div>
