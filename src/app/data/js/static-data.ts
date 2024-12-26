@@ -45,7 +45,7 @@ export const lh_experiences = [
         endDate: 'Present',
         location: 'Phnom Penh, Cambodia',
         workModel: 'Hybrid',
-        description: '- Built scalable and innovative digital solutions, focusing on web development and system optimization. <br/> - Led projects using technologies like Angular, Java Spring Boot, and MS SQL to deliver tailored applications. - Streamlined workflows by implementing automation processes, improving efficiency for clients. - Supervised a team of developers, ensuring high-quality deliverables and professional growth. - Established a reputation for delivering projects aligned with the motto, "Building Digital Dreams, One Line at a Time.',
+        description: '- Built scalable and innovative digital solutions, focusing on web development and system optimization. <br/> - Led projects using technologies like Angular, Java Spring Boot, and MS SQL to deliver tailored applications. <br/> - Streamlined workflows by implementing automation processes, improving efficiency for clients.  <br/> - Supervised a team of developers, ensuring high-quality deliverables and professional growth. - Established a reputation for delivering projects aligned with the motto, "Building Digital Dreams, One Line at a Time.',
         skills: [
             'Business Ownership',
             'Start-up Leadership',
@@ -130,7 +130,7 @@ export const lh_experiences = [
             'Marketing Strategy',
             'OOP',
         ],
-        icon: '/assets/img/icons/we.svg',
+        icon: '/assets/img/icons/hrinc.svg',
     },
     {
         title: 'Senior Web Developer',
