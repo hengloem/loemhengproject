@@ -1,9 +1,9 @@
 <div class="resume-box">
-    <ul *ngFor="let item of lh_expData">
+    <ul *ngFor="let item of lh_expData;">
         <li>
             <!-- Icon Section -->
             <div class="icon">
-                <img *ngIf="item?.icon" [src]="item?.icon" alt="{{ item?.title }}" />
+                <img class="lh_logo" *ngIf="item?.icon" [src]="item?.icon" alt="{{ item?.title }}" />
                 <i *ngIf="!item?.icon" class="fa fa-briefcase"></i>
             </div>
 
@@ -12,12 +12,17 @@
                 <span class="time text-uppercase">
                     {{ item?.startDate | date: 'MMM yyyy' }} -
                     {{ item?.endDate === 'Present' ? 'Present' : (item?.endDate | date: 'MMM yyyy') }}
-                </span>
-                <span class="time text-uppercase">
+                    ·
                     {{ calculateDuration(item.startDate, item.endDate) }}
                 </span>
-                <span class="time text-uppercase">{{ item?.employmentType }}</span>
-                <span class="time text-uppercase">{{ item?.location }}</span>
+            </div>
+
+            <div class="details">
+                <span class="time text-uppercase">
+                    {{ item?.employmentType }} ·
+                    {{ item?.workModel }} ·
+                    {{ item?.location }}
+                </span>
             </div>
 
             <!-- Job Title and Company -->
@@ -27,8 +32,7 @@
             </h5>
 
             <!-- Job Description -->
-            <!-- <quill-editor [(ngModel)]="item.description"></quill-editor> -->
-            <p>{{ item.description }}</p>
+            <p [innerHTML]="item.description"></p>
         </li>
     </ul>
 </div>
