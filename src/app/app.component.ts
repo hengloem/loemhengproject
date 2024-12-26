@@ -5,6 +5,7 @@ import { IpLocationService } from './core/services/ip-location.service';
 import { TranslateService } from '@ngx-translate/core';
 import { HeaderTitleService } from './core/services/header-title.service';
 import { SharedService } from './core/services/shared.service';
+import analytics from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,14 @@ export class AppComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    // Inject analytics (similar to setting up tracking)
+    analytics.inject();
+
+    // Track a page view or event manually
+    analytics.track('Page View', {
+      path: window.location.pathname
+    });
+
     this.headerTitleService.setTitle('app.title');
 
     // Check if language is already set in localStorage
@@ -37,10 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
       // Detect user's country if no language is set in localStorage
       this.ipLocationService.getUserCountry().subscribe({
         next: (data) => {
-          console.log(data);
-          
           const lang = data.country === 'KH' ? 'kh' : 'en';
-
           // Set language in localStorage and apply it
           this.localStorage.set('lang', lang);
           this.isKh = lang === 'kh' ? 'app.eng' : 'app.kh';
