@@ -1,20 +1,51 @@
-<!-- <mat-chip-listbox aria-label="Fish selection">
-    <mat-chip-option>One fish</mat-chip-option>
-    <mat-chip-option>Two fish</mat-chip-option>
-    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-    <mat-chip-option color="warn">Warn fish</mat-chip-option>
-</mat-chip-listbox> -->
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="{{ item?.title }}" *ngFor="let item of lh_expData;">
+        <div class="resume-box mt-3">
+            <ul *ngFor="let job of item.jobs;">
+                <li>
+                    <!-- Icon Section -->
+                    <div class="icon">
+                        <img class="lh_logo" *ngIf="job?.icon" [src]="job?.icon" alt="{{ job?.title }}" />
+                        <i *ngIf="!job?.icon" class="fa fa-briefcase"></i>
+                    </div>
 
+                    <!-- Details Section -->
+                    <div class="details">
+                        <span class="time text-uppercase">
+                            {{ job?.startDate | date: 'MMM yyyy' }} -
+                            {{ job?.endDate === 'Present' ? 'Present' : (job?.endDate | date: 'MMM yyyy') }}
+                        </span>
+                    </div>
+
+                    <div class="details">
+                        <span class="time text-uppercase">
+                            {{ calculateDuration(job.startDate, job.endDate) }} ·
+                            {{ job?.workModel }}
+                        </span>
+                    </div>
+
+                    <!-- Job Title and Company -->
+                    <h5 class="text-uppercase">
+                        {{ job?.title }}
+                        <span class="place">{{ job?.company }}</span>
+                    </h5>
+
+                    <!-- Job Description -->
+                    <p [innerHTML]="job.description"></p>
+                </li>
+            </ul>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<!-- 
 <div class="resume-box">
     <ul *ngFor="let item of lh_expData;">
         <li>
-            <!-- Icon Section -->
             <div class="icon">
                 <img class="lh_logo" *ngIf="item?.icon" [src]="item?.icon" alt="{{ item?.title }}" />
                 <i *ngIf="!item?.icon" class="fa fa-briefcase"></i>
             </div>
-
-            <!-- Details Section -->
             <div class="details">
                 <span class="time text-uppercase">
                     {{ item?.startDate | date: 'MMM yyyy' }} -
@@ -30,15 +61,11 @@
                     {{ item?.workModel }}
                 </span>
             </div>
-
-            <!-- Job Title and Company -->
             <h5 class="text-uppercase">
                 {{ item?.title }}
                 <span class="place">{{ item?.company }}</span>
             </h5>
-
-            <!-- Job Description -->
             <p [innerHTML]="item.description"></p>
         </li>
     </ul>
-</div>
+</div> -->
