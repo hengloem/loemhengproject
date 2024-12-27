@@ -8,7 +8,7 @@
         </h4>
 
         <div class="row">
-            <div class="col-6 col-md-3 mb-3 mb-sm-5" *ngFor="let skill of item.skills">
+            <div class="col-6 col-md-3" *ngFor="let skill of item.skills">
                 <div class="c100 p{{ skill.rate }}">
                     <span>{{ skill.rate }}%</span>
                     <div class="slice">
@@ -16,7 +16,7 @@
                         <div class="fill"></div>
                     </div>
                 </div>
-                <h6 class="text-uppercase text-center mt-2 mt-sm-4">{{ skill.title }}</h6>
+                <h6 class="text-uppercase text-center">{{ skill.title }}</h6>
             </div>
         </div>
     </div>
