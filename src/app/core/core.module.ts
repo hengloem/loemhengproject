@@ -1,9 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './guard/auth.guard';
 import { NoAuthGuard } from './guard/no-auth.guard';
-import { TokenInterceptor } from './interceptor/token.interceptor';
 import { throwIfAlreadyLoaded } from './guard/module-import.guard';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
@@ -16,15 +14,10 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
   ],
   providers: [
     AuthGuard,
-    NoAuthGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
+    NoAuthGuard
   ],
   exports: [
-    SafeUrlPipe // Export the pipe to make it available in other modules
+    SafeUrlPipe
   ]
 })
 export class CoreModule {

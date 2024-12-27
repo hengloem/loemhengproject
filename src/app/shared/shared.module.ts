@@ -47,42 +47,12 @@ import { MatTreeModule } from '@angular/material/tree';
 import { SharedRoutingModule } from './shared-routing.module';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
-import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { QuillModule } from 'ngx-quill';
-
-import {
-  faPlus,
-  faEdit,
-  faTrash,
-  faTimes,
-  faCaretUp,
-  faCaretDown,
-  faExclamationTriangle,
-  faFilter,
-  faTasks,
-  faCheck,
-  faSquare,
-  faLanguage,
-  faPaintBrush,
-  faLightbulb,
-  faWindowMaximize,
-  faStream,
-  faBook,
-  faUserCircle,
-  faAsterisk
-} from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [
-    ControlMessagesComponent,
-    SpinnerComponent
-  ],
+  declarations: [],
   imports: [
     NgtUniversalModule,
     NgxMaskModule.forRoot(options),
@@ -134,24 +104,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule,
-    FontAwesomeModule,
-    QuillModule.forRoot({
-      modules: {
-        syntax: false,
-        toolbar: [
-          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-          ['blockquote', 'code-block'],
-          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-          [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
-          [{ 'direction': 'rtl' }],                         // text direction
-          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-          [{ 'align': [] }],
-          ['clean']                                         // remove formatting button
-        ]
-      }
-    })
+    TranslateModule
   ],
   exports: [
     A11yModule,
@@ -200,35 +153,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule,
-    FontAwesomeModule,
-    QuillModule
+    TranslateModule
   ]
 })
-export class SharedModule {
-  constructor(faIconLibrary: FaIconLibrary) {
-    faIconLibrary.addIcons(
-      faGithub,
-      faMediumM,
-      faPlus,
-      faEdit,
-      faTrash,
-      faTimes,
-      faCaretUp,
-      faCaretDown,
-      faExclamationTriangle,
-      faFilter,
-      faTasks,
-      faCheck,
-      faSquare,
-      faLanguage,
-      faPaintBrush,
-      faLightbulb,
-      faWindowMaximize,
-      faStream,
-      faBook,
-      faUserCircle,
-      faAsterisk
-    );
-  }
-}
+export class SharedModule { }
