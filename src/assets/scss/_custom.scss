@@ -5,6 +5,7 @@
 
 .lh_justify {
     text-align: justify;
+    font-family: $font-eng, $font-km, sans-serif !important;
 }
 
 .icon {
@@ -13,5 +14,15 @@
 
 li > p {
     text-align: justify;
+    font-family: $font-eng, $font-km, sans-serif !important;
 }
 
+.lh_no_after {
+    &:after {
+        display: none;
+    }
+}
+
+.lh_no_padding {
+    padding: 0 !important;
+}
