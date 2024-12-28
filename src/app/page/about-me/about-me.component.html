@@ -13,7 +13,7 @@
             <div class="col-12 col-lg-5 col-xl-6">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="text-uppercase custom-title mb-0 ft-wt-600">
+                        <h3 class="text-uppercase custom-title mb-0 ft-wt-600 lh_no_padding">
                             {{ 'about.personal-information' | translate }}
                         </h3>
                     </div>
@@ -23,14 +23,12 @@
                     </div>
 
                     <div class="col-12 mt-3">
-                        <p>Background</p>
                         <p class="lh_justify">My name is LOEM Heng. I am {{ lh_AgeInYears }}. I am Cambodian.
                             I can speak two languages: Khmer (Native) and English. My father is a farmer, and my mother
                             is a housewife. I have five brothers and no sisters. I was born in Chi-Phat Village,
                             Chi-Phat Commune, Thmar Bang District, Koh Kong Province, Cambodia.
                         </p>
-
-                        <p>Discover My Hometwon</p>
+                        <p class="ft-wt-600">Discover My Hometown</p>
                         <p class="lh_justify">Chi-Phat is a remarkable
                             community in the Cardamom Mountains, Southeast Asia’s largest mainland rainforest. Known for
                             its emerald forests, estuaries, and mangroves, this region is a biodiversity hotspot and
@@ -55,6 +53,13 @@
             <!-- Boxes Starts -->
             <div class="col-12 col-lg-7 col-xl-6 mt-5 mt-lg-0">
                 <div class="row">
+                    <div class="col-6">
+                        <div class="box-stats with-margin">
+                            <h3 class="position-relative">5</h3>
+                            <p class="m-0 position-relative text-uppercase">Industries of <span
+                                    class="d-block">experience</span></p>
+                        </div>
+                    </div>
                     <div class="col-6">
                         <div class="box-stats with-margin">
                             <h3 class="position-relative">{{ lh_ExpInYears }}</h3>
@@ -83,14 +88,18 @@
                                     class="d-block">certifications</span></p>
                         </div>
                     </div>
-                    <div class="col-12 mt-3">
-                        <p>For more details about my experience and expertise, you can download my CV using the link
-                            below.</p>
-                        <p class="lh_justify"></p>
-                        <a class="button" href="#">
-                            <span class="button-text">Download CV</span>
-                            <span class="button-icon fa fa-download"></span>
-                        </a>
+                    <div class="col-6">
+                        <div class="box-stats">
+                            <h3 class="position-relative lh_no_after">
+                                CV
+                            </h3>
+
+                            <a href="#">
+                                <p class="m-0 position-relative text-uppercase">Download
+                                    <span class="d-block">My CV</span>
+                                </p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
