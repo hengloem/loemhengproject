@@ -1,1 +1,172 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction | Loem Heng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            background: linear-gradient(to right, #f0f, #0ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: textWave 3s infinite alternate;
+        }
+
+        @keyframes textWave {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            opacity: 0;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: scale(0);
+            transition: opacity 0.3s, transform 0.5s;
+        }
+
+        h1:hover::after {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+        }
+
+        .loader {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            cursor: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22 fill=%22none%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%3C/svg%3E'), auto;
+        }
+
+        .construction-image {
+            width: 150px;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+            /* Image bounce animation */
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Loem Heng</h1>
+        <div class="construction-image">
+            <img src="/assets/img/uc.svg" alt="Construction Icon" width="100"/>
+        </div>
+        <p>I'll be here soon with an amazing new site!</p>
+        <div class="loader"></div>
+        <p>Stay tuned for updates!</p>
+    </div>
+    <div class="footer">
+        &copy; 2025 Loem Heng | Follow me on <a href="https://github.com/hengloem" target="_blank">Github</a>
+    </div>
+</body>
+
+</html>
