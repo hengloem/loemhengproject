@@ -10,6 +10,7 @@ import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.com
 import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-service.component';
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
+import { HtmlEditorComponent } from './dev-tools/html-editor/html-editor.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,7 @@ const routes: Routes = [
     path: 'terms-of-service',
     component: TermsOfServiceComponent
   },
+  { path: 'editor', component: HtmlEditorComponent },
   {
     path: 'math-tools',
     loadChildren: () => import('@math-tools/math-tools.module').then(m => m.MathToolsModule)

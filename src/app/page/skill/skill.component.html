@@ -1,23 +1,26 @@
-<div class="row">
-    <div class="col-12">
-        <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">Skills</h3>
+<div class="skills-container">
+    <div class="skills-header">
+        <h3 class="skills-title text-uppercase text-center">Skills</h3>
     </div>
-    <div class="col-12" *ngFor="let item of lh_skillData">
-        <h4 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">
-            {{ item?.title }}
-        </h4>
 
-        <div class="row">
-            <div class="col-6 col-md-3" *ngFor="let skill of item.skills">
-                <div class="c100 p{{ skill.rate }}">
-                    <span>{{ skill.rate }}%</span>
-                    <div class="slice">
-                        <div class="bar"></div>
-                        <div class="fill"></div>
+    <mat-tab-group animationDuration="300ms" mat-align-tabs="center" class="skills-tabs">
+        <mat-tab *ngFor="let item of lh_skillData" [label]="item.title">
+            <div class="tab-content-wrapper">
+                <div class="skills-flex-container">
+                    <div class="skill-item" *ngFor="let skill of item.skills">
+                        <div class="skill-circle-wrapper">
+                            <div class="c100 p{{ skill.rate }}">
+                                <span>{{ skill.rate }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                            <h6 class="skill-name text-uppercase text-center">{{ skill.title }}</h6>
+                        </div>
                     </div>
                 </div>
-                <h6 class="text-uppercase text-center">{{ skill.title }}</h6>
             </div>
-        </div>
-    </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
