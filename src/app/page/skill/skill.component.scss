@@ -1,5 +1,149 @@
-canvas {
-    width: 100% !important;
-    height: 300px !important;
+/* Modern styling with white background */
+.skills-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+}
+
+.skills-header {
+  margin-bottom: 1.5rem;
+}
+
+.skills-title {
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.skills-title:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3f51b5, #2196f3);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Custom styling for Material tabs */
+::ng-deep .skills-tabs .mat-tab-label {
+  min-width: 120px;
+  padding: 0 24px;
+  height: 48px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  color: #555;
+}
+
+::ng-deep .skills-tabs .mat-tab-label-active {
+  opacity: 1;
+  font-weight: 600;
+  color: #2196f3;
+}
+
+::ng-deep .skills-tabs .mat-ink-bar {
+  background-color: #2196f3 !important;
+  height: 3px;
+}
+
+/* Inline flex layout for skills */
+.tab-content-wrapper {
+  padding: 2rem 0.5rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.skills-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: inline-block;
+  margin: 0 0.5rem 1.5rem;
+  width: auto;
+}
+
+.skill-circle-wrapper {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  text-align: center;
+  width: 120px;
+}
+
+.skill-circle-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+/* Skill circles */
+.c100 {
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.1);
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+.c100:hover {
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.2);
+}
+
+.c100 .bar, .c100 .fill {
+  border-color: #2196f3 !important;
+  transition: all 0.5s ease;
+}
+
+.c100:hover .bar, .c100:hover .fill {
+  border-color: #3f51b5 !important;
+}
+
+.skill-name {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.skill-circle-wrapper:hover .skill-name {
+  color: #2196f3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-flex-container {
+    gap: 1rem;
   }
   
+  .skill-circle-wrapper {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .skill-item {
+    margin: 0 0.25rem 1.25rem;
+  }
+  
+  .skill-circle-wrapper {
+    width: 90px;
+  }
+}

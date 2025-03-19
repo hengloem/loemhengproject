@@ -1,0 +1,63 @@
+<div class="editor-container">
+    <div class="header">
+        <h2>Modern HTML Editor</h2>
+        <div class="toolbar">
+            <button class="btn btn-primary" (click)="runCode()" title="Run">
+                <i class="fa fa-play"></i> Run
+            </button>
+            <button class="btn btn-outline" (click)="clearEditor()" title="Clear">
+                <i class="fa fa-trash"></i> Clear
+            </button>
+            <button class="btn btn-outline" (click)="downloadCode()" title="Download">
+                <i class="fa fa-download"></i> Download
+            </button>
+            <button class="btn btn-outline" (click)="toggleFullscreen()" title="Toggle fullscreen">
+                <i class="fa" [ngClass]="isFullscreen ? 'fa-compress' : 'fa-expand'"></i>
+            </button>
+            <select class="theme-selector" (change)="changeTheme($event)">
+                <option value="default">Light Theme</option>
+                <option value="dracula">Dark Theme</option>
+                <option value="material">Material Theme</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <div class="editor-section" [ngClass]="{'fullscreen': isFullscreen}">
+            <div class="section-header">
+                <span>HTML Code</span>
+                <div class="section-actions">
+                    <button class="icon-btn" (click)="insertTemplate('basic')" title="Insert Basic Template">
+                        <i class="fa fa-file-code"></i>
+                    </button>
+                    <button class="icon-btn" (click)="formatCode()" title="Format Code">
+                        <i class="fa fa-indent"></i>
+                    </button>
+                </div>
+            </div>
+            <div #editorContainer class="code-editor"></div>
+        </div>
+
+        <div class="preview-section" [ngClass]="{'hidden': isFullscreen}">
+            <div class="section-header">
+                <span>Preview</span>
+                <div class="section-actions">
+                    <button class="icon-btn" (click)="refreshPreview()" title="Refresh">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                    <select (change)="changeViewport($event)">
+                        <option value="desktop">Desktop</option>
+                        <option value="tablet">Tablet</option>
+                        <option value="mobile">Mobile</option>
+                    </select>
+                </div>
+            </div>
+            <iframe #previewFrame class="preview-frame"></iframe>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span class="status-message">{{ statusMessage }}</span>
+        <span class="cursor-position">Line: {{ cursorLine }}, Column: {{ cursorCh }}</span>
+    </div>
+</div>
