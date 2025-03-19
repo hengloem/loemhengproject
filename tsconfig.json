@@ -34,7 +34,9 @@
       "@data/*": ["app/data/*"],
       "@math-tools/*": ["app/math-tools/*"]
     },
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

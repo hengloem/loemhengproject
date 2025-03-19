@@ -18,7 +18,7 @@ import { PageModule } from './page/page.module';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { MathToolsModule } from './math-tools/math-tools.module';
-import { DevToolsComponent } from './dev-tools/dev-tools.component';
+import { DevToolsModule } from './dev-tools/dev-tools.module';
 
 export function InitApp(appLoadService: AppInitService) {
   return () => appLoadService.init();
@@ -36,8 +36,7 @@ export class TranslateHandler implements MissingTranslationHandler {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DevToolsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +50,7 @@ export class TranslateHandler implements MissingTranslationHandler {
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MathToolsModule,
+    DevToolsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:5000'
