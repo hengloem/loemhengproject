@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { lh_experiences } from '@app/data/js/static-data';
+import { lh_fullTimeExperiences, lh_seasonalExperiences, lh_selfEmployedExperiences } from '@app/data/js/static-data';
 
 @Component({
   selector: 'app-experience',
@@ -7,14 +7,18 @@ import { lh_experiences } from '@app/data/js/static-data';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
-  lh_expData: any = [];
+  lh_fullTimeExp: any = [];
+  lh_seasonalExp: any = [];
+  lh_selfEmpExp: any = [];
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    this.lh_expData = lh_experiences;
+    this.lh_fullTimeExp = lh_fullTimeExperiences;
+    this.lh_seasonalExp = lh_seasonalExperiences;
+    this.lh_selfEmpExp = lh_selfEmployedExperiences;
   }
 
   /**

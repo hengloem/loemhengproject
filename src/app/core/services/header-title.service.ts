@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -6,7 +6,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class HeaderTitleService {
+export class HeaderTitleService implements OnDestroy {
   title = new BehaviorSubject<string>('');
   private languageSubscription: Subscription;
 
