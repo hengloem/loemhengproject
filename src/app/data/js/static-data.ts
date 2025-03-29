@@ -1,3 +1,5 @@
+import { SkillCategory } from "@app/shared/models/about.model";
+
 export const MENUS = [
     { title: 'app.home', icon: 'fa fa-home', route: '/home' },
     { title: 'app.about', icon: 'fa fa-user', route: '/about' },
@@ -150,7 +152,7 @@ export const lh_seasonalExperiences = [
     },
     {
         title: 'President',
-        company: 'Passerelles numériques Cambodia',
+        company: 'Student Association of Passerelles numériques Cambodia',
         employmentType: 'Seasonal',
         startDate: '2016-09-01',
         endDate: '2017-09-30',
@@ -161,7 +163,7 @@ export const lh_seasonalExperiences = [
     },
     {
         title: 'Club Coordinator',
-        company: 'Passerelles numériques Cambodia',
+        company: 'Student Association of Passerelles numériques Cambodia',
         employmentType: 'Seasonal',
         startDate: '2015-09-01',
         endDate: '2016-09-30',
@@ -195,6 +197,96 @@ export const lh_selfEmployedExperiences = [
         description: 'I founded and grew a successful gaming community with 22,000 YouTube subscribers and 72,000 TikTok followers. I produced high-quality gaming content, including reviews, tutorials, and live streams, engaging a global audience. I managed the YouTube Partner Program to monetize content and generate revenue. I designed and maintained a website to improve user experience and earn ad revenue. My focus on content strategy, video editing, and audience engagement has driven consistent growth.',
         icon: '/assets/img/icons/itg.svg',
     },
+];
+
+export const lh_ratingSkills: SkillCategory[] = [
+    {
+        title: "Programming Languages",
+        overview: "Core programming languages and technologies used to develop software and web applications.",
+        skills: [
+            { title: "HTML", desc: "HyperText Markup Language", rate: 90 },
+            { title: "CSS", desc: "Cascading Style Sheets", rate: 90 },
+            { title: "JavaScript", desc: "Programming language for web development", rate: 85 },
+            { title: "Angular", desc: "Web application framework", rate: 80 },
+            { title: "TypeScript", desc: "Superset of JavaScript", rate: 75 },
+            { title: "Java", desc: "Object-oriented programming language", rate: 75 },
+            { title: "Python", desc: "High-level programming language", rate: 70 },
+            { title: "PHP", desc: "Server-side scripting language", rate: 70 }
+        ],
+        icon: "fa fa-code",
+        type: "Hard-Skill"
+    },
+    {
+        title: "Frameworks & UI/UX Libraries",
+        overview: "Popular frameworks and libraries that streamline web application development and enhance user experience.",
+        skills: [
+            { title: "Bootstrap", desc: "Front-end framework for responsive design", rate: 85 },
+            { title: "Vue.js", desc: "JavaScript framework for building UIs", rate: 80 },
+            { title: "CodeIgniter", desc: "PHP framework for rapid development", rate: 80 },
+            { title: "Angular Material", desc: "Material Design components for Angular", rate: 80 },
+            { title: "Laravel", desc: "PHP framework with elegant syntax", rate: 75 },
+            { title: "Java Spring Boot", desc: "Framework for Java-based applications", rate: 70 }
+        ],
+        icon: "fa fa-cogs",
+        type: "Hard-Skill"
+    },
+    {
+        title: "Databases",
+        overview: "Relational and NoSQL database systems used for efficient data storage and management.",
+        skills: [
+            { title: "MySQL", desc: "Relational database management system", rate: 85 },
+            { title: "Microsoft SQL Server", desc: "Database management system by Microsoft", rate: 80 }
+        ],
+        icon: "fa fa-database",
+        type: "Hard-Skill"
+    },
+    {
+        title: "UI/UX Design Tools",
+        overview: "Software used for designing, prototyping, and enhancing user experience in digital products.",
+        skills: [
+            { title: "Canva", desc: "Graphic design tool for beginners", rate: 85 },
+            { title: "Adobe Photoshop", desc: "Image editing and graphic design tool", rate: 75 },
+            { title: "Figma", desc: "Cloud-based UI/UX design tool", rate: 70 }
+
+        ],
+        icon: "fa fa-paint-brush",
+        type: "Hard-Skill"
+    },
+    {
+        title: "Productivity & Collaboration Tools",
+        overview: "Essential tools for video editing, source control, team collaboration, and reporting.",
+        skills: [
+            { title: "Adobe Premiere Pro", desc: "Professional video editing software", rate: 80 },
+            { title: "CapCut", desc: "Mobile video editing app", rate: 75 },
+            { title: "Git", desc: "Version control system", rate: 85 },
+            { title: "GitHub", desc: "Cloud-based repository hosting", rate: 80 },
+            { title: "GitLab", desc: "DevOps platform for CI/CD", rate: 80 },
+            { title: "Trello", desc: "Project management and collaboration tool", rate: 80 },
+            { title: "Jaspersoft Report Designer 5.0.1", desc: "Business intelligence reporting tool", rate: 80 }
+        ],
+        icon: "fa fa-cogs",
+        type: "Hard-Skill"
+    },
+    {
+        title: "Development Skills",
+        overview: "Essential non-technical skills that enhance productivity, teamwork, and problem-solving in software development.",
+        skills: [
+            { title: "Time Management", desc: "Effectively managing time for productivity", rate: 90 },
+            { title: "Communication", desc: "Effective verbal and written communication", rate: 90 },
+            { title: "Self-Learning", desc: "Ability to learn independently", rate: 85 },
+            { title: "Critical Thinking", desc: "Analyzing and solving complex problems", rate: 85 },
+            { title: "Teamwork", desc: "Working collaboratively with others", rate: 85 },
+            { title: "Problem-Solving", desc: "Identifying and resolving issues efficiently", rate: 85 },
+            { title: "Creativity", desc: "Generating innovative ideas and solutions", rate: 80 },
+            { title: "Leadership", desc: "Guiding and inspiring teams", rate: 75 }
+        ],
+        icon: "fa fa-users",
+        type: "Soft-Skill"
+    }
+];
+
+export const lh_ratingSoftSkills = [
+
 ];
 
 export const clients = [
@@ -242,141 +334,6 @@ export const contactInfo = {
     handPhone: "(+855) 762 226 505",
     telegram: "https://t.me/hengloem"
 };
-
-export const lh_ratingSkills = [
-    {
-        key: "programming",
-        title: "Programming Languages",
-        skills: [
-            { title: "HTML", rate: 90 },
-            { title: "CSS", rate: 90 },
-            { title: "JavaScript", rate: 85 },
-            { title: "Java", rate: 75 },
-            { title: "Angular", rate: 80 },
-            { title: "Java Spring Boot", rate: 70 },
-            { title: "Raw PHP", rate: 70 },
-            { title: "TypeScript", rate: 75 },
-            { title: "Python", rate: 70 },
-        ],
-    },
-    {
-        key: "webFrameworks",
-        title: "Web Frameworks",
-        skills: [
-            { title: "CodeIgniter", rate: 80 },
-            { title: "Laravel", rate: 75 },
-            { title: "Vue.js", rate: 80 },
-            { title: "Spring Boot", rate: 70 },
-        ],
-    },
-    {
-        key: "uiUxFrameworks",
-        title: "UI/UX Frameworks",
-        skills: [
-            { title: "Bootstrap", rate: 85 },
-            { title: "Angular Material", rate: 80 },
-        ],
-    },
-    {
-        key: "databases",
-        title: "Databases",
-        skills: [
-            { title: "MySQL", rate: 85 },
-            { title: "Microsoft SQL Server", rate: 80 },
-            { title: "MongoDB", rate: 70 },
-        ],
-    },
-    {
-        key: "uiUxDesign",
-        title: "UI/UX Design Tools",
-        skills: [
-            { title: "Balsamiq", rate: 80 },
-            { title: "Adobe Xd", rate: 85 },
-            { title: "Invision", rate: 80 },
-            { title: "Figma", rate: 85 },
-            { title: "Canva", rate: 75 },
-            { title: "Adobe Photoshop", rate: 85 },
-            { title: "Webflow", rate: 80 },
-        ],
-    },
-    {
-        key: "videoEditing",
-        title: "Video Editing Tools",
-        skills: [
-            { title: "Adobe Premiere Pro", rate: 80 },
-            { title: "Apple Final Cut Pro", rate: 75 },
-            { title: "Wondershare Filmora", rate: 75 },
-            { title: "Apple iMovie", rate: 70 },
-            { title: "CapCut", rate: 70 },
-        ],
-    },
-    {
-        key: "sourceControl",
-        title: "Source Control and Collaboration",
-        skills: [
-            { title: "Git", rate: 85 },
-            { title: "Github", rate: 80 },
-            { title: "GitLab", rate: 80 },
-            { title: "Trello", rate: 80 },
-            { title: "Bitbucket", rate: 75 },
-        ],
-    },
-    {
-        key: "reporting",
-        title: "Reporting Tools",
-        skills: [
-            { title: "Jaspersoft Report Designer 5.0.1", rate: 80 },
-        ],
-    },
-    {
-        key: "dataIntegration",
-        title: "Data Integration Tools",
-        skills: [
-            { title: "SSIS (SQL Server Integration Services)", rate: 80 },
-            { title: "Outlook MIS Report Integration", rate: 75 },
-            { title: "Zapier", rate: 70 },
-        ],
-    },
-    {
-        key: "apiTesting",
-        title: "API Testing Tools",
-        skills: [
-            { title: "Postman", rate: 80 },
-            { title: "Swagger", rate: 75 },
-        ],
-    },
-    {
-        key: "fileTransfer",
-        title: "File Transfer Tools",
-        skills: [
-            { title: "WinSCP", rate: 75 },
-        ],
-    },
-    {
-        key: "projectManagement",
-        title: "Project Management",
-        skills: [
-            { title: "IT Project Consultation and Management", rate: 80 },
-            { title: "Agile Scrum Methodology", rate: 75 },
-            { title: "Self-Learning", rate: 85 },
-            { title: "Critical Thinking", rate: 85 },
-            { title: "Time Management", rate: 90 },
-            { title: "CI/CD", rate: 75 },
-        ],
-    },
-    {
-        key: "interpersonalSkills",
-        title: "Interpersonal Skills",
-        skills: [
-            { title: "Communication", rate: 90 },
-            { title: "Teamwork", rate: 85 },
-            { title: "Creativity", rate: 80 },
-            { title: "Problem-Solving", rate: 85 },
-            { title: "Leadership", rate: 75 },
-            { title: "Motivational Speaking", rate: 75 },
-        ],
-    },
-];
 
 export const portfolios = [
     {

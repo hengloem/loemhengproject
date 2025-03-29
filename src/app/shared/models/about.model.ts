@@ -12,3 +12,17 @@ export interface PersonalInfo {
     address: string;
     profilePicture: string;
 }
+
+export interface Skill {
+    title: string;
+    desc: string;
+    rate: number;
+}
+
+export interface SkillCategory {
+    title: string;
+    overview: string;
+    skills: Skill[];
+    icon: string;
+    type: string;
+}

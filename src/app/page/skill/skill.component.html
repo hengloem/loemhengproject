@@ -1,26 +1,43 @@
-<div class="skills-container">
-    <div class="skills-header">
-        <h3 class="skills-title text-uppercase text-center">Skills</h3>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1 class="dashboard-title">Professional Skills Portfolio</h1>
+        <p class="dashboard-subtitle">A comprehensive overview of technical and professional competencies</p>
     </div>
 
-    <mat-tab-group animationDuration="300ms" mat-align-tabs="center" class="skills-tabs">
-        <mat-tab *ngFor="let item of lh_skillData" [label]="item.title">
-            <div class="tab-content-wrapper">
-                <div class="skills-flex-container">
-                    <div class="skill-item" *ngFor="let skill of item.skills">
-                        <div class="skill-circle-wrapper">
-                            <div class="c100 p{{ skill.rate }}">
-                                <span>{{ skill.rate }}%</span>
-                                <div class="slice">
-                                    <div class="bar"></div>
-                                    <div class="fill"></div>
-                                </div>
+    <div class="tabs-container">
+        <div class="tabs-header">
+            <button *ngFor="let type of skillTypes" class="tab-button" [class.active]="activeTab === type"
+                (click)="setActiveTab(type)">
+                {{ type }}
+            </button>
+        </div>
+
+        <div class="tabs-content">
+            <div *ngFor="let category of filteredCategories" class="skill-category">
+                <div class="category-header">
+                    <h2 class="category-title">{{ category.title }}</h2>
+                    <p class="category-description">{{ category.overview }}</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div *ngFor="let skill of category.skills" class="skill-card">
+                        <div class="skill-header">
+                            <h3 class="skill-title">{{ skill.title }}</h3>
+                            <div class="skill-badge" [ngClass]="getBadgeClass(skill.rate)">
+                                {{ getProficiencyLevel(skill.rate) }}
                             </div>
-                            <h6 class="skill-name text-uppercase text-center">{{ skill.title }}</h6>
+                        </div>
+                        <p class="skill-description">{{ skill.desc }}</p>
+                        <div class="skill-progress-container">
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-indicator" [ngClass]="getProgressColor(skill.rate)"
+                                    [style.width.%]="skill.rate"></div>
+                            </div>
+                            <span class="skill-progress-value">{{ skill.rate }}%</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </mat-tab>
-    </mat-tab-group>
+        </div>
+    </div>
 </div>
