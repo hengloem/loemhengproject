@@ -10,8 +10,6 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { SkillComponent } from './skill/skill.component';
-import { EducationComponent } from './education/education.component';
-import { ExperienceComponent } from './experience/experience.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { CoreModule } from '@app/core/core.module';
@@ -26,8 +24,6 @@ import { CoreModule } from '@app/core/core.module';
     BlogComponent,
     BlogPostComponent,
     SkillComponent,
-    EducationComponent,
-    ExperienceComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent
   ],
@@ -37,7 +33,6 @@ import { CoreModule } from '@app/core/core.module';
     LayoutModule,
     SharedModule,
     CoreModule
-  ],
-  bootstrap: [ExperienceComponent]
+  ]
 })
 export class PageModule { }

@@ -10,11 +10,6 @@
                 (click)="setActiveTab(type)">
                 <span class="button-text">{{ type }}</span>
             </button>
-
-            <!-- <button *ngFor="let type of skillTypes" class="button tab-button" [class.active]="activeTab === type"
-                (click)="setActiveTab(type)">
-                {{ type }}
-            </button> -->
         </div>
 
         <div class="tabs-content">
@@ -27,8 +22,8 @@
                 <div class="skills-grid">
                     <div *ngFor="let skill of category.skills" class="skill-card">
                         <div class="skill-header">
-                            <h3 class="skill-title">{{ skill.title }}</h3>
-                            <div class="skill-badge" [ngClass]="getBadgeClass(skill.rate)">
+                            <h3 class="text-uppercase skill-title">{{ skill.title }}</h3>
+                            <div class="text-uppercase skill-badge" [ngClass]="getBadgeClass(skill.rate)">
                                 {{ getProficiencyLevel(skill.rate) }}
                             </div>
                         </div>

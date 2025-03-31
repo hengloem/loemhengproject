@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsService } from '@app/core/services/skills.service';
-import { lh_ratingSkills } from '@app/data/js/static-data';
 import { lh_skillCategory } from '@app/shared/models/about.model';
 
 @Component({
