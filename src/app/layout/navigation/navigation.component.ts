@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '@app/core/services/shared.service';
 import { MENUS } from '@app/data/js/static-data';
-import { MenuItem } from '@app/shared/models/utils.model';
+import { lh_menuItem } from '@app/shared/models/utils.model';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  menus: MenuItem[] = [];
+  lh_menuData: lh_menuItem[] = [];
   isKh: string = '';
 
   constructor(
@@ -21,7 +21,7 @@ export class NavigationComponent {
   ) { }
 
   ngOnInit(): void {
-    this.menus = MENUS;
+    this.lh_menuData = MENUS;
     this.isKh = this.localStorage.get('lang') == 'kh' ? 'app.eng' : 'app.kh';
   }
 

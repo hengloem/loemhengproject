@@ -1,4 +1,4 @@
-.dashboard-container {
+.lh_dashboard-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -8,19 +8,20 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-header {
+.lh_dashboard-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.dashboard-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 0.5rem;
+.lh_dashboard-title {
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    padding-left: 26px;
 }
 
-.dashboard-subtitle {
+.lh_dashboard-subtitle {
     color: #666;
     font-size: 1rem;
 }
@@ -46,9 +47,9 @@
     cursor: pointer;
 
     &.active {
-        background-color: #3f51b5;
+        background-color: #028A0F;
         color: white;
-        border-color: #3f51b5;
+        border-color: #028A0F;
     }
 
     &:hover:not(.active) {

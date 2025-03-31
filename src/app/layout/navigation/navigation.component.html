@@ -7,7 +7,8 @@
         </a>
     </li> -->
 
-    <li class="icon-box" *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
+    <li class="icon-box" *ngFor="let menu of lh_menuData;" [ngClass]="menuIsActive(menu.route)"
+        routerLinkActive="active">
         <i class="{{ menu.icon }}"></i>
         <a [href]="menu.route">
             <h2>{{ menu.title | translate }}</h2>
@@ -24,14 +25,14 @@
         <span></span>
         <span></span>
         <ul class="list-unstyled" id="menu">
-            <li>
+            <!-- <li>
                 <a href="javascript:void(0)" (click)="preLang()">
                     <i class="fa fa-language"></i>
                     <span>{{ this.isKh | translate }}</span>
                 </a>
-            </li>
+            </li> -->
 
-            <li *ngFor="let menu of menus;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
+            <li *ngFor="let menu of lh_menuData;" [ngClass]="menuIsActive(menu.route)" routerLinkActive="active">
                 <a [href]="menu.route">
                     <i class="{{ menu.icon }}"></i>
                     <span>{{ menu.title | translate }}</span>

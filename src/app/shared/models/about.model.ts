@@ -1,28 +1,13 @@
-export interface PersonalInfo {
-    id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    age: string;
-    dateOfBirth: string;
-    nationality: string;
-    language: string;
-    phoneNumberOne: string;
-    phoneNumberTwo: string;
-    address: string;
-    profilePicture: string;
-}
-
-export interface Skill {
+export interface lh_skill {
     title: string;
     desc: string;
     rate: number;
 }
 
-export interface SkillCategory {
+export interface lh_skillCategory {
     title: string;
     overview: string;
-    skills: Skill[];
+    skills: lh_skill[];
     icon: string;
     type: string;
 }
