@@ -5,8 +5,7 @@ export const MENUS = [
     { title: 'app.about', icon: 'fa fa-user', route: '/about' },
     { title: 'app.portfolio', icon: 'fa fa-briefcase', route: '/portfolio' },
     { title: 'app.contact', icon: 'fa fa-envelope-open', route: '/contact' },
-    { title: 'app.blog', icon: 'fa fa-comments', route: '/blog' },
-    { title: 'app.tool', icon: 'fa fa-smile-o', route: '/math-tools' }
+    { title: 'app.blog', icon: 'fa fa-comments', route: '/blog' }
 ];
 
 export const lh_education = [
@@ -204,12 +203,12 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         title: "Programming Languages",
         overview: "Core programming languages and technologies used to develop software and web applications.",
         skills: [
-            { title: "HTML", desc: "HyperText Markup Language", rate: 90 },
+            { title: "HTML", desc: "HyperText Markup Language", rate: 95 },
             { title: "CSS", desc: "Cascading Style Sheets", rate: 90 },
-            { title: "JavaScript", desc: "Programming language for web development", rate: 85 },
-            { title: "Angular", desc: "Web application framework", rate: 80 },
-            { title: "TypeScript", desc: "Superset of JavaScript", rate: 75 },
-            { title: "Java", desc: "Object-oriented programming language", rate: 75 },
+            { title: "JavaScript", desc: "Programming language for web development", rate: 90 },
+            { title: "Angular", desc: "Web application framework", rate: 90 },
+            { title: "TypeScript", desc: "Superset of JavaScript", rate: 90 },
+            { title: "Java", desc: "Object-oriented programming language", rate: 70 },
             { title: "Python", desc: "High-level programming language", rate: 70 },
             { title: "PHP", desc: "Server-side scripting language", rate: 70 }
         ],
@@ -221,11 +220,8 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         overview: "Popular frameworks and libraries that streamline web application development and enhance user experience.",
         skills: [
             { title: "Bootstrap", desc: "Front-end framework for responsive design", rate: 85 },
-            { title: "Vue.js", desc: "JavaScript framework for building UIs", rate: 80 },
-            { title: "CodeIgniter", desc: "PHP framework for rapid development", rate: 80 },
-            { title: "Angular Material", desc: "Material Design components for Angular", rate: 80 },
-            { title: "Laravel", desc: "PHP framework with elegant syntax", rate: 75 },
-            { title: "Java Spring Boot", desc: "Framework for Java-based applications", rate: 70 }
+            { title: "Angular Material", desc: "Material Design components for Angular", rate: 85 },
+            { title: "Java Spring Boot", desc: "Framework for Java-based applications", rate: 85 }
         ],
         icon: "fa fa-cogs",
         type: "Hard-Skill"
@@ -234,18 +230,18 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         title: "Databases",
         overview: "Relational and NoSQL database systems used for efficient data storage and management.",
         skills: [
-            { title: "MySQL", desc: "Relational database management system", rate: 85 },
-            { title: "Microsoft SQL Server", desc: "Database management system by Microsoft", rate: 80 }
+            { title: "MySQL", desc: "Relational database management system", rate: 90 },
+            { title: "Microsoft SQL Server", desc: "Database management system by Microsoft", rate: 90 }
         ],
         icon: "fa fa-database",
         type: "Hard-Skill"
     },
     {
-        title: "UI/UX Design Tools",
+        title: "UI/UX Design",
         overview: "Software used for designing, prototyping, and enhancing user experience in digital products.",
         skills: [
             { title: "Canva", desc: "Graphic design tool for beginners", rate: 85 },
-            { title: "Adobe Photoshop", desc: "Image editing and graphic design tool", rate: 75 },
+            { title: "Adobe Photoshop", desc: "Image editing and graphic design tool", rate: 80 },
             { title: "Figma", desc: "Cloud-based UI/UX design tool", rate: 70 }
 
         ],
@@ -253,14 +249,13 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         type: "Hard-Skill"
     },
     {
-        title: "Productivity & Collaboration Tools",
+        title: "Productivity & Collaboration",
         overview: "Essential tools for video editing, source control, team collaboration, and reporting.",
         skills: [
-            { title: "Adobe Premiere Pro", desc: "Professional video editing software", rate: 80 },
-            { title: "CapCut", desc: "Mobile video editing app", rate: 75 },
             { title: "Git", desc: "Version control system", rate: 85 },
+            { title: "Adobe Premiere Pro", desc: "Professional video editing software", rate: 80 },
+            { title: "CapCut", desc: "Mobile video editing app", rate: 80 },
             { title: "GitHub", desc: "Cloud-based repository hosting", rate: 80 },
-            { title: "GitLab", desc: "DevOps platform for CI/CD", rate: 80 },
             { title: "Trello", desc: "Project management and collaboration tool", rate: 80 },
             { title: "Jaspersoft Report Designer 5.0.1", desc: "Business intelligence reporting tool", rate: 80 }
         ],
@@ -268,7 +263,7 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         type: "Hard-Skill"
     },
     {
-        title: "Development Skills",
+        title: "Non-Technical",
         overview: "Essential non-technical skills that enhance productivity, teamwork, and problem-solving in software development.",
         skills: [
             { title: "Time Management", desc: "Effectively managing time for productivity", rate: 90 },
@@ -278,128 +273,9 @@ export const lh_ratingSkills: lh_skillCategory[] = [
             { title: "Teamwork", desc: "Working collaboratively with others", rate: 85 },
             { title: "Problem-Solving", desc: "Identifying and resolving issues efficiently", rate: 85 },
             { title: "Creativity", desc: "Generating innovative ideas and solutions", rate: 80 },
-            { title: "Leadership", desc: "Guiding and inspiring teams", rate: 75 }
+            { title: "Leadership", desc: "Guiding and inspiring teams", rate: 80 }
         ],
         icon: "fa fa-users",
         type: "Soft-Skill"
     }
-];
-
-export const lh_ratingSoftSkills = [
-
-];
-
-export const clients = [
-    "Sahaka Microfinance Institution PLC",
-    "Web Essentials Co., Ltd",
-    "SpaciaNet Co., Ltd",
-    "AirXpress",
-    "Arun Company",
-    "HRINC (Cambodia) Co., Ltd",
-    "Fortune Life Insurance PLC",
-];
-
-export const portfolio = {
-    websiteDevelopment: [
-        "United Security Provider",
-        "Ahladang Landing Page",
-        "HRINC Jobs Portal",
-        "In Time Gaming Blog",
-        "Loem Heng Project",
-        "Customer Portal",
-    ],
-    systemDevelopment: [
-        "Customer Management System",
-        "My Litmus Cloud",
-        "Recruitment Management System",
-        "Scan Application",
-        "E-Submission Application",
-        "Premium Renewal Collection",
-        "Group Life Reporting System",
-        "Management Information System (MIS Report)",
-        "Financial Reports",
-        "Operation Reports",
-        "Policy Service Reports",
-        "Actuarial Reports",
-    ],
-};
-
-export const services = "IT Consulting";
-
-export const blog = "Embracing Knowledge Sharing";
-
-export const contactInfo = {
-    email: "hengloem.pnc@gmail.com",
-    mobilePhone: "(+855) 962 204 505",
-    handPhone: "(+855) 762 226 505",
-    telegram: "https://t.me/hengloem"
-};
-
-export const portfolios = [
-    {
-        title: "Image Project",
-        category: "Website",
-        client: "Envato",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
-    {
-        title: "Youtube Project",
-        category: "Video",
-        client: "Videohive",
-        languages: "Adobe After Effects",
-        previewLink: "https://www.videohive.net",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-        videoUrl: "https://www.youtube.com/embed/7e90gBu4pas?enablejsapi=1&version=3&playerapiid=ytplayer",
-    },
-    {
-        title: "Slider Project",
-        category: "Website",
-        client: "Themeforest",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.themeforest.net",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
-    {
-        title: "Local Video Project",
-        category: "Video",
-        client: "Videohive",
-        languages: "Adobe Premium",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-        videoUrl: "https://youtu.be/-fERfZ_x4bk",
-    },
-    {
-        title: "Image Project",
-        category: "Website",
-        client: "Envato",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
-    {
-        title: "Image Project",
-        category: "Website",
-        client: "Envato",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
-    {
-        title: "Image Project",
-        category: "Website",
-        client: "Envato",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
-    {
-        title: "Image Project",
-        category: "Website",
-        client: "Envato",
-        languages: "HTML, CSS, Javascript",
-        previewLink: "https://www.envato.com",
-        imageUrl: "http://via.placeholder.com/895x552.jpg",
-    },
 ];

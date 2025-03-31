@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderTitleService } from '@app/core/services/header-title.service';
 
-declare var $: any; // Declare $ to use jQuery
-
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -13,7 +11,7 @@ export class PortfolioComponent implements OnInit {
     {
       title: 'Image Project',
       type: 'image',
-      src: 'http://via.placeholder.com/895x552.jpg',
+      src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg',
       details: [
         { label: 'Project', value: 'Website', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'Envato', icon: 'fa fa-user-o' },
@@ -26,9 +24,9 @@ export class PortfolioComponent implements OnInit {
       title: 'Slider Project',
       type: 'carousel',
       slides: [
-        { src: 'http://via.placeholder.com/895x552.jpg' },
-        { src: 'http://via.placeholder.com/895x552.jpg' },
-        { src: 'http://via.placeholder.com/895x552.jpg' }
+        { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg' },
+        { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg' },
+        { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg' }
       ],
       details: [
         { label: 'Project', value: 'Website', icon: 'fa fa-file-text-o' },
@@ -54,7 +52,7 @@ export class PortfolioComponent implements OnInit {
       type: 'video',
       platform: 'local',
       src: 'https://youtu.be/-fERfZ_x4bk',
-      poster: 'http://via.placeholder.com/895x552.jpg',
+      poster: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg',
       details: [
         { label: 'Project', value: 'Video', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'Videohive', icon: 'fa fa-user-o' },

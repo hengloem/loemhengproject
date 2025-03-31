@@ -41,15 +41,16 @@
     padding: 0.75rem 1.5rem;
     background-color: #f5f5f5;
     border: 1px solid #ddd;
-    border-radius: 4px;
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
 
     &.active {
         background-color: #028A0F;
-        color: white;
-        border-color: #028A0F;
+
+        .button-text {
+            color: white;
+        }
     }
 
     &:hover:not(.active) {
@@ -71,10 +72,10 @@
 }
 
 .category-title {
-    font-size: 1.5rem;
+    opacity: 0.8;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
+    font-size: 15px;
+    position: relative;
 }
 
 .category-description {
@@ -113,16 +114,20 @@
 }
 
 .skill-title {
-    font-size: 1.1rem;
+    font-size: 14px;
     font-weight: 600;
     color: #333;
 }
 
 .skill-badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 10px;
+    display: inline-block;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    background-color: #252525;
 
     &.badge-expert {
         background-color: rgba(76, 175, 80, 0.1);
