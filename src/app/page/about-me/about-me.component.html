@@ -298,7 +298,7 @@
                 </h3>
             </div>
 
-            <div class="col-lg-12 m-15px-tb">
+            <div class="col-lg-4 m-15px-tb">
                 <div class="resume-box">
                     <ul *ngFor="let item of lh_skillData;">
                         <li>
@@ -310,8 +310,9 @@
                             <!-- Job Title and Company -->
                             <h5 class="text-uppercase">
                                 {{ item.title }}
-                                <span class="place">{{ item?.type }}</span>
+                                <!-- <span class="place">{{ item?.type }}</span> -->
                             </h5>
+                            <hr class="separator mt-1">
 
                             <!-- Details Section -->
                             <!-- <div class="lh_time_group">
@@ -338,10 +339,11 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="col-lg-8 m-15px-tb">
+                <app-skill></app-skill>
+            </div>
         </div>
-        <!-- Skills Ends -->
-        <hr class="separator mt-1">
-        <app-skill></app-skill>
     </div>
 </section>
 <!-- Main Content Ends -->

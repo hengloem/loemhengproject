@@ -1,4 +1,4 @@
-import { SkillCategory } from "@app/shared/models/about.model";
+import { lh_skillCategory } from "@app/shared/models/about.model";
 
 export const MENUS = [
     { title: 'app.home', icon: 'fa fa-home', route: '/home' },
@@ -199,7 +199,7 @@ export const lh_selfEmployedExperiences = [
     },
 ];
 
-export const lh_ratingSkills: SkillCategory[] = [
+export const lh_ratingSkills: lh_skillCategory[] = [
     {
         title: "Programming Languages",
         overview: "Core programming languages and technologies used to develop software and web applications.",

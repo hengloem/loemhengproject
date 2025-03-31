@@ -9,7 +9,7 @@ declare var $: any; // Declare $ to use jQuery
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-  portfolioItems = [
+  lh_portfolioItems = [
     {
       title: 'Image Project',
       type: 'image',
