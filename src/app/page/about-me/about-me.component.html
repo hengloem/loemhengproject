@@ -298,26 +298,21 @@
                 </h3>
             </div>
 
-            <div class="col-lg-12 m-15px-tb">
+            <div class="col-lg-4 m-15px-tb">
                 <div class="resume-box">
                     <ul *ngFor="let item of lh_skillData;">
                         <li>
                             <!-- Icon Section -->
-                            <div class="icon">
-                                <i class="fa {{ item.icon }}"></i>
+                            <div class="lh_icon_group">
+                                <div class="icon">
+                                    <i class="fa {{ item.icon }}"></i>
+                                </div>
+
+                                <!-- Job Title and Company -->
+                                <h5 class="text-uppercase">
+                                    {{ item.title }}
+                                </h5>
                             </div>
-
-                            <!-- Job Title and Company -->
-                            <h5 class="text-uppercase">
-                                {{ item.title }}
-                                <span class="place">{{ item?.type }}</span>
-                            </h5>
-
-                            <!-- Details Section -->
-                            <!-- <div class="lh_time_group">
-                                <span class="time text-uppercase">
-                                    {{ item.overview }} </span>
-                            </div> -->
 
                             <!-- Job Description -->
                             <div style="display: flex; flex-wrap: wrap; margin-top: 20px;">
@@ -329,7 +324,7 @@
                                             <div class="fill"></div>
                                         </div>
                                     </div>
-                                    <h6 class="text-uppercase text-center mt-2 mt-sm-4"
+                                    <h6 class="text-uppercase text-center mt-2"
                                         style="font-size: 12px; margin-bottom: 1.5rem;">{{
                                         skill.title }}</h6>
                                 </div>
@@ -338,10 +333,11 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="col-lg-8 m-15px-tb">
+                <app-skill></app-skill>
+            </div>
         </div>
-        <!-- Skills Ends -->
-        <hr class="separator mt-1">
-        <app-skill></app-skill>
     </div>
 </section>
 <!-- Main Content Ends -->

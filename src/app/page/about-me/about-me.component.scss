@@ -2,3 +2,13 @@
     display: flex;
     gap: 0.5rem;
 }
+
+.lh_icon_group {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+
+    h5 {
+        margin: 0 auto;
+    }
+}

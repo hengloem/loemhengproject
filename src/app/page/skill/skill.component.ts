@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsService } from '@app/core/services/skills.service';
-import { lh_ratingSkills } from '@app/data/js/static-data';
-import { SkillCategory } from '@app/shared/models/about.model';
+import { lh_skillCategory } from '@app/shared/models/about.model';
 
 @Component({
   selector: 'app-skill',
@@ -10,8 +9,8 @@ import { SkillCategory } from '@app/shared/models/about.model';
 })
 export class SkillComponent implements OnInit {
   skillTypes: string[] = [];
-  skillCategories: SkillCategory[] = [];
-  filteredCategories: SkillCategory[] = [];
+  skillCategories: lh_skillCategory[] = [];
+  filteredCategories: lh_skillCategory[] = [];
   activeTab: string = '';
 
   constructor(private skillsService: SkillsService) { }

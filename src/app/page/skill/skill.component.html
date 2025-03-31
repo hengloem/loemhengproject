@@ -1,14 +1,14 @@
-<div class="dashboard-container">
-    <div class="dashboard-header">
-        <h1 class="dashboard-title">Professional Skills Portfolio</h1>
-        <p class="dashboard-subtitle">A comprehensive overview of technical and professional competencies</p>
+<div class="lh_dashboard-container">
+    <div class="lh_dashboard-header">
+        <h1 class="text-uppercase lh_dashboard-title">Professional Skills Portfolio</h1>
+        <p class="lh_dashboard-subtitle">A comprehensive overview of technical and professional competencies</p>
     </div>
 
     <div class="tabs-container">
         <div class="tabs-header">
-            <button *ngFor="let type of skillTypes" class="tab-button" [class.active]="activeTab === type"
+            <button class="button tab-button" *ngFor="let type of skillTypes;" [class.active]="activeTab === type"
                 (click)="setActiveTab(type)">
-                {{ type }}
+                <span class="button-text">{{ type }}</span>
             </button>
         </div>
 
@@ -22,8 +22,8 @@
                 <div class="skills-grid">
                     <div *ngFor="let skill of category.skills" class="skill-card">
                         <div class="skill-header">
-                            <h3 class="skill-title">{{ skill.title }}</h3>
-                            <div class="skill-badge" [ngClass]="getBadgeClass(skill.rate)">
+                            <h3 class="text-uppercase skill-title">{{ skill.title }}</h3>
+                            <div class="text-uppercase skill-badge" [ngClass]="getBadgeClass(skill.rate)">
                                 {{ getProficiencyLevel(skill.rate) }}
                             </div>
                         </div>
