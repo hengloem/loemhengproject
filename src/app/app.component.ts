@@ -29,8 +29,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.headerTitleService.setTitle('app.title');
 
-    analytics.inject();
-    analytics.track('Page View', { path: window.location.pathname });
+    // analytics.inject();
+    // analytics.track('Page View', { path: window.location.pathname });
 
     // const savedLang = this.localStorage.get('lang');
     // this.isKh = savedLang === 'kh' ? 'app.eng' : 'app.kh';
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
         }, {});
 
         const activeClass = Object.keys(routeClassMap).find(key => this.router.url.includes(key)) || '';
-        document.body.className = routeClassMap[activeClass] ? `${routeClassMap[activeClass]} light` : 'light';
+        document.body.className = routeClassMap[activeClass] ? `light ${routeClassMap[activeClass]}` : 'light';
       }
     });
   }

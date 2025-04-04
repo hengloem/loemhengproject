@@ -1,0 +1,249 @@
+.grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.grid li {
+    display: block;
+    float: left;
+    padding: 15px;
+    width: 33.333%;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .grid li {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid li {
+        width: 100%;
+    }
+}
+
+.grid figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.grid figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.grid figure div {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.grid figure:hover div {
+    opacity: 1;
+}
+
+.grid figure div span {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Slideshow Layout */
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    perspective: 1000px;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.slideshow.show-slideshow {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+}
+
+.slideshow ul {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 150px);
+    transition: transform 0.5s;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow ul li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.slideshow ul li.current {
+    max-width: 660px;
+    height: 500px;
+    visibility: visible;
+    overflow: auto;
+}
+
+.slideshow ul li figure {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 0;
+}
+
+.slideshow figcaption {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.slideshow figcaption h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Hide grid when slideshow is active */
+.hide-grid {
+    visibility: hidden;
+}
+
+/* Content */
+.slideshow img,
+.slideshow iframe,
+.slideshow video {
+    max-width: 100%;
+    max-height: 70vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.slideshow iframe {
+    width: 100%;
+    height: 60vh;
+    border: none;
+}
+
+.slideshow .carousel {
+    width: 80%;
+    max-width: 1000px;
+}
+
+.slideshow .carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+.slideshow nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.slideshow nav span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.slideshow nav span:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.slideshow nav span img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.slideshow .nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Bootstrap Carousel Adjustments */
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    background-color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+/* Project Details */
+.project-label {
+    font-weight: 500;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.ft-wt-600 {
+    font-weight: 600;
+}

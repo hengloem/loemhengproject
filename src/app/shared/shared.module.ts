@@ -47,6 +47,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { SharedRoutingModule } from './shared-routing.module';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -104,7 +105,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule
+    TranslateModule,
+    NgxMasonryModule
   ],
   exports: [
     A11yModule,
@@ -153,7 +155,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule
+    TranslateModule,
+    NgxMasonryModule
   ]
 })
 export class SharedModule { }
