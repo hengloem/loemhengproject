@@ -10,147 +10,123 @@
     <div id="grid-gallery" class="container grid-gallery">
         <!-- Portfolio Grid Starts -->
         <section class="grid-wrap">
-            <ul class="row grid">
-                <!-- Portfolio Item Starts -->
-                <li>
+            <ul #gridGallery class="row grid">
+                <!-- Portfolio Items -->
+                <li *ngFor="let item of lh_portfolioItems" (click)="showDetails(item)">
                     <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Youtube Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Slider Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Local Video Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-                <!-- Portfolio Item Starts -->
-                <li>
-                    <figure>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg"
-                            alt="Portolio Image" />
-                        <div><span>Image Project</span></div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Ends -->
-            </ul>
-        </section>
-        <!-- Portfolio Grid Ends -->
+                        <!-- Image Type -->
+                        <ng-container *ngIf="item.type === 'image'">
+                            <img [src]="item.src | safeUrl" [alt]="item.title" />
+                        </ng-container>
 
-        <!-- Portfolio Details Starts -->
-        <section class="slideshow">
-            <ul>
-                <!-- Portfolio Item Detail Starts -->
-                <li *ngFor="let item of lh_portfolioItems">
-                    <figure>
-                        <figcaption>
-                            <h3>{{ item.title }}</h3>
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-2" *ngFor="let detail of item.details">
-                                    <i [class]="detail.icon + ' pr-2'"></i><span class="project-label">{{ detail.label
-                                        }} </span>:
-                                    <span class="ft-wt-600 uppercase">{{ detail.value }}</span>
+                        <!-- Carousel Type -->
+                        <ng-container *ngIf="item.type === 'carousel'">
+                            <div class="carousel-container" data-bs-ride="carousel">
+                                <div class="carousel-item carousel-slide"
+                                    *ngFor="let slide of item.slides; let i = index"
+                                    [ngClass]="{'active': i === currentSlideIndex}" data-bs-interval="5000">
+                                    <img [src]="slide.src | safeUrl" [alt]="item.title + ' slide ' + i" />
                                 </div>
                             </div>
-                        </figcaption>
-                        <div *ngIf="item.type === 'image'">
-                            <img [src]="item.src" alt="Portfolio Image" />
+                        </ng-container>
+
+                        <!-- YouTube Video Type -->
+                        <ng-container *ngIf="item.type === 'video' && item.platform === 'youtube'">
+                            <div class="video-container">
+                                <iframe width="100%" height="315" [src]="item.src | safeUrl" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen (click)="$event.stopPropagation()">
+                                </iframe>
+                            </div>
+                        </ng-container>
+
+                        <!-- Local Video Type -->
+                        <ng-container *ngIf="item.type === 'video' && item.platform === 'local'">
+                            <div class="video-container">
+                                <video width="100%" controls [poster]="item.poster | safeUrl"
+                                    (click)="$event.stopPropagation()">
+                                    <source [src]="item.src | safeUrl" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </ng-container>
+
+                        <!-- Common Title Overlay -->
+                        <div><span>{{ item.title }}</span></div>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Portfolio Details Modal -->
+        <div class="portfolio-details-modal" *ngIf="selectedItem" (click)="closeDetails()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <button class="close-details" (click)="closeDetails()">&times;</button>
+                <h3>{{ selectedItem.title }}</h3>
+
+                <!-- Preview Area Based on Type -->
+                <div class="preview-area">
+                    <!-- Image Type -->
+                    <ng-container *ngIf="selectedItem.type === 'image'">
+                        <img [src]="selectedItem.src | safeUrl" [alt]="selectedItem.title" />
+                    </ng-container>
+
+                    <!-- Carousel Type -->
+                    <ng-container *ngIf="selectedItem.type === 'carousel'">
+                        <div class="carousel-container modal-carousel">
+                            <div class="carousel-slide" *ngFor="let slide of selectedItem.slides; let i = index"
+                                [ngClass]="{'active': i === currentSlideIndex}">
+                                <img [src]="slide.src | safeUrl" [alt]="selectedItem.title + ' slide ' + i" />
+                            </div>
+                            <div class="carousel-controls"
+                                *ngIf="selectedItem.slides && selectedItem.slides.length > 1">
+                                <button class="prev-btn" (click)="prevSlide()">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <button class="next-btn" (click)="nextSlide()">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div *ngIf="item.type === 'video'">
-                            <iframe *ngIf="item.platform === 'youtube'" [src]="item.src | safeUrl"
-                                allowfullscreen></iframe>
-                            <video *ngIf="item.platform === 'local'" class="responsive-video" controls
-                                [poster]="item.poster">
-                                <source [src]="item.src" type="video/mp4">
+                    </ng-container>
+
+                    <!-- YouTube Video Type -->
+                    <ng-container *ngIf="selectedItem.type === 'video' && selectedItem.platform === 'youtube'">
+                        <div class="video-container modal-video">
+                            <iframe width="100%" height="315" [src]="selectedItem.src | safeUrl" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </ng-container>
+
+                    <!-- Local Video Type -->
+                    <ng-container *ngIf="selectedItem.type === 'video' && selectedItem.platform === 'local'">
+                        <div class="video-container modal-video">
+                            <video width="100%" controls [poster]="selectedItem.poster | safeUrl">
+                                <source [src]="selectedItem.src | safeUrl" type="video/mp4">
+                                Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div *ngIf="item.type === 'carousel'">
-                            <div id="slider" class="carousel slide portfolio-slider" data-ride="carousel"
-                                data-interval="false">
-                                <ol class="carousel-indicators">
-                                    <li *ngFor="let slide of item.slides; let i = index" [class.active]="i === 0"
-                                        data-target="#slider" [attr.data-slide-to]="i"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div *ngFor="let slide of item.slides; let i = index" class="carousel-item"
-                                        [class.active]="i === 0">
-                                        <img [src]="slide.src" alt="Portfolio Image" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </figure>
-                </li>
-                <!-- Portfolio Item Detail Ends -->
-            </ul>
-            <!-- Portfolio Navigation Starts -->
-            <nav>
-                <span class="icon nav-prev"><img src="assets/img/projects/navigation/left-arrow.png"
-                        alt="previous"></span>
-                <span class="icon nav-next"><img src="assets/img/projects/navigation/right-arrow.png" alt="next"></span>
-                <span class="nav-close"><img src="/assets/img/projects/navigation/close-button.png" alt="close"></span>
-            </nav>
-            <!-- Portfolio Navigation Ends -->
-        </section>
+                    </ng-container>
+                </div>
+
+                <!-- Project Details -->
+                <div class="details-info">
+                    <ul class="details-list">
+                        <li *ngFor="let detail of selectedItem.details">
+                            <i [class]="detail.icon"></i>
+                            <strong>{{ detail.label }}:</strong>
+                            <span *ngIf="detail.label !== 'Preview'">{{ detail.value }}</span>
+                            <a *ngIf="detail.label === 'Preview'" [href]="'https://' + detail.value" target="_blank">
+                                {{ detail.value }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Grid Ends -->
     </div>
 </section>
 <!-- Main Content Ends -->

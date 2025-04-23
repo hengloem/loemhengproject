@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   isKh: string = '';
   lh_menuData: lh_menuItem[] = MENUS;
 
+  theme: 'light' | 'dark' = 'light';
+
   constructor(
     private translate: TranslateService,
     private router: Router,
@@ -24,6 +26,10 @@ export class AppComponent implements OnInit {
   ) {
     translate.addLangs(['en', 'kh']);
     translate.setDefaultLang('en');
+
+    // Load saved theme from localStorage
+    const savedTheme = this.localStorage.get('theme');
+    this.theme = (savedTheme === 'dark' || savedTheme === 'light') ? savedTheme : 'light';
   }
 
   ngOnInit(): void {
@@ -36,17 +42,40 @@ export class AppComponent implements OnInit {
     // this.isKh = savedLang === 'kh' ? 'app.eng' : 'app.kh';
     // this.translate.use(savedLang || 'en');
 
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     // Generate routeClassMap dynamically from MENUS
+    //     const routeClassMap = this.lh_menuData.reduce((acc, menu) => {
+    //       acc[menu.route] = menu.route.substring(1); // Remove the leading slash
+    //       return acc;
+    //     }, {});
+
+    //     const activeClass = Object.keys(routeClassMap).find(key => this.router.url.includes(key)) || '';
+    //     document.body.className = routeClassMap[activeClass] ? `${routeClassMap[activeClass]} light` : 'light';
+    //   }
+    // });
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Generate routeClassMap dynamically from MENUS
-        const routeClassMap = this.lh_menuData.reduce((acc, menu) => {
-          acc[menu.route] = menu.route.substring(1); // Remove the leading slash
-          return acc;
-        }, {});
-
-        const activeClass = Object.keys(routeClassMap).find(key => this.router.url.includes(key)) || '';
-        document.body.className = routeClassMap[activeClass] ? `${routeClassMap[activeClass]} light` : 'light';
+        this.updateBodyClass(); // Always applies the current theme
       }
     });
+  }
+
+  toggleTheme(): void {
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.localStorage.set('theme', this.theme); // Save to localStorage
+    this.updateBodyClass();
+  }
+
+  updateBodyClass(): void {
+    const routeClassMap = this.lh_menuData.reduce((acc, menu) => {
+      acc[menu.route] = menu.route.substring(1);
+      return acc;
+    }, {});
+    const activeClass = Object.keys(routeClassMap).find(key => this.router.url.includes(key)) || '';
+    document.body.className = routeClassMap[activeClass]
+      ? `${routeClassMap[activeClass]} ${this.theme}`
+      : this.theme;
   }
 }
