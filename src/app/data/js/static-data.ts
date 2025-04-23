@@ -266,16 +266,74 @@ export const lh_ratingSkills: lh_skillCategory[] = [
         title: "Non-Technical",
         overview: "Essential non-technical skills that enhance productivity, teamwork, and problem-solving in software development.",
         skills: [
-            { title: "Time Management", desc: "Effectively managing time for productivity", rate: 90 },
-            { title: "Communication", desc: "Effective verbal and written communication", rate: 90 },
-            { title: "Self-Learning", desc: "Ability to learn independently", rate: 85 },
-            { title: "Critical Thinking", desc: "Analyzing and solving complex problems", rate: 85 },
-            { title: "Teamwork", desc: "Working collaboratively with others", rate: 85 },
-            { title: "Problem-Solving", desc: "Identifying and resolving issues efficiently", rate: 85 },
-            { title: "Creativity", desc: "Generating innovative ideas and solutions", rate: 80 },
-            { title: "Leadership", desc: "Guiding and inspiring teams", rate: 80 }
+            { title: "Leadership", desc: "Guiding teams with vision, clarity, and responsibility", rate: 95 },
+            { title: "Time Management", desc: "Effectively managing time for productivity and balance", rate: 90 },
+            { title: "Communication", desc: "Clear and impactful verbal and written communication", rate: 90 },
+            { title: "Self-Learning", desc: "Quickly acquiring new skills and knowledge independently", rate: 85 },
+            { title: "Critical Thinking", desc: "Analyzing situations to make informed decisions", rate: 85 },
+            { title: "Teamwork", desc: "Collaborating with others to achieve common goals", rate: 85 },
+            { title: "Problem-Solving", desc: "Resolving challenges through logical approaches", rate: 80 },
+            { title: "Creativity", desc: "Developing innovative ideas and approaches", rate: 80 },
+            { title: "Adaptability", desc: "Adjusting smoothly to changes in tools, environments, and expectations", rate: 80 },
+            { title: "Emotional Intelligence", desc: "Understanding and managing your emotions and those of others", rate: 75 },
+            { title: "Attention to Detail", desc: "Ensuring precision and accuracy in work", rate: 70 }
         ],
         icon: "fa fa-users",
         type: "Soft-Skill"
+    }
+
+];
+
+export const lh_portfolioList = [
+    {
+        title: 'Kamlot Amarak Farm Website',
+        type: 'image',
+        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg',
+        details: [
+            { label: 'Project', value: 'E-Commerce Website', icon: 'fa fa-file-text-o' },
+            { label: 'Client', value: 'Kamlot Amarak Farm', icon: 'fa fa-user-o' },
+            { label: 'Languages', value: 'HTML, CSS, JavaScript, Angular', icon: 'fa fa-code' },
+            { label: 'Preview', value: 'https://kamlotfarm.com', icon: 'fa fa-external-link' }
+        ]
+    },
+    {
+        title: 'Heng Coding UI Templates',
+        type: 'carousel',
+        slides: [
+            { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXyvc9vYr01gRylM1U9H0GiUNKlVeCnh-uERfcRUKxukTdwjgfMtEaaxyUN_-XKWCKEra45DjlkchBtZ8jeSu5MwB_Qt8h26ktxQK_irYRR_QSPeXXG9Gb9xR51otsCQLhyphenhyphenQDdnUz_QUi6m6jWmXe-3Qcl61YMmKE2DbqaJt42DKN0OjH7EnfvgvUTndHJ/w640-h336-rw/ITG%20-%20FACEBOOK%20SHARE%20COVER%20-%20WEBSITE.jpg' },
+            { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhunbMgX_QTXXlj60nOrAV8xaHQqHirJX8ByWKb2OU9g1hHpns4vb9qj9GPvE0st8c8yksCf_YsP2khm0wBoTBTHv8zMCt_ZMMc8h08KZ-HQItjnZnD3SeW3sJfH_iAEpUNCSJa563cFJ-W/s1200/byintime-odette-fb-share-cover.jpg' },
+            { src: 'https://blogger.googleusercontent.com/img/a/AVvXsEhG2A-6TQ7e5P9nztrg2WeGM5zcamQJ3zISVw_NFq-ccXlD22zdt649MCI0ybLxav1C4uM8lEEfn-D_SflC8ws6402PZBMgE2UhHow2IdIUHdKqkZAalmCmcht0iB6SPiZBK3IBmhU9l3pcb5R5RSy9pWuMdc_RnStBASAX_vPphsVMTyrlE5irp7x4GrpK' }
+        ],
+        details: [
+            { label: 'Project', value: 'Frontend Templates', icon: 'fa fa-file-text-o' },
+            { label: 'Client', value: 'Themeforest Buyers', icon: 'fa fa-user-o' },
+            { label: 'Languages', value: 'React, Tailwind CSS', icon: 'fa fa-code' },
+            { label: 'Preview', value: 'https://themeforest.net/user/hengcoding', icon: 'fa fa-external-link' }
+        ]
+    },
+    {
+        title: 'Tech Review - YouTube Video',
+        type: 'video',
+        platform: 'youtube',
+        src: 'https://youtu.be/4ep0OzvLErU',
+        details: [
+            { label: 'Project', value: 'Content Creation', icon: 'fa fa-file-text-o' },
+            { label: 'Client', value: 'Intime Xperience Channel', icon: 'fa fa-user-o' },
+            { label: 'Tools', value: 'Adobe After Effects, Premiere Pro', icon: 'fa fa-code' },
+            { label: 'Preview', value: 'https://youtube.com/@intimexperience', icon: 'fa fa-external-link' }
+        ]
+    },
+    {
+        title: 'Promotional Video - Local Host',
+        type: 'video',
+        platform: 'local',
+        src: 'assets/video/GX011835.MP4',
+        poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEhG2A-6TQ7e5P9nztrg2WeGM5zcamQJ3zISVw_NFq-ccXlD22zdt649MCI0ybLxav1C4uM8lEEfn-D_SflC8ws6402PZBMgE2UhHow2IdIUHdKqkZAalmCmcht0iB6SPiZBK3IBmhU9l3pcb5R5RSy9pWuMdc_RnStBASAX_vPphsVMTyrlE5irp7x4GrpK',
+        details: [
+            { label: 'Project', value: 'Video Editing', icon: 'fa fa-file-text-o' },
+            { label: 'Client', value: 'In Time Gaming', icon: 'fa fa-user-o' },
+            { label: 'Tools', value: 'Adobe Premiere, Audition', icon: 'fa fa-code' },
+            { label: 'Preview', value: 'https://www.intimegaming.com/p/about-us.html', icon: 'fa fa-external-link' }
+        ]
     }
 ];
