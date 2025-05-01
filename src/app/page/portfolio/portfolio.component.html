@@ -12,7 +12,7 @@
         <section class="grid-wrap">
             <ul #gridGallery class="row grid">
                 <!-- Portfolio Items -->
-                <li *ngFor="let item of lh_portfolioItems" (click)="showDetails(item)">
+                <li *ngFor="let item of lh_portfolioItems" (click)="showDetails(item)" class="item" ngsReveal>
                     <figure>
                         <!-- Image Type -->
                         <ng-container *ngIf="item.type === 'image'">

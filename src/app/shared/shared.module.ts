@@ -1,3 +1,4 @@
+import { NgsRevealModule } from 'ngx-scrollreveal';
 import { TranslateModule } from '@ngx-translate/core';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -153,7 +154,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    TranslateModule
+    TranslateModule,
+    NgsRevealModule
   ]
 })
 export class SharedModule { }
