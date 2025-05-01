@@ -13,6 +13,7 @@ import { SkillComponent } from './skill/skill.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { CoreModule } from '@app/core/core.module';
+import { NgsRevealConfig } from 'ngx-scrollreveal';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -33,6 +34,9 @@ import { CoreModule } from '@app/core/core.module';
     LayoutModule,
     SharedModule,
     CoreModule
+  ],
+  providers: [
+    NgsRevealConfig
   ]
 })
 export class PageModule { }

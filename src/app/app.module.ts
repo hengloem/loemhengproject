@@ -1,3 +1,4 @@
+import { NgsRevealModule } from 'ngx-scrollreveal';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -67,7 +68,8 @@ export class TranslateHandler implements MissingTranslationHandler {
         useClass: TranslateHandler
       }]
     }),
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    NgsRevealModule
   ],
   providers: [
     AppInitService,

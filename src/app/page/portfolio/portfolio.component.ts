@@ -23,7 +23,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     private headerTitleService: HeaderTitleService,
     private gridGalleryService: GridGalleryService,
     private renderer: Renderer2
-  ) { }
+  ) {
+    
+  }
 
   ngOnInit(): void {
     this.headerTitleService.setTitle('app.portfolio');

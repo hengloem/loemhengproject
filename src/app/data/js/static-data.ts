@@ -286,54 +286,157 @@ export const lh_ratingSkills: lh_skillCategory[] = [
 
 export const lh_portfolioList = [
     {
-        title: 'Kamlot Amarak Farm Website',
-        type: 'image',
-        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQog9JAAAhwbJhbnruQEBWugpQzX-lzuXt-7Fmt504cehxOW-0MrP8IN9WsdhUIBSTQ2Wmp87ODWbAJaCMGCbC38_2YoNaApnID8nJoZ76JIGwSvcWTjmGKzQW2xv4Tf33fhDPUZcI1TceGsdt8UqBohF9mT2l6hKdocGvsDMBxiAzoXG9kk_U0bMW/s1200/kamlot-amarak-farm-cover.jpg',
-        details: [
-            { label: 'Project', value: 'E-Commerce Website', icon: 'fa fa-file-text-o' },
-            { label: 'Client', value: 'Kamlot Amarak Farm', icon: 'fa fa-user-o' },
-            { label: 'Languages', value: 'HTML, CSS, JavaScript, Angular', icon: 'fa fa-code' },
-            { label: 'Preview', value: 'https://kamlotfarm.com', icon: 'fa fa-external-link' }
-        ]
+      title: 'GCL WebView',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=GCL+WebView',
+      details: [
+        { label: 'Project', value: 'Internal Company WebView', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Angular', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Nov 2024 - Dec 2024', icon: 'fa fa-calendar' }
+      ]
     },
     {
-        title: 'Heng Coding UI Templates',
-        type: 'carousel',
-        slides: [
-            { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXyvc9vYr01gRylM1U9H0GiUNKlVeCnh-uERfcRUKxukTdwjgfMtEaaxyUN_-XKWCKEra45DjlkchBtZ8jeSu5MwB_Qt8h26ktxQK_irYRR_QSPeXXG9Gb9xR51otsCQLhyphenhyphenQDdnUz_QUi6m6jWmXe-3Qcl61YMmKE2DbqaJt42DKN0OjH7EnfvgvUTndHJ/w640-h336-rw/ITG%20-%20FACEBOOK%20SHARE%20COVER%20-%20WEBSITE.jpg' },
-            { src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhunbMgX_QTXXlj60nOrAV8xaHQqHirJX8ByWKb2OU9g1hHpns4vb9qj9GPvE0st8c8yksCf_YsP2khm0wBoTBTHv8zMCt_ZMMc8h08KZ-HQItjnZnD3SeW3sJfH_iAEpUNCSJa563cFJ-W/s1200/byintime-odette-fb-share-cover.jpg' },
-            { src: 'https://blogger.googleusercontent.com/img/a/AVvXsEhG2A-6TQ7e5P9nztrg2WeGM5zcamQJ3zISVw_NFq-ccXlD22zdt649MCI0ybLxav1C4uM8lEEfn-D_SflC8ws6402PZBMgE2UhHow2IdIUHdKqkZAalmCmcht0iB6SPiZBK3IBmhU9l3pcb5R5RSy9pWuMdc_RnStBASAX_vPphsVMTyrlE5irp7x4GrpK' }
-        ],
-        details: [
-            { label: 'Project', value: 'Frontend Templates', icon: 'fa fa-file-text-o' },
-            { label: 'Client', value: 'Themeforest Buyers', icon: 'fa fa-user-o' },
-            { label: 'Languages', value: 'React, Tailwind CSS', icon: 'fa fa-code' },
-            { label: 'Preview', value: 'https://themeforest.net/user/hengcoding', icon: 'fa fa-external-link' }
-        ]
+      title: 'Loem Heng Project',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Loem+Heng+Project',
+      details: [
+        { label: 'Project', value: 'Management & Dev Toolkit', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Heng Coding Service', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Angular, Angular Material', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Mar 2024 - Dec 2024', icon: 'fa fa-calendar' }
+      ]
     },
     {
-        title: 'Tech Review - YouTube Video',
-        type: 'video',
-        platform: 'youtube',
-        src: 'https://youtu.be/4ep0OzvLErU',
-        details: [
-            { label: 'Project', value: 'Content Creation', icon: 'fa fa-file-text-o' },
-            { label: 'Client', value: 'Intime Xperience Channel', icon: 'fa fa-user-o' },
-            { label: 'Tools', value: 'Adobe After Effects, Premiere Pro', icon: 'fa fa-code' },
-            { label: 'Preview', value: 'https://youtube.com/@intimexperience', icon: 'fa fa-external-link' }
-        ]
+      title: 'E-Recruitment Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=E-Recruitment+Portal',
+      details: [
+        { label: 'Project', value: 'Job Applicant Tracking System', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Angular, Java, Spring Boot', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Aug 2024 - Oct 2024', icon: 'fa fa-calendar' }
+      ]
     },
     {
-        title: 'Promotional Video - Local Host',
-        type: 'video',
-        platform: 'local',
-        src: 'assets/video/GX011835.MP4',
-        poster: 'https://blogger.googleusercontent.com/img/a/AVvXsEhG2A-6TQ7e5P9nztrg2WeGM5zcamQJ3zISVw_NFq-ccXlD22zdt649MCI0ybLxav1C4uM8lEEfn-D_SflC8ws6402PZBMgE2UhHow2IdIUHdKqkZAalmCmcht0iB6SPiZBK3IBmhU9l3pcb5R5RSy9pWuMdc_RnStBASAX_vPphsVMTyrlE5irp7x4GrpK',
-        details: [
-            { label: 'Project', value: 'Video Editing', icon: 'fa fa-file-text-o' },
-            { label: 'Client', value: 'In Time Gaming', icon: 'fa fa-user-o' },
-            { label: 'Tools', value: 'Adobe Premiere, Audition', icon: 'fa fa-code' },
-            { label: 'Preview', value: 'https://www.intimegaming.com/p/about-us.html', icon: 'fa fa-external-link' }
-        ]
+      title: 'Renewal Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Renewal+Portal',
+      details: [
+        { label: 'Project', value: 'Insurance Renewal System', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Java, Spring Boot, Angular, MS SQL', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Sep 2023 - Dec 2023', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Scan-App Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Scan-App+Portal',
+      details: [
+        { label: 'Project', value: 'Document Scanner & Tracker', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Java, Spring Boot, HTML5, Angular', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Feb 2023 - May 2023', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'E-App Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=E-App+Portal',
+      details: [
+        { label: 'Project', value: 'Digital Application Submission', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Java, Angular, HTML5, CLI, SQL Server', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Jul 2022 - Jan 2023', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Hrinc Jobs Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=HRINC+Jobs+Portal',
+      details: [
+        { label: 'Project', value: 'Multi-country Job Listing Site', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'HRINC (Cambodia) Co., Ltd', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'AngularJS, HTML5, CSS, Git, TypeScript, SDLC', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Sep 2019 - Jul 2022', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'In Time Gaming Blog',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=In+Time+Gaming+Blog',
+      details: [
+        { label: 'Project', value: 'Gaming Review Blog', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Self-initiated Project', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'HTML5, CSS, JavaScript, PHP, Bootstrap', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Jul 2021 - Dec 2021', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Loem Heng Blog',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Loem+Heng+Blog',
+      details: [
+        { label: 'Project', value: 'Personal Portfolio Blog', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Heng Coding Service', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'HTML5, CSS, JavaScript, Bootstrap', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Jan 2021 - Jun 2021', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Ahladang Landing Page',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Ahladang+Landing+Page',
+      details: [
+        { label: 'Project', value: 'Education Platform Landing Page', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Heng Coding Service', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'HTML5, JavaScript, Bootstrap, SDLC', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Jun 2019 - Sep 2019', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'My Litmus Cloud',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=My+Litmus+Cloud',
+      details: [
+        { label: 'Project', value: 'IoT Sensor Monitoring', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Arun Company', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Vue.js, HTML5, SQL Server, CSS', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Feb 2019 - Sep 2019', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'United Security Provider',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=United+Security+Provider',
+      details: [
+        { label: 'Project', value: 'Corporate Website', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Heng Coding Service', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Typo3, HTML5, Git, Postman API', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Aug 2018 - Jan 2019', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Customer Management System',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Customer+Management+System',
+      details: [
+        { label: 'Project', value: 'MFI Customer Management', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Sahaka Microfinance Institution Plc', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'HTML5, Git, Problem Solving', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Jun 2017 - Aug 2018', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Internship Follow Up System',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=Internship+Follow+Up+System',
+      details: [
+        { label: 'Project', value: 'PNC Final Project', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Passerelles numériques Cambodia', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'PHP, HTML5, Bootstrap, Git', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'May 2017 - Jun 2017', icon: 'fa fa-calendar' }
+      ]
     }
-];
+  ];  

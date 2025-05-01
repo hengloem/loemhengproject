@@ -35,9 +35,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/scrollreveal/dist/scrollreveal.js",
               "src/assets/js/preloader.min.js",
-              "src/assets/js/fm.revealator.jquery.min.js",
-              "src/assets/js/cbpGridGallery.js",
               "src/assets/js/classie.js",
               "src/assets/js/imagesloaded.pkgd.min.js",
               "src/assets/js/modernizr.custom.js"
