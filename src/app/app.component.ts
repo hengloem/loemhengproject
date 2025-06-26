@@ -6,6 +6,8 @@ import analytics from '@vercel/analytics';
 import { HeaderTitleService } from './core/services/header-title.service';
 import { MENUS } from './data/js/static-data';
 import { lh_menuItem } from './shared/models/utils.model';
+import { SchemaService } from './core/services/schema.service';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private localStorage: SharedService,
     private headerTitleService: HeaderTitleService,
+    private schemaService: SchemaService
   ) {
     translate.addLangs(['en', 'kh']);
     translate.setDefaultLang('en');
@@ -35,8 +38,13 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.headerTitleService.setTitle('app.title');
 
+    // Add global schema markup
+    this.schemaService.addWebsiteSchema();
+    this.schemaService.addPersonSchema();
+
     analytics.inject();
     analytics.track('Page View', { path: window.location.pathname });
+    injectSpeedInsights();
 
     // const savedLang = this.localStorage.get('lang');
     // this.isKh = savedLang === 'kh' ? 'app.eng' : 'app.kh';
