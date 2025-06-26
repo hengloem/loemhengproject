@@ -20,15 +20,38 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { MathToolsModule } from './math-tools/math-tools.module';
 import { DevToolsModule } from './dev-tools/dev-tools.module';
+import { SeoService } from './core/services/seo.service';
+import { SchemaService } from './core/services/schema.service';
 
-export function InitApp(appLoadService: AppInitService) {
-  return () => appLoadService.init();
+/**
+ * Factory function to initialize the application.
+ * This function is called during the app initialization phase.
+ * It uses the AppInitService to perform necessary initializations.
+ *
+ * @param appInitService - The service responsible for app initialization.
+ * @returns A function that returns a Promise resolving when initialization is complete.
+ */
+export function InitApp(appInitService: AppInitService): () => Promise<any> {
+  return (): Promise<any> => {
+    return appInitService.init();
+  };
 }
 
+/**
+ * Factory function to create a TranslateHttpLoader instance.
+ * This loader is used to load translation files over HTTP.
+ *
+ * @param http - The HttpClient instance used to make HTTP requests.
+ * @returns A new instance of TranslateHttpLoader.
+ */
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
+/**
+ * Custom MissingTranslationHandler that returns the key of the missing translation.
+ * This is useful for debugging purposes, allowing developers to see which keys are missing.
+ */
 export class TranslateHandler implements MissingTranslationHandler {
   handle(params: any) {
     return params.key;
@@ -73,6 +96,8 @@ export class TranslateHandler implements MissingTranslationHandler {
   ],
   providers: [
     AppInitService,
+    SeoService,
+    SchemaService,
     {
       provide: APP_INITIALIZER,
       useFactory: InitApp,
