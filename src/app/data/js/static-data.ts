@@ -1,11 +1,12 @@
 import { lh_skillCategory } from "@app/shared/models/about.model";
+import { environment } from "@env";
 
 export const MENUS = [
     { title: 'app.home', icon: 'fa fa-home', route: '/home' },
     { title: 'app.about', icon: 'fa fa-user', route: '/about' },
     { title: 'app.portfolio', icon: 'fa fa-briefcase', route: '/portfolio' },
-    { title: 'app.contact', icon: 'fa fa-envelope-open', route: '/contact' },
-    { title: 'app.blog', icon: 'fa fa-comments', route: '/blog' }
+    // { title: 'app.contact', icon: 'fa fa-envelope-open', route: '/contact' },
+    // { title: 'app.blog', icon: 'fa fa-comments', route: '/blog' }
 ];
 
 export const lh_education = [
@@ -285,6 +286,18 @@ export const lh_ratingSkills: lh_skillCategory[] = [
 ];
 
 export const lh_portfolioList = [
+      {
+      title: 'HTML Code Editor',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=HTML+Code+Editor',
+      url: `${ environment.baseUrl }` + 'html-code-editor',
+      details: [
+        { label: 'Project', value: 'HTML Code Editor', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Personal Project', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Angular', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Nov 2024 - Dec 2024', icon: 'fa fa-calendar' }
+      ]
+    },
     {
       title: 'GCL WebView',
       type: 'image',
@@ -433,9 +446,9 @@ export const lh_portfolioList = [
       type: 'image',
       src: 'https://dummyimage.com/895x552?text=Internship+Follow+Up+System',
       details: [
-        { label: 'Project', value: 'PNC Final Project', icon: 'fa fa-file-text-o' },
-        { label: 'Client', value: 'Passerelles numériques Cambodia', icon: 'fa fa-user-o' },
-        { label: 'Languages', value: 'PHP, HTML5, Bootstrap, Git', icon: 'fa fa-code' },
+        { label: 'Project', value: 'Internship Follow Up System', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'PNC Final Project', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'PHP, HTML5, Bootstrap', icon: 'fa fa-code' },
         { label: 'Duration', value: 'May 2017 - Jun 2017', icon: 'fa fa-calendar' }
       ]
     }

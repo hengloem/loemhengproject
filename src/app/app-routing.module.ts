@@ -50,7 +50,10 @@ const routes: Routes = [
     path: 'terms-of-service',
     component: TermsOfServiceComponent
   },
-  { path: 'editor', component: HtmlEditorComponent },
+  { 
+    path: 'html-code-editor', 
+    component: HtmlEditorComponent 
+  },
   {
     path: 'math-tools',
     loadChildren: () => import('@math-tools/math-tools.module').then(m => m.MathToolsModule)
