@@ -3,12 +3,9 @@ import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@ang
 import { EditorView, basicSetup } from 'codemirror';
 import { html } from '@codemirror/lang-html';
 import { EditorState } from '@codemirror/state';
-import { oneDark } from '@codemirror/theme-one-dark';
 import { indentUnit } from '@codemirror/language';
 import { keymap } from '@codemirror/view';
 import { indentWithTab } from '@codemirror/commands';
-import * as prettier from 'prettier';
-import * as htmlParser from 'prettier/parser-html';
 
 @Component({
   selector: 'app-html-editor',
@@ -133,26 +130,10 @@ export class HtmlEditorComponent implements AfterViewInit, OnDestroy {
     const blob = new Blob([code], { type: 'text/html' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'code.html';
+    a.download = 'html-code-editor.html';
     a.click();
     URL.revokeObjectURL(a.href);
     this.statusMessage = 'Code downloaded';
-  }
-
-  toggleFullscreen(): void {
-    this.isFullscreen = !this.isFullscreen;
-    setTimeout(() => {
-      this.editor.requestMeasure();
-    }, 300);
-  }
-
-  changeTheme(event: Event): void {
-    const select = event.target as HTMLSelectElement;
-    const theme = select.value;
-
-    // Implement theme switching logic here
-    // This would need to be customized based on which themes you want to support
-    this.statusMessage = `Theme changed to ${theme}`;
   }
 
   insertTemplate(templateName: string): void {
