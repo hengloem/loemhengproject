@@ -200,89 +200,95 @@ export const lh_selfEmployedExperiences = [
 ];
 
 export const lh_ratingSkills: lh_skillCategory[] = [
-    {
-        title: "Programming Languages",
-        overview: "Core programming languages and technologies used to develop software and web applications.",
-        skills: [
-            { title: "HTML", desc: "HyperText Markup Language", rate: 95 },
-            { title: "CSS", desc: "Cascading Style Sheets", rate: 90 },
-            { title: "JavaScript", desc: "Programming language for web development", rate: 90 },
-            { title: "Angular", desc: "Web application framework", rate: 90 },
-            { title: "TypeScript", desc: "Superset of JavaScript", rate: 90 },
-            { title: "Java", desc: "Object-oriented programming language", rate: 70 },
-            { title: "Python", desc: "High-level programming language", rate: 70 },
-            { title: "PHP", desc: "Server-side scripting language", rate: 70 }
-        ],
-        icon: "fa fa-code",
-        type: "Hard-Skill"
-    },
-    {
-        title: "Frameworks & UI/UX Libraries",
-        overview: "Popular frameworks and libraries that streamline web application development and enhance user experience.",
-        skills: [
-            { title: "Bootstrap", desc: "Front-end framework for responsive design", rate: 85 },
-            { title: "Angular Material", desc: "Material Design components for Angular", rate: 85 },
-            { title: "Java Spring Boot", desc: "Framework for Java-based applications", rate: 85 }
-        ],
-        icon: "fa fa-cogs",
-        type: "Hard-Skill"
-    },
-    {
-        title: "Databases",
-        overview: "Relational and NoSQL database systems used for efficient data storage and management.",
-        skills: [
-            { title: "MySQL", desc: "Relational database management system", rate: 90 },
-            { title: "Microsoft SQL Server", desc: "Database management system by Microsoft", rate: 90 }
-        ],
-        icon: "fa fa-database",
-        type: "Hard-Skill"
-    },
-    {
-        title: "UI/UX Design",
-        overview: "Software used for designing, prototyping, and enhancing user experience in digital products.",
-        skills: [
-            { title: "Canva", desc: "Graphic design tool for beginners", rate: 85 },
-            { title: "Adobe Photoshop", desc: "Image editing and graphic design tool", rate: 80 },
-            { title: "Figma", desc: "Cloud-based UI/UX design tool", rate: 70 }
-
-        ],
-        icon: "fa fa-paint-brush",
-        type: "Hard-Skill"
-    },
-    {
-        title: "Productivity & Collaboration",
-        overview: "Essential tools for video editing, source control, team collaboration, and reporting.",
-        skills: [
-            { title: "Git", desc: "Version control system", rate: 85 },
-            { title: "Adobe Premiere Pro", desc: "Professional video editing software", rate: 80 },
-            { title: "CapCut", desc: "Mobile video editing app", rate: 80 },
-            { title: "GitHub", desc: "Cloud-based repository hosting", rate: 80 },
-            { title: "Trello", desc: "Project management and collaboration tool", rate: 80 },
-            { title: "Jaspersoft Report Designer 5.0.1", desc: "Business intelligence reporting tool", rate: 80 }
-        ],
-        icon: "fa fa-cogs",
-        type: "Hard-Skill"
-    },
-    {
-        title: "Non-Technical",
-        overview: "Essential non-technical skills that enhance productivity, teamwork, and problem-solving in software development.",
-        skills: [
-            { title: "Leadership", desc: "Guiding teams with vision, clarity, and responsibility", rate: 95 },
-            { title: "Time Management", desc: "Effectively managing time for productivity and balance", rate: 90 },
-            { title: "Communication", desc: "Clear and impactful verbal and written communication", rate: 90 },
-            { title: "Self-Learning", desc: "Quickly acquiring new skills and knowledge independently", rate: 85 },
-            { title: "Critical Thinking", desc: "Analyzing situations to make informed decisions", rate: 85 },
-            { title: "Teamwork", desc: "Collaborating with others to achieve common goals", rate: 85 },
-            { title: "Problem-Solving", desc: "Resolving challenges through logical approaches", rate: 80 },
-            { title: "Creativity", desc: "Developing innovative ideas and approaches", rate: 80 },
-            { title: "Adaptability", desc: "Adjusting smoothly to changes in tools, environments, and expectations", rate: 80 },
-            { title: "Emotional Intelligence", desc: "Understanding and managing your emotions and those of others", rate: 75 },
-            { title: "Attention to Detail", desc: "Ensuring precision and accuracy in work", rate: 70 }
-        ],
-        icon: "fa fa-users",
-        type: "Soft-Skill"
-    }
-
+  {
+    title: "Programming Languages",
+    overview: "Core programming languages and technologies used to develop software and web applications.",
+    skills: [
+      { title: "HTML", desc: "HyperText Markup Language", rate: 95 },
+      { title: "CSS", desc: "Cascading Style Sheets", rate: 90 },
+      { title: "JavaScript", desc: "Programming language for web development", rate: 90 },
+      { title: "TypeScript", desc: "Superset of JavaScript", rate: 90 },
+      { title: "Angular", desc: "Web application framework", rate: 90 },
+      { title: "Java", desc: "Object-oriented programming language", rate: 70 },
+      { title: "Python", desc: "High-level programming language", rate: 70 },
+      { title: "PHP", desc: "Server-side scripting language", rate: 70 }
+    ],
+    icon: "fa fa-code",
+    type: "Hard-Skill"
+  },
+  {
+    title: "Frameworks & UI/UX Libraries",
+    overview: "Popular frameworks and libraries that streamline web application development and enhance user experience.",
+    skills: [
+      { title: "Angular Material", desc: "Material Design components for Angular", rate: 85 },
+      { title: "Bootstrap", desc: "Front-end framework for responsive design", rate: 85 },
+      { title: "Java Spring Boot", desc: "Framework for Java-based applications", rate: 85 },
+      { title: "Tailwind CSS", desc: "Utility-first CSS framework", rate: 80 },
+      { title: "Next.js", desc: "React-based framework for server-side rendering", rate: 70 },
+      { title: "React", desc: "JavaScript library for building user interfaces", rate: 70 },
+      { title: "ShadCN UI", desc: "Modern React UI components based on Radix & Tailwind", rate: 70 }
+    ],
+    icon: "fa fa-th-large",
+    type: "Hard-Skill"
+  },
+  {
+    title: "Databases",
+    overview: "Relational and NoSQL database systems used for efficient data storage and management.",
+    skills: [
+      { title: "MySQL", desc: "Relational database management system", rate: 90 },
+      { title: "Microsoft SQL Server", desc: "Database management system by Microsoft", rate: 90 },
+      { title: "Firebase Realtime DB", desc: "Cloud-hosted NoSQL database by Google", rate: 60 }
+    ],
+    icon: "fa fa-database",
+    type: "Hard-Skill"
+  },
+  {
+    title: "UI/UX Design",
+    overview: "Software used for designing, prototyping, and enhancing user experience in digital products.",
+    skills: [
+      { title: "Canva", desc: "Graphic design tool for beginners", rate: 95 },
+      { title: "Adobe Photoshop", desc: "Image editing and graphic design tool", rate: 90 },
+      { title: "Balsamiq", desc: "Rapid wireframing tool for UI/UX", rate: 70 },
+      { title: "Figma", desc: "Collaborative interface design tool", rate: 75 },
+      { title: "Storybook", desc: "UI component explorer for isolated development", rate: 65 }
+    ],
+    icon: "fa fa-paint-brush",
+    type: "Hard-Skill"
+  },
+  {
+    title: "Productivity & Collaboration",
+    overview: "Essential tools for source control, collaboration, video editing, and API testing.",
+    skills: [
+      { title: "Git", desc: "Version control system", rate: 85 },
+      { title: "GitHub", desc: "Cloud-based Git repository hosting", rate: 80 },
+      { title: "Trello", desc: "Project management and collaboration tool", rate: 80 },
+      { title: "Adobe Premiere Pro", desc: "Professional video editing software", rate: 80 },
+      { title: "CapCut", desc: "Mobile video editing app", rate: 80 },
+      { title: "Jaspersoft Report Designer 5.0.1", desc: "Business intelligence reporting tool", rate: 80 },
+      { title: "Postman", desc: "API development and testing platform", rate: 75 },
+    ],
+    icon: "fa fa-bars",
+    type: "Hard-Skill"
+  },
+  {
+    title: "Non-Technical",
+    overview: "Essential non-technical skills that enhance productivity, teamwork, and problem-solving in software development.",
+    skills: [
+      { title: "Leadership", desc: "Guiding teams with vision, clarity, and responsibility", rate: 95 },
+      { title: "Time Management", desc: "Effectively managing time for productivity and balance", rate: 90 },
+      { title: "Communication", desc: "Clear and impactful verbal and written communication", rate: 90 },
+      { title: "Self-Learning", desc: "Quickly acquiring new skills and knowledge independently", rate: 85 },
+      { title: "Critical Thinking", desc: "Analyzing situations to make informed decisions", rate: 85 },
+      { title: "Teamwork", desc: "Collaborating with others to achieve common goals", rate: 85 },
+      { title: "Problem-Solving", desc: "Resolving challenges through logical approaches", rate: 80 },
+      { title: "Creativity", desc: "Developing innovative ideas and approaches", rate: 80 },
+      { title: "Adaptability", desc: "Adjusting smoothly to changes in tools, environments, and expectations", rate: 80 },
+      { title: "Emotional Intelligence", desc: "Understanding and managing your emotions and those of others", rate: 75 },
+      { title: "Attention to Detail", desc: "Ensuring precision and accuracy in work", rate: 70 }
+    ],
+    icon: "fa fa-users",
+    type: "Soft-Skill"
+  }
 ];
 
 export const lh_portfolioList = [
