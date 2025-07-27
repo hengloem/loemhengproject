@@ -11,6 +11,7 @@ import { TermsOfServiceComponent } from './page/terms-of-service/terms-of-servic
 import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
 import { HtmlEditorComponent } from './dev-tools/html-editor/html-editor.component';
+import { ImageMetadataEditorComponent } from './dev-tools/image-metadata-editor/image-metadata-editor.component';
 
 const routes: Routes = [
   {
@@ -50,9 +51,9 @@ const routes: Routes = [
     path: 'terms-of-service',
     component: TermsOfServiceComponent
   },
-  { 
-    path: 'html-code-editor', 
-    component: HtmlEditorComponent 
+  {
+    path: 'dev-tools',
+    loadChildren: () => import('@dev-tools/dev-tools.module').then(m => m.DevToolsModule)
   },
   {
     path: 'math-tools',

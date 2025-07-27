@@ -292,6 +292,17 @@ export const lh_ratingSkills: lh_skillCategory[] = [
 ];
 
 export const lh_portfolioList = [
+    {
+      title: 'GTL Portal',
+      type: 'image',
+      src: '/assets/img/projects/gtl-portal.png',
+      details: [
+        { label: 'Project', value: 'Job Applicant Tracking System', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'Angular, Java, Spring Boot', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Aug 2024 - Oct 2024', icon: 'fa fa-calendar' }
+      ]
+    },
       {
       title: 'HTML Code Editor',
       type: 'image',
@@ -371,13 +382,24 @@ export const lh_portfolioList = [
       ]
     },
     {
-      title: 'Hrinc Jobs Portal',
+      title: 'Recruitement Management System',
       type: 'image',
-      src: 'https://dummyimage.com/895x552?text=HRINC+Jobs+Portal',
+      src: 'https://dummyimage.com/895x552?text=RMS+Portal',
       details: [
         { label: 'Project', value: 'Multi-country Job Listing Site', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'HRINC (Cambodia) Co., Ltd', icon: 'fa fa-user-o' },
-        { label: 'Languages', value: 'AngularJS, HTML5, CSS, Git, TypeScript, SDLC', icon: 'fa fa-code' },
+        { label: 'Languages', value: 'AngularJS, HTML5, CSS, TypeScript', icon: 'fa fa-code' },
+        { label: 'Duration', value: 'Sep 2019 - Jul 2022', icon: 'fa fa-calendar' }
+      ]
+    },
+    {
+      title: 'Hrinc Jobs Portal',
+      type: 'image',
+      src: 'https://dummyimage.com/895x552?text=HRINCJobs+Portal',
+      details: [
+        { label: 'Project', value: 'Multi-country Job Listing Site', icon: 'fa fa-file-text-o' },
+        { label: 'Client', value: 'HRINC (Cambodia) Co., Ltd', icon: 'fa fa-user-o' },
+        { label: 'Languages', value: 'AngularJS, HTML5, CSS, TypeScript', icon: 'fa fa-code' },
         { label: 'Duration', value: 'Sep 2019 - Jul 2022', icon: 'fa fa-calendar' }
       ]
     },
@@ -448,9 +470,9 @@ export const lh_portfolioList = [
       ]
     },
     {
-      title: 'Internship Follow Up System',
+      title: 'Internship FollowUp System',
       type: 'image',
-      src: 'https://dummyimage.com/895x552?text=Internship+Follow+Up+System',
+      src: '/assets/img/projects/internship-follow-up-system.png',
       details: [
         { label: 'Project', value: 'Internship Follow Up System', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'PNC Final Project', icon: 'fa fa-user-o' },
