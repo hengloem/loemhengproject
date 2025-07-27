@@ -73,4 +73,8 @@ export class AboutMeComponent implements OnInit {
     return yearsOfExperience;
   }
 
+  click_preview_resume()  {
+    
+  }
+
 }

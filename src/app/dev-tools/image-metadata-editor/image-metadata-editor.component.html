@@ -1,0 +1,193 @@
+<div class="container">
+    <h2>Bulk Image Metadata Privacy Editor</h2>
+
+    <div class="upload-section">
+        <input type="file" #fileInput (change)="onFilesSelected($event)" accept="image/*" multiple class="file-input">
+        <button (click)="fileInput.click()" class="upload-btn">
+            Select Multiple Images
+        </button>
+        <div class="upload-info">
+            <p>Selected: {{ images.length }} image(s)</p>
+        </div>
+    </div>
+
+    <div *ngIf="images.length > 0" class="bulk-actions">
+        <h3>Bulk Actions</h3>
+
+        <div class="processing-options">
+            <h4>Processing Mode:</h4>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="processingMode" value="strip" [(ngModel)]="processingMode">
+                    Strip All Metadata (Empty details)
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="processingMode" value="fake" [(ngModel)]="processingMode">
+                    Embed Fake Metadata (Show fake details)
+                </label>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button (click)="randomizeAllMetadata()" class="btn btn-secondary">
+                Randomize All Images
+            </button>
+            <button (click)="clearAllSensitiveData()" class="btn btn-warning">
+                Clear All Sensitive Data
+            </button>
+            <button (click)="processAllImages()" class="btn btn-primary" [disabled]="isProcessingAll">
+                {{ isProcessingAll ? 'Processing...' : 'Process All Images' }}
+            </button>
+            <button (click)="downloadAllImages()" class="btn btn-success" [disabled]="!allImagesProcessed">
+                Download All (ZIP)
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="images.length > 0" class="images-grid">
+        <div *ngFor="let image of images; trackBy: trackByImageId" class="image-card">
+            <div class="image-header">
+                <h3>{{ image.originalFile.name }}</h3>
+                <button (click)="removeImage(image.id)" class="remove-btn">×</button>
+            </div>
+
+            <div class="image-content">
+                <div class="image-preview-section">
+                    <div class="preview-container">
+                        <h4>Original Image</h4>
+                        <img [src]="image.originalImageUrl" alt="Original" class="preview-image">
+
+                        <!-- Original Metadata Display -->
+                        <div *ngIf="image.originalMetadata" class="original-metadata">
+                            <h5>Image Information (Auto-Generated Fake Data)</h5>
+                            <div class="metadata-grid">
+                                <div class="metadata-item">
+                                    <label>File Size:</label>
+                                    <span>{{ image.originalMetadata.fileSize }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Image Size:</label>
+                                    <span>{{ image.originalMetadata.imageSize }} (Original)</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Capture Date:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.captureDate }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Camera Make:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.cameraMake }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Camera Model:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.cameraModel }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Location:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.location }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Coordinates:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.coordinates }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>ISO:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.iso }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Aperture:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.aperture }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Shutter Speed:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.shutterSpeed }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Flash:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.flash }}</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <label>Software:</label>
+                                    <span class="fake-data">{{ image.originalMetadata.software }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="image.processedImageUrl" class="processed-container">
+                        <h4>Processed Image</h4>
+                        <img [src]="image.processedImageUrl" alt="Processed" class="preview-image">
+                        <div class="download-section">
+                            <button (click)="downloadSingleImage(image)" class="btn btn-sm btn-success">
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metadata-editor">
+                    <h4>Edit Metadata</h4>
+
+                    <div class="form-group">
+                        <label>File Name:</label>
+                        <input type="text" [(ngModel)]="image.editedMetadata.fileName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Capture Date:</label>
+                        <input type="datetime-local" [value]="formatDateForInput(image.editedMetadata.captureDate)"
+                            (change)="updateImageDate(image, $event)" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location:</label>
+                        <input type="text" [(ngModel)]="image.editedMetadata.location" placeholder="Generic location"
+                            class="form-control">
+                    </div>
+
+                    <div class="coordinates-group">
+                        <div class="form-group">
+                            <label>Latitude:</label>
+                            <input type="number" [(ngModel)]="image.editedMetadata.coordinates.latitude" step="0.000001"
+                                class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Longitude:</label>
+                            <input type="number" [(ngModel)]="image.editedMetadata.coordinates.longitude"
+                                step="0.000001" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Camera Model:</label>
+                        <input type="text" [(ngModel)]="image.editedMetadata.cameraModel" placeholder="Generic camera"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea [(ngModel)]="image.editedMetadata.description" placeholder="Updated description"
+                            class="form-control"></textarea>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button (click)="randomizeImageMetadata(image)" class="btn btn-sm btn-secondary">
+                            Randomize
+                        </button>
+                        <button (click)="clearImageSensitiveData(image)" class="btn btn-sm btn-warning">
+                            Clear Sensitive
+                        </button>
+                        <button (click)="processSingleImage(image)" class="btn btn-sm btn-primary"
+                            [disabled]="image.isProcessing">
+                            {{ image.isProcessing ? 'Processing...' : 'Process' }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="images.length === 0" class="empty-state">
+        <p>No images selected. Choose multiple images to get started.</p>
+    </div>
+</div>
