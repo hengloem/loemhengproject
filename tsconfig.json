@@ -32,7 +32,8 @@
       "@shared/*": ["app/shared/*"],
       "@env": ["environments/environment"],
       "@data/*": ["app/data/*"],
-      "@math-tools/*": ["app/math-tools/*"]
+      "@math-tools/*": ["app/math-tools/*"],
+      "@dev-tools/*": ["app/dev-tools/*"],
     },
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
