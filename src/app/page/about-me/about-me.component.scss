@@ -12,3 +12,21 @@
         margin: 0 auto;
     }
 }
+
+.lh_ellipsis_text {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        font-size: 14px;
+        padding: 3px;
+        border-radius: 15px;
+        width: 90px;
+        display: flex;
+        justify-content: center;
+    }
+
+    a:hover {
+        background-color: oklab(0 none none/.05);
+    }
+}

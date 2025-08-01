@@ -1,0 +1,77 @@
+<div class="app-container">
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" [class.collapsed]="sidebarCollapsed">
+        <div class="sidebar-header">
+            <button class="toggle-btn" (click)="toggleSidebar()">
+                <span class="hamburger"></span>
+            </button>
+            <h3 *ngIf="!sidebarCollapsed">Conversations</h3>
+        </div>
+
+        <nav class="sidebar-nav">
+            <button class="nav-item active" *ngIf="!sidebarCollapsed">
+                <span class="icon">💬</span>
+                New Conversation
+            </button>
+            <button class="nav-item" *ngFor="let chat of chatHistory" (click)="selectChat(chat)">
+                <span class="icon" *ngIf="sidebarCollapsed">💬</span>
+                <span *ngIf="!sidebarCollapsed" class="chat-title">{{ chat.title }}</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Chat Section -->
+        <section class="chat-section" [class.full-width]="!showCodeSection">
+            <div class="chat-header">
+                <h2>Chat with AI Assistant</h2>
+                <button class="code-toggle" (click)="toggleCodeSection()">
+                    {{ showCodeSection ? 'Hide Code' : 'Show Code' }}
+                </button>
+            </div>
+
+            <div class="chat-messages" #chatContainer>
+                <div *ngFor="let message of messages" class="message" [class.user]="message.type === 'user'"
+                    [class.assistant]="message.type === 'assistant'">
+                    <div class="message-content">
+                        <strong>{{ message.type === 'user' ? 'You' : 'Assistant' }}:</strong>
+                        <p>{{ message.content }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <textarea [(ngModel)]="currentMessage" placeholder="Type your message..."
+                    (keydown.enter)="sendMessage($event)" rows="3"></textarea>
+                <button (click)="sendMessage()" [disabled]="!currentMessage.trim()">
+                    Send
+                </button>
+            </div>
+        </section>
+
+        <!-- Code Section -->
+        <section class="code-section" *ngIf="showCodeSection">
+            <div class="code-header">
+                <h3>Code Editor</h3>
+                <select [(ngModel)]="selectedLanguage" (change)="onLanguageChange()">
+                    <option value="typescript">TypeScript</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="sql">SQL</option>
+                </select>
+            </div>
+
+            <div class="code-editor">
+                <textarea [(ngModel)]="codeContent" placeholder="Write your code here..." spellcheck="false"></textarea>
+            </div>
+
+            <div class="code-actions">
+                <button (click)="runCode()" class="run-btn">Run Code</button>
+                <button (click)="clearCode()" class="clear-btn">Clear</button>
+                <button (click)="copyCode()" class="copy-btn">Copy</button>
+            </div>
+        </section>
+    </main>
+</div>

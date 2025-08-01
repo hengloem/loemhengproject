@@ -8,6 +8,8 @@ import { MENUS } from './data/js/static-data';
 import { lh_menuItem } from './shared/models/utils.model';
 import { SchemaService } from './core/services/schema.service';
 import { injectSpeedInsights } from '@vercel/speed-insights';
+import { environment } from 'environments/environment.prod';
+import { SeoService } from './core/services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,8 @@ export class AppComponent implements OnInit {
     private router: Router,
     private localStorage: SharedService,
     private headerTitleService: HeaderTitleService,
-    private schemaService: SchemaService
+    private schemaService: SchemaService,
+    private seoService: SeoService
   ) {
     translate.addLangs(['en', 'kh']);
     translate.setDefaultLang('en');
@@ -85,5 +88,15 @@ export class AppComponent implements OnInit {
     document.body.className = routeClassMap[activeClass]
       ? `${routeClassMap[activeClass]} ${this.theme}`
       : this.theme;
+  }
+
+  private setSeoData() {
+    this.seoService.updatePageSeo({
+      title: 'Home',
+      description: environment.siteDescription,
+      keywords: 'Loem Heng, portfolio, tech blog, web development, Angular, programming, Cambodia developer',
+      path: '/home',
+      image: '/assets/img/photos/03_610_x_1020.jpg'
+    });
   }
 }

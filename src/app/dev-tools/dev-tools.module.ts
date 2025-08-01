@@ -7,7 +7,7 @@ import { HtmlEditorComponent } from './html-editor/html-editor.component';
 import { ImageMetadataEditorComponent } from './image-metadata-editor/image-metadata-editor.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { ImageMetadataOverviewComponent } from './image-metadata-overview/image-metadata-overview.component';
-
+import { PramPramChatComponent } from './pram-pram-chat/pram-pram-chat.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import { ImageMetadataOverviewComponent } from './image-metadata-overview/image-
     HtmlEditorComponent,
     ImageMetadataEditorComponent,
     ImageMetadataOverviewComponent
+    PramPramChatComponent
   ],
   imports: [
     CommonModule,

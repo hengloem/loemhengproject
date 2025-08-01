@@ -15,6 +15,7 @@ export class AboutMeComponent implements OnInit {
   lh_selfEmpExp: any = [];
   lh_eduData: any = [];
   lh_skillData: any = [];
+  expandedJobs: { [key: number]: boolean } = {};
 
   constructor(
     private headerTitleService: HeaderTitleService
@@ -73,8 +74,16 @@ export class AboutMeComponent implements OnInit {
     return yearsOfExperience;
   }
 
-  click_preview_resume()  {
-    
+  click_preview_resume() {
+
+  }
+
+  toggleDescription(index: number): void {
+    this.expandedJobs[index] = !this.expandedJobs[index];
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedJobs[index];
   }
 
 }

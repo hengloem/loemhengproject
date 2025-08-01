@@ -121,7 +121,7 @@
             </div>
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul *ngFor="let job of lh_fullTimeExp;">
+                    <ul *ngFor="let job of lh_fullTimeExp; let i = index">
                         <li>
                             <!-- Icon Section -->
                             <div class="icon">
@@ -156,7 +156,13 @@
                             </div>
 
                             <!-- Job Description -->
-                            <p [innerHTML]="job.description"></p>
+                            <p [innerHTML]="isExpanded(i) ? job.description : (job.description | ellipsis: 155)"></p>
+
+                            <div class="lh_ellipsis_text">
+                                <a href="javascript:void(0)" (click)="toggleDescription(i); $event.preventDefault()">
+                                    {{ isExpanded(i) ? 'Read less' : 'Read more' }}
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -164,7 +170,7 @@
 
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul *ngFor="let item of lh_eduData;">
+                    <ul *ngFor="let item of lh_eduData; let i = index;">
                         <li>
                             <!-- Icon Section -->
                             <div class="icon">
@@ -189,7 +195,13 @@
                             </div>
 
                             <!-- Education Description -->
-                            <p [innerHTML]="item.description"></p>
+                            <p [innerHTML]="isExpanded(i) ? item.description : (item.description | ellipsis: 155)"></p>
+
+                            <div class="lh_ellipsis_text">
+                                <a href="javascript:void(0)" (click)="toggleDescription(i); $event.preventDefault()">
+                                    {{ isExpanded(i) ? 'Read less' : 'Read more' }}
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -204,7 +216,7 @@
             </div>
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul *ngFor="let job of lh_seasonalExp;">
+                    <ul *ngFor="let job of lh_seasonalExp; let i = index;">
                         <li>
                             <!-- Icon Section -->
                             <div class="icon">
@@ -239,7 +251,13 @@
                             </div>
 
                             <!-- Job Description -->
-                            <p [innerHTML]="job.description"></p>
+                            <p [innerHTML]="isExpanded(i) ? job.description : (job.description | ellipsis: 155)"></p>
+
+                            <div class="lh_ellipsis_text">
+                                <a href="javascript:void(0)" (click)="toggleDescription(i); $event.preventDefault()">
+                                    {{ isExpanded(i) ? 'Read less' : 'Read more' }}
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -247,7 +265,7 @@
 
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul *ngFor="let job of lh_selfEmpExp;">
+                    <ul *ngFor="let job of lh_selfEmpExp; let i = index;">
                         <li>
                             <!-- Icon Section -->
                             <div class="icon">
@@ -282,7 +300,13 @@
                             </div>
 
                             <!-- Job Description -->
-                            <p [innerHTML]="job.description"></p>
+                            <p [innerHTML]="isExpanded(i) ? job.description : (job.description | ellipsis: 155)"></p>
+
+                            <div class="lh_ellipsis_text">
+                                <a href="javascript:void(0)" (click)="toggleDescription(i); $event.preventDefault()">
+                                    {{ isExpanded(i) ? 'Read less' : 'Read more' }}
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
