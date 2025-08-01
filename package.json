@@ -36,6 +36,7 @@
     "@types/jszip": "^3.4.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "@w11k/angular-sticky-things": "^1.10.1",
     "autoprefixer": "^10.4.16",
     "bonjour": "^3.5.0",
     "bootstrap": "^5.3.3",
