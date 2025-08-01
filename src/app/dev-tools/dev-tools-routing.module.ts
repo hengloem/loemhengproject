@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DevToolsHomeComponent } from './dev-tools-home/dev-tools-home.component';
 import { HtmlEditorComponent } from './html-editor/html-editor.component';
 import { ImageMetadataEditorComponent } from './image-metadata-editor/image-metadata-editor.component';
+import { Page404Component } from '@app/layout/page404/page404.component';
 import { PramPramChatComponent } from './pram-pram-chat/pram-pram-chat.component';
 
 
@@ -29,6 +30,9 @@ const routes: Routes = [
         component: ImageMetadataEditorComponent
       },
       {
+        path: '**',
+        component: Page404Component
+      },
         path: 'pram-pram-chat',
         component: PramPramChatComponent
       }
