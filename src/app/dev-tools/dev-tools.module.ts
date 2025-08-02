@@ -14,7 +14,7 @@ import { PramPramChatComponent } from './pram-pram-chat/pram-pram-chat.component
     DevToolsHomeComponent,
     HtmlEditorComponent,
     ImageMetadataEditorComponent,
-    ImageMetadataOverviewComponent
+    ImageMetadataOverviewComponent,
     PramPramChatComponent
   ],
   imports: [

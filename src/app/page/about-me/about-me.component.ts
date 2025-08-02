@@ -15,6 +15,7 @@ export class AboutMeComponent implements OnInit {
   lh_selfEmpExp: any = [];
   lh_eduData: any = [];
   lh_skillData: any = [];
+
   expandedJobs: { [key: number]: boolean } = {};
 
   constructor(
@@ -34,7 +35,7 @@ export class AboutMeComponent implements OnInit {
   }
 
   calculateAge(): void {
-    const dateOfBirth = new Date('1995-05-07'); // Static date of birth
+    const dateOfBirth = new Date('1997-05-07'); // Static date of birth
     this.lh_AgeInYears = this.calculateAgeFromDateOfBirth(dateOfBirth);
   }
 
@@ -78,12 +79,16 @@ export class AboutMeComponent implements OnInit {
 
   }
 
-  toggleDescription(index: number): void {
-    this.expandedJobs[index] = !this.expandedJobs[index];
+  getJobKey(job: any): string {
+    return JSON.stringify(job); // Or combine fields like job.title + job.company
   }
 
-  isExpanded(index: number): boolean {
-    return this.expandedJobs[index];
+  toggleDescription(key: string): void {
+    this.expandedJobs[key] = !this.expandedJobs[key];
+  }
+
+  isExpanded(key: string): boolean {
+    return this.expandedJobs[key];
   }
 
 }
