@@ -115,7 +115,7 @@ export const lh_fullTimeExperiences = [
         icon: '/assets/img/icons/shk.svg',
     },
     {
-        title: 'Web Developer Intern',
+        title: 'IT Officer (Intern)',
         company: 'Sahaka Microfinance Institution PLC',
         employmentType: 'Full-time',
         startDate: '2017-06-01',

@@ -24,9 +24,11 @@
         width: 90px;
         display: flex;
         justify-content: center;
+        opacity: 0.5;
     }
 
     a:hover {
         background-color: oklab(0 none none/.05);
+        opacity: 1;
     }
 }

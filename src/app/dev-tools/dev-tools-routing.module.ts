@@ -30,11 +30,12 @@ const routes: Routes = [
         component: ImageMetadataEditorComponent
       },
       {
-        path: '**',
-        component: Page404Component
-      },
         path: 'pram-pram-chat',
         component: PramPramChatComponent
+      },
+      {
+        path: '**',
+        component: Page404Component
       }
     ]
   }
