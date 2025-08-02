@@ -8,11 +8,13 @@ import { VideoService } from './services/video.service';
 import { GridGalleryService } from './services/grid-gallery.service';
 import { ContactFormService } from './services/contact-form.service';
 import { HoverEffectDirective } from './directives/hover-effect.directive';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 @NgModule({
   declarations: [
     SafeUrlPipe,
-    HoverEffectDirective
+    HoverEffectDirective,
+    EllipsisPipe
   ],
   imports: [
     CommonModule
@@ -25,7 +27,8 @@ import { HoverEffectDirective } from './directives/hover-effect.directive';
     ContactFormService
   ],
   exports: [
-    SafeUrlPipe
+    SafeUrlPipe,
+    EllipsisPipe
   ]
 })
 export class CoreModule {

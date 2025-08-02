@@ -3,46 +3,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import JSZip from 'jszip';
 import * as piexif from 'piexifjs';
 import * as saveAs from 'file-saver';
-
-interface ImageMetadata {
-  fileName: string;
-  captureDate: Date;
-  location: string;
-  coordinates: {
-    latitude: number;
-    longitude: number;
-  };
-  cameraModel: string;
-  description: string;
-}
-
-interface OriginalMetadata {
-  fileName: string;
-  fileSize: string;
-  captureDate: string;
-  location: string;
-  coordinates: string;
-  cameraModel: string;
-  cameraMake: string;
-  imageSize: string;
-  orientation: string;
-  iso: string;
-  aperture: string;
-  shutterSpeed: string;
-  flash: string;
-  software: string;
-}
-
-interface ProcessedImage {
-  id: string;
-  originalFile: File;
-  originalImageUrl: SafeUrl;
-  processedImageUrl: SafeUrl | null;
-  processedBlobUrl: string | null;
-  originalMetadata: OriginalMetadata | null;
-  editedMetadata: ImageMetadata;
-  isProcessing: boolean;
-}
+import { ProcessedImage, AntiDetectionSettings, ImageMetadata } from '@app/shared/models/metadata.model';
 
 @Component({
   selector: 'app-image-metadata-editor',
@@ -53,6 +14,15 @@ export class ImageMetadataEditorComponent {
   images: ProcessedImage[] = [];
   isProcessingAll = false;
   processingMode: 'strip' | 'fake' = 'fake';
+
+  antiDetection: AntiDetectionSettings = {
+    addNoise: true,
+    adjustColors: true,
+    addWatermark: false,
+    resizeSlightly: true,
+    compressRecompress: true,
+    randomRotation: true
+  };
 
   constructor(private sanitizer: DomSanitizer) { }
 
@@ -425,11 +395,24 @@ export class ImageMetadataEditorComponent {
       const img = new Image();
 
       img.onload = () => {
+        // Apply anti-detection techniques if enabled
+        const { width, height } = this.calculateAntiDetectionDimensions(img.width, img.height);
         canvas.width = img.width;
         canvas.height = img.height;
 
         if (ctx) {
-          ctx.drawImage(img, 0, 0);
+          // Apply micro-rotation if enabled
+          if (this.antiDetection.randomRotation) {
+            const angle = (Math.random() - 0.5) * 0.01; // 0.1-0.5 degrees
+            ctx.translate(width / 2, height / 2);
+            ctx.rotate(angle);
+            ctx.translate(-width / 2, -height / 2);
+          }
+
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Apply anti-detection filters
+          this.applyAntiDetectionFilters(ctx, width, height);
 
           canvas.toBlob((blob) => {
             if (blob) {
@@ -458,17 +441,87 @@ export class ImageMetadataEditorComponent {
     });
   }
 
-  private createFakeMetadataComment(metadata: ImageMetadata): string {
-    return JSON.stringify({
-      fileName: metadata.fileName,
-      captureDate: metadata.captureDate.toISOString(),
-      location: metadata.location,
-      coordinates: metadata.coordinates,
-      cameraModel: metadata.cameraModel,
-      description: metadata.description,
-      software: 'Privacy Editor 1.0',
-      processingDate: new Date().toISOString()
-    });
+  private calculateAntiDetectionDimensions(originalWidth: number, originalHeight: number): { width: number; height: number } {
+    if (!this.antiDetection.resizeSlightly) {
+      return { width: originalWidth, height: originalHeight };
+    }
+
+    // Micro-resize: change dimensions by 0.1% to 2%
+    const resizeFactor = 0.999 + (Math.random() * 0.02); // 99.9% to 101.9%
+    const width = Math.round(originalWidth * resizeFactor);
+    const height = Math.round(originalHeight * resizeFactor);
+
+    return { width, height };
+  }
+
+  private applyAntiDetectionFilters(ctx: CanvasRenderingContext2D, width: number, height: number): void {
+    const imageData = ctx.getImageData(0, 0, width, height);
+    const data = imageData.data;
+
+    // Apply noise to break ML fingerprinting
+    if (this.antiDetection.addNoise) {
+      this.addPixelNoise(data);
+    }
+
+    // Subtle color adjustments to avoid reverse search
+    if (this.antiDetection.adjustColors) {
+      this.adjustColors(data);
+    }
+
+    // Add invisible watermark pattern
+    if (this.antiDetection.addWatermark) {
+      this.addInvisibleWatermark(data, width, height);
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+  private addPixelNoise(data: Uint8ClampedArray): void {
+    // Add very subtle random noise (±1-2 values) to break pixel-perfect matching
+    for (let i = 0; i < data.length; i += 4) {
+      // Only modify RGB, leave alpha unchanged
+      for (let j = 0; j < 3; j++) {
+        const noise = (Math.random() - 0.5) * 4; // ±2 pixel values
+        data[i + j] = Math.max(0, Math.min(255, data[i + j] + noise));
+      }
+    }
+  }
+
+  private adjustColors(data: Uint8ClampedArray): void {
+    // Very subtle color temperature and saturation adjustments
+    const temperatureShift = (Math.random() - 0.5) * 0.02; // ±1% temperature
+    const saturationShift = (Math.random() - 0.5) * 0.02; // ±1% saturation
+
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+
+      // Subtle temperature adjustment
+      data[i] = Math.max(0, Math.min(255, r + temperatureShift * 10));
+      data[i + 2] = Math.max(0, Math.min(255, b - temperatureShift * 10));
+
+      // Subtle saturation adjustment
+      const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+      data[i] = Math.max(0, Math.min(255, gray + (r - gray) * (1 + saturationShift)));
+      data[i + 1] = Math.max(0, Math.min(255, gray + (g - gray) * (1 + saturationShift)));
+      data[i + 2] = Math.max(0, Math.min(255, gray + (b - gray) * (1 + saturationShift)));
+    }
+  }
+
+  private addInvisibleWatermark(data: Uint8ClampedArray, width: number, height: number): void {
+    // Add imperceptible pattern in least significant bits
+    const pattern = Math.floor(Math.random() * 256);
+
+    for (let y = 0; y < height; y += 17) { // Sparse pattern
+      for (let x = 0; x < width; x += 19) {
+        const index = (y * width + x) * 4;
+        if (index < data.length) {
+          // Modify least significant bit of blue channel
+          data[index + 2] = (data[index + 2] & 0xFE) | (pattern & 1);
+        }
+      }
+    }
   }
 
   private async embedBasicMetadata(blob: Blob, image: ProcessedImage): Promise<Blob> {
@@ -537,7 +590,7 @@ export class ImageMetadataEditorComponent {
     if (image.processedBlobUrl) {
       const link = document.createElement('a');
       link.href = image.processedBlobUrl;
-      link.download = image.editedMetadata.fileName || 'Do-Not-Thai-To-Me-Processed-Image.jpg';
+      link.download = image.editedMetadata.fileName || 'Do-Not-Thai-To-The-World.jpg';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -573,7 +626,7 @@ export class ImageMetadataEditorComponent {
       await Promise.all(downloadPromises);
 
       const zipBlob = await zip.generateAsync({ type: 'blob' });
-      saveAs(zipBlob, 'Do-Not-Thai-To-Me-Processed-Image.zip');
+      saveAs(zipBlob, 'Do-Not-Thai-To-The-World.zip');
     } catch (error) {
       console.error('Error generating ZIP file:', error);
       throw error;
