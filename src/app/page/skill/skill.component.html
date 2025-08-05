@@ -1,8 +1,8 @@
 <div class="lh_dashboard-container">
-    <div class="lh_dashboard-header">
+    <!-- <div class="lh_dashboard-header">
         <h1 class="text-uppercase lh_dashboard-title">Professional Skills Portfolio</h1>
         <p class="lh_dashboard-subtitle">A comprehensive overview of technical and professional competencies</p>
-    </div>
+    </div> -->
 
     <div class="tabs-container">
         <div class="tabs-header">
@@ -21,19 +21,21 @@
 
                 <div class="skills-grid">
                     <div *ngFor="let skill of category.skills" class="skill-card">
-                        <div class="skill-header">
-                            <h3 class="text-uppercase skill-title">{{ skill.title }}</h3>
-                            <div class="text-uppercase skill-badge" [ngClass]="getBadgeClass(skill.rate)">
-                                {{ getProficiencyLevel(skill.rate) }}
+                        <div ngsReveal>
+                            <div class="skill-header">
+                                <h3 class="text-uppercase skill-title">{{ skill.title }}</h3>
+                                <div class="text-uppercase skill-badge" [ngClass]="getBadgeClass(skill.rate)">
+                                    {{ getProficiencyLevel(skill.rate) }}
+                                </div>
                             </div>
-                        </div>
-                        <p class="skill-description">{{ skill.desc }}</p>
-                        <div class="skill-progress-container">
-                            <div class="skill-progress-bar">
-                                <div class="skill-progress-indicator" [ngClass]="getProgressColor(skill.rate)"
-                                    [style.width.%]="skill.rate"></div>
+                            <p class="skill-description">{{ skill.desc }}</p>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-indicator" [ngClass]="getProgressColor(skill.rate)"
+                                        [style.width.%]="skill.rate"></div>
+                                </div>
+                                <span class="skill-progress-value">{{ skill.rate }}%</span>
                             </div>
-                            <span class="skill-progress-value">{{ skill.rate }}%</span>
                         </div>
                     </div>
                 </div>
