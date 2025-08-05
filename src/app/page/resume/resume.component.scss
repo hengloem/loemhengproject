@@ -1,0 +1,254 @@
+.resume-container {
+    max-width: 8.5in;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    min-height: 11in;
+}
+
+.lh_resume_header {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, #028a0f 0%, #035d0a 100%);
+    color: white;
+    padding: 30px;
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        box-shadow: 0 0 7px #000;
+    }
+}
+
+.lh_resume_header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.lh_resume_header .title {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.lh_resume_header .contact {
+    font-size: 0.9em;
+    opacity: 0.8;
+
+    i {
+        margin-right: 5px;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.footer {
+    background: #028a0f;
+    color: white;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    color: #028a0f;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #028a0f;
+    padding-bottom: 5px;
+}
+
+.about {
+    text-align: justify;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #028a0f;
+}
+
+.skill-category h3 {
+    color: #028a0f;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.skill-category ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.skill-category li {
+    padding: 3px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #028a0f;
+}
+
+.experience-item h3 {
+    color: #028a0f;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.experience-item .company {
+    color: #028a0f;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.experience-item .duration {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.education-item {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.education-item .degree {
+    font-weight: 600;
+    color: #028a0f;
+}
+
+.education-item .school {
+    color: #028a0f;
+    font-size: 0.9em;
+}
+
+.education-item .year {
+    color: #7f8c8d;
+    font-size: 0.85em;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.portfolio-category {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #028a0f;
+}
+
+.portfolio-category h3 {
+    color: #028a0f;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.portfolio-category ul {
+    list-style: none;
+}
+
+.portfolio-category li {
+    padding: 2px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.client-item {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+@media print {
+    .resume-container {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

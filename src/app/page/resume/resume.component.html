@@ -1,527 +1,284 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="resume-container">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heng - Resume</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.4;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        .resume-container {
-            max-width: 8.5in;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            min-height: 11in;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #028A0F 0%, #035D0A 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .header .title {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .header .contact {
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.9;
-        }
-
-        .contact-item a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #028A0F;
-            color: white;
-            padding: 20px 30px;
-            margin-top: 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            align-items: center;
-        }
-
-        .footer-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-item a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.9;
-        }
-
-        .footer-item a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .content {
-            padding: 30px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            color: #028A0F;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #028A0F;
-            padding-bottom: 5px;
-        }
-
-        .about {
-            text-align: justify;
-            font-size: 0.95em;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #028A0F;
-        }
-
-        .skill-category h3 {
-            color: #028A0F;
-            margin-bottom: 10px;
-            font-size: 1em;
-        }
-
-        .skill-category ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        .skill-category li {
-            padding: 3px 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .experience-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #028A0F;
-        }
-
-        .experience-item h3 {
-            color: #028A0F;
-            margin-bottom: 5px;
-            font-size: 1.1em;
-        }
-
-        .experience-item .company {
-            color: #028A0F;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .experience-item .duration {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .education-item {
-            margin-bottom: 12px;
-            padding: 10px 15px;
-            background: #f8f9fa;
-            border-radius: 6px;
-        }
-
-        .education-item .degree {
-            font-weight: 600;
-            color: #028A0F;
-        }
-
-        .education-item .school {
-            color: #028A0F;
-            font-size: 0.9em;
-        }
-
-        .education-item .year {
-            color: #7f8c8d;
-            font-size: 0.85em;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .portfolio-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #028A0F;
-        }
-
-        .portfolio-category h3 {
-            color: #028A0F;
-            margin-bottom: 10px;
-            font-size: 1em;
-        }
-
-        .portfolio-category ul {
-            list-style: none;
-        }
-
-        .portfolio-category li {
-            padding: 2px 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .client-item {
-            background: #f8f9fa;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            color: #666;
-            text-align: center;
-        }
-
-        .print-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #028A0F;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            box-shadow: 0 4px 12px rgba(2, 138, 15, 0.3);
-            z-index: 1000;
-        }
-
-        .print-button:hover {
-            background: #035D0A;
-        }
-
-        @media print {
-            body {
-                background: white;
-            }
-
-            .resume-container {
-                box-shadow: none;
-                margin: 0;
-                max-width: none;
-            }
-
-            .print-button {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .clients-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <button class="print-button" onclick="window.print()">Print / Save as PDF</button>
-
-    <div class="resume-container">
-        <div class="header">
+    <div class="lh_resume_header">
+        <div class="col-lg-6">
             <h1>Heng LOEM</h1>
-            <div class="title">System Development Supervisor & Full Stack Developer</div>
+            <div class="title">Full-Stack Developer</div>
             <div class="contact">
-                Phnom Penh, Cambodia | IT Professional Since 2017
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="section">
-                <h2>Professional Summary</h2>
-                <div class="about">
-                    Experienced IT professional with 7+ years in web development, system development, and IT management.
-                    Proven track record in leading development teams, implementing enterprise solutions, and delivering
-                    high-quality software products. Expertise in Angular, Java Spring Boot, Microsoft SQL Server, and
-                    full-stack development. Strong background in banking, human resources, insurance, and software
-                    industries with excellent problem-solving skills and collaborative teamwork approach.
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:+855962204505">(+855) 962 204 505</a>
                 </div>
-            </div>
-
-            <div class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming & Frameworks</h3>
-                        <ul>
-                            <li>HTML, CSS, JavaScript</li>
-                            <li>Angular, AngularJS</li>
-                            <li>Java, Java Spring Boot</li>
-                            <li>PHP, CodeIgniter, Laravel</li>
-                            <li>Vue.js</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Database & Integration</h3>
-                        <ul>
-                            <li>Microsoft SQL Server 2016</li>
-                            <li>MySQL</li>
-                            <li>SSIS (SQL Server Integration Services)</li>
-                            <li>Data Integration & ETL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>UI/UX & Design</h3>
-                        <ul>
-                            <li>Bootstrap, Angular Material</li>
-                            <li>Adobe XD, Figma, Canva</li>
-                            <li>Balsamiq, InVision</li>
-                            <li>Adobe Photoshop, Webflow</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
-                        <ul>
-                            <li>Git, GitHub, GitLab</li>
-                            <li>Postman (API Testing)</li>
-                            <li>Jaspersoft Report Designer</li>
-                            <li>WinSCP, Trello</li>
-                            <li>Adobe Premiere Pro, Final Cut Pro</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Professional Experience</h2>
-                <div class="experience-item">
-                    <h3>System Development Supervisor</h3>
-                    <div class="company">Fortune Life Insurance PLC</div>
-                    <div class="duration">July 2022 - Present</div>
-                    <p>Leading system development initiatives and supervising development teams in insurance domain.
-                        Responsible for enterprise system architecture, reporting systems, and data integration
-                        solutions.</p>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Senior Web Developer</h3>
-                    <div class="company">HRINC (Cambodia) Co., Ltd</div>
-                    <div class="duration">September 2019 - July 2022</div>
-                    <p>Developed and maintained web applications using Angular and Java Spring Boot. Led development of
-                        HR management systems and recruitment portals.</p>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Junior Web Developer</h3>
-                    <div class="company">Web Essentials PLC</div>
-                    <div class="duration">August 2018 - January 2019</div>
-                    <p>Contributed to web development projects using modern frameworks and technologies. Gained
-                        experience in client-server applications and database management.</p>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Information Technology Officer</h3>
-                    <div class="company">Sahaka Microfinance Institution PLC</div>
-                    <div class="duration">September 2017 - August 2018</div>
-                    <p>Managed IT infrastructure and developed internal systems. Started career with web development
-                        internship and progressed to full-time IT role.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <div class="degree">Bachelor's Degree in Computer Science</div>
-                    <div class="school">University of Puthisastra</div>
-                    <div class="year">2017 - 2019</div>
-                </div>
-                <div class="education-item">
-                    <div class="degree">Associate Degree in Computer Science</div>
-                    <div class="school">Passerelles Numeriques Cambodia</div>
-                    <div class="year">2015 - 2017</div>
-                </div>
-                <div class="education-item">
-                    <div class="degree">High School Diploma</div>
-                    <div class="school">Koh Kong High School</div>
-                    <div class="year">2012 - 2015</div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Key Projects Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-category">
-                        <h3>System Development</h3>
-                        <ul>
-                            <li>Group Life Reporting System</li>
-                            <li>Financial Reporting System</li>
-                            <li>Operation Reporting System</li>
-                            <li>Recruitment Management System</li>
-                            <li>Customer Management System</li>
-                            <li>E-App Portal</li>
-                        </ul>
-                    </div>
-                    <div class="portfolio-category">
-                        <h3>Web Development</h3>
-                        <ul>
-                            <li>HRINC Jobs Portal</li>
-                            <li>United Security Provider</li>
-                            <li>Ahladang Website</li>
-                            <li>Customer Portal</li>
-                            <li>Scan App Portal</li>
-                            <li>Renewal Collection Portal</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Core Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Technical Leadership</h3>
-                        <ul>
-                            <li>IT Project Management</li>
-                            <li>Agile Scrum Methodology</li>
-                            <li>System Architecture Design</li>
-                            <li>Team Leadership</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Professional Skills</h3>
-                        <ul>
-                            <li>Problem-Solving</li>
-                            <li>Critical Thinking</li>
-                            <li>Communication</li>
-                            <li>Time Management</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Professional Services</h2>
-                <div class="about">
-                    <strong>Specialized in:</strong> IT Consulting, Custom Software Development, Data Integration & ETL
-                    Services, Report & Dashboard Development, Cloud Services & Migration, DevOps & CI/CD Implementation,
-                    Cybersecurity Solutions, and Mobile App Development. Experienced in delivering comprehensive IT
-                    solutions across banking, insurance, HR, and software industries.
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <span>St. 2002, Teuk Thla, Sen Sok, Phnom Penh, Cambodia</span>
                 </div>
             </div>
         </div>
 
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-item">
-                    <span>📧</span>
-                    <a href="mailto:hengloem.pnc@gmail.com">hengloem.pnc&#64;gmail.com</a>
-                </div>
-                <div class="footer-item">
-                    <span>📱</span>
-                    <a href="tel:+855962204505">(+855) 962 204 505</a> / <a href="tel:+855762226505">(+855) 762 226
-                        505</a>
-                </div>
-                <div class="footer-item">
-                    <span>💬</span>
-                    <a href="https://t.me/hengloem" target="_blank">t.me/hengloem</a>
-                </div>
-                <div class="footer-item">
-                    <span>🌐</span>
-                    <a href="https://www.loemheng.com" target="_blank">www.loemheng.com</a>
-                </div>
-                <div class="footer-item">
-                    <span>💻</span>
-                    <a href="https://github.com/hengloem" target="_blank">github.com/hengloem</a>
-                </div>
+        <div class="col-lg-6 justify-content-end d-flex">
+            <div class="profile-picture">
+                <img class="img-fluid" src="./assets/img/photos/04_300_x_300.jpg" alt="Heng Loem Profile Picture">
             </div>
         </div>
     </div>
-</body>
 
-</html>
+    <div class="content">
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>
+                Results-driven IT professional with 7+ years of experience in system development, web application
+                architecture, and technical team leadership. Proven expertise in full-stack development using Angular,
+                Java Spring Boot, and Microsoft SQL Server. Adept at leading cross-functional teams to deliver scalable
+                enterprise solutions in the insurance, HR, and banking sectors. Passionate about innovation, clean code,
+                and agile methodologies.
+            </p>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>System Development Supervisor</h3>
+                <div class="company">Fortune Life Insurance PLC</div>
+                <div class="duration">July 2022 – Present</div>
+                <ul class="job-details">
+                    <li>Lead end-to-end system development lifecycle for enterprise-level insurance applications.</li>
+                    <li>Design and implement reporting systems (financial, operational, group life) using Jaspersoft and
+                        SQL Server.</li>
+                    <li>Supervise a team of developers, ensuring code quality, timely delivery, and adherence to
+                        Agile/Scrum practices.</li>
+                    <li>Architect and integrate data solutions using SSIS for ETL processes and cross-system data
+                        synchronization.</li>
+                    <li>Collaborate with business stakeholders to translate requirements into technical specifications.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Senior Web Developer</h3>
+                <div class="company">HRINC (Cambodia) Co., Ltd</div>
+                <div class="duration">September 2019 – July 2022</div>
+                <ul class="job-details">
+                    <li>Developed and maintained HR management systems and recruitment portals using Angular and Spring
+                        Boot.</li>
+                    <li>Led front-end development and API integration for client-facing web applications.</li>
+                    <li>Optimized application performance and implemented responsive UIs using Bootstrap and Angular
+                        Material.</li>
+                    <li>Utilized Git, Postman, and Trello for version control, API testing, and project tracking.</li>
+                    <li>Mentored junior developers and conducted code reviews to ensure best practices.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">Bachelor of Science in Computer Science</div>
+                <div class="school">University of Puthisastra</div>
+                <div class="year">2017 – 2019</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Associate Degree in Computer Science</div>
+                <div class="school">Passerelles Numériques Cambodia</div>
+                <div class="year">2015 – 2017</div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Frameworks</h3>
+                    <ul>
+                        <li>JavaScript, TypeScript, HTML5, CSS3</li>
+                        <li>Angular, AngularJS, Vue.js</li>
+                        <li>Java, Spring Boot, RESTful APIs</li>
+                        <li>PHP, Laravel, CodeIgniter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & Data Integration</h3>
+                    <ul>
+                        <li>Microsoft SQL Server (2016+)</li>
+                        <li>MySQL</li>
+                        <li>SSIS, ETL Processes</li>
+                        <li>Jaspersoft Reporting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>UI/UX & Design Tools</h3>
+                    <ul>
+                        <li>Bootstrap, Angular Material</li>
+                        <li>Figma, Adobe XD, Balsamiq</li>
+                        <li>Adobe Photoshop, Canva, Webflow</li>
+                        <li>InVision, Adobe Premiere Pro</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Development & Collaboration Tools</h3>
+                    <ul>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>Postman, JIRA, Trello</li>
+                        <li>WinSCP, VS Code, IntelliJ IDEA</li>
+                        <li>Agile, Scrum, CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+            <h2>Key Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-category">
+                    <h3>System Development</h3>
+                    <ul>
+                        <li><strong>Group Life Reporting System</strong> – Built comprehensive reporting dashboard for
+                            policy tracking.</li>
+                        <li><strong>Financial & Operational Reporting Systems</strong> – Integrated with core insurance
+                            systems using SSIS.</li>
+                        <li><strong>Customer Management System (CMS)</strong> – Streamlined client data management and
+                            service delivery.</li>
+                        <li><strong>E-App Portal</strong> – Enabled digital insurance applications with secure
+                            authentication.</li>
+                    </ul>
+                </div>
+                <div class="portfolio-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li><strong>HRINC Jobs Portal</strong> – Developed a full-featured job board and applicant
+                            tracking system.</li>
+                        <li><strong>United Security Provider Website</strong> – Created responsive site with service
+                            modules and contact forms.</li>
+                        <li><strong>Renewal Collection Portal</strong> – Automated renewal reminders and payment
+                            tracking.</li>
+                        <li><strong>Scan App Portal</strong> – Integrated document scanning and digital submission
+                            workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="section">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Leadership & Management</h3>
+                    <ul>
+                        <li>Team Leadership & Mentorship</li>
+                        <li>Agile Project Management</li>
+                        <li>System Architecture & Design</li>
+                        <li>Stakeholder Collaboration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Problem-Solving & Debugging</li>
+                        <li>Critical Thinking & Analysis</li>
+                        <li>Effective Communication</li>
+                        <li>Time Management & Prioritization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <ul>
+                <li>Delivered 10+ enterprise systems in insurance and HR sectors within deadlines and budget.</li>
+                <li>Reduced data processing time by 70% using optimized SSIS workflows and indexing strategies.</li>
+                <li>Successfully migrated legacy PHP systems to modern Angular + Spring Boot architecture.</li>
+            </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="section">
+            <h2>Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <ul>
+                        <li>Khmer (Native)</li>
+                        <li>English (Fluent, Professional Proficiency)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="section">
+            <h2>Interests</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <ul>
+                        <li>Reading Tech & Self-Development Books</li>
+                        <li>Video Gaming</li>
+                        <li>Music & Digital Media Editing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open Source & Community -->
+        <div class="section">
+            <h2>Open Source & Community</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Open Source</h3>
+                    <ul>
+                        <li>Contributed to open-source projects on GitHub, focusing on code improvements and issue
+                            resolution</li>
+                        <li>Active participant in the Angular community, sharing knowledge and supporting developers
+                        </li>
+                        <li>Provided feedback and testing support for early AI models, including OpenAI and Gemini</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Community</h3>
+                    <ul>
+                        <li>Active in Google Local Guides</li>
+                        <li>Formerly active in the Cambodia Scouts</li>
+                        <li>Contributed to Ahladang Edu.</li>
+                        <li>Donated to I SEE I DO School</li>
+                        <li>Donated to Foundation for Border Infrasturcer Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- References -->
+        <div class="section">
+            <h2>References</h2>
+            <p>Available upon request.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-item">
+                <span>📧</span>
+                <a href="mailto:hengloem.pnc@gmail.com">hengloem.pnc&#64;gmail.com</a>
+            </div>
+            <div class="footer-item">
+                <span>💬</span>
+                <a href="https://t.me/hengloem" target="_blank">&#64;hengloem</a>
+            </div>
+            <div class="footer-item">
+                <span>🌐</span>
+                <a href="https://www.loemheng.com" target="_blank">www.loemheng.com</a>
+            </div>
+            <div class="footer-item">
+                <span>💻</span>
+                <a href="https://github.com/hengloem" target="_blank">github.com/hengloem</a>
+            </div>
+        </div>
+    </div>
+</div>

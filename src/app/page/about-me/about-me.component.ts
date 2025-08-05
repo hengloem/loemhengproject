@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { HeaderTitleService } from '@app/core/services/header-title.service';
 import { lh_education, lh_fullTimeExperiences, lh_ratingSkills, lh_seasonalExperiences, lh_selfEmployedExperiences } from '@app/data/js/static-data';
+import { ResumeComponent } from '../resume/resume.component';
 
 @Component({
   selector: 'app-about-me',
@@ -18,7 +20,8 @@ export class AboutMeComponent implements OnInit {
   expandedJobs: { [key: number]: boolean } = {};
 
   constructor(
-    private headerTitleService: HeaderTitleService
+    private headerTitleService: HeaderTitleService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -74,7 +77,18 @@ export class AboutMeComponent implements OnInit {
   }
 
   click_preview_resume() {
+    const dialogRef = this.dialog.open(ResumeComponent, {
+      width: '50%',
+      height: '90%',
+      data: {},
+      panelClass: 'custom-dialog-container',
+      disableClose: true
+    }
+  );
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   getJobKey(job: any): string {
