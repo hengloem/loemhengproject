@@ -14,7 +14,6 @@ export class AboutMeComponent implements OnInit {
   lh_seasonalExp: any = [];
   lh_selfEmpExp: any = [];
   lh_eduData: any = [];
-  lh_skillData: any = [];
 
   expandedJobs: { [key: number]: boolean } = {};
 
@@ -28,7 +27,6 @@ export class AboutMeComponent implements OnInit {
     this.lh_fullTimeExp = lh_fullTimeExperiences;
     this.lh_seasonalExp = lh_seasonalExperiences;
     this.lh_selfEmpExp = lh_selfEmployedExperiences;
-    this.lh_skillData = lh_ratingSkills;
 
     this.calculateAge();
     this.calculateExperience();
