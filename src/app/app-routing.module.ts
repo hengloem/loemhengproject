@@ -12,6 +12,7 @@ import { BlogPostComponent } from './page/blog-post/blog-post.component';
 import { Page404Component } from './layout/page404/page404.component';
 import { HtmlEditorComponent } from './dev-tools/html-editor/html-editor.component';
 import { ImageMetadataEditorComponent } from './dev-tools/image-metadata-editor/image-metadata-editor.component';
+import { ResumeComponent } from './page/resume/resume.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'math-tools',
     loadChildren: () => import('@math-tools/math-tools.module').then(m => m.MathToolsModule)
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent
   },
   {
     path: '**',
