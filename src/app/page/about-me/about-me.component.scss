@@ -32,3 +32,16 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .lh_time_group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        margin-bottom: 20px;
+
+        .time {
+            margin-bottom: 5px !important;
+        }
+    }
+}

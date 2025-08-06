@@ -562,82 +562,81 @@ body.dark {
 		padding-bottom: 60px;
 		margin-top: -15px;
 	}
+
 	.grid-gallery {
 		ul {
 			list-style: none;
 			margin: 0;
 			padding: 0;
 		}
+
 		figure {
 			margin: 0;
 
 			img {
 				display: block;
 				width: 100%;
+				max-height: 229px;
 				transition: 0.3s;
+				border-radius: 5px;
 			}
 		}
 	}
+
 	.grid-wrap {
 		margin: 0 auto;
 	}
-	.grid {
-		display: flex;
-		flex-wrap: wrap;
-		list-style: none;
 
+	.grid {
 		li {
 			position: relative;
 			width: calc(33.33% - 30px);
-			margin: 10px;
-			overflow: hidden;
 			cursor: pointer;
-
-			@media (max-width: 992px) {
-				width: calc(50% - 30px);
-			}
-
-			@media (max-width: 576px) {
-				width: calc(100% - 30px);
-			}
+			padding: 15px;
 
 			figure {
-				-webkit-transition: 0.3s;
 				transition: 0.3s ease;
 				border-radius: 5px;
 				padding: 0;
 				position: relative;
 				overflow: hidden;
 
-				&:hover {
-					transform: translateY(-5px);
-				}
-
 				img {
-					width: 100%;
-					height: 250px;
-					object-fit: cover;
 					display: block;
+					position: relative;
 				}
 
-				div {
-					position: relative;
-					bottom: 0;
+				.lh_portfolio-title {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					top: 100%;
 					left: 0;
-					right: 0;
-					background: $color-green;
-					transition: opacity 0.3s ease;
+					transition:
+						top 0.3s ease,
+						left 0.3s ease;
 
 					span {
 						margin: 0;
 						text-transform: uppercase;
-						color: $color_1;
-						font-size: 14px;
-						font-weight: bold;
+						color: #fff;
+						font-size: 18px;
+					}
+				}
+
+				&:hover {
+					.lh_portfolio-title {
+						top: 0;
+						left: 0;
 					}
 				}
 			}
 		}
+
 		figure {
 			transition: 0.3s;
 			border-radius: 5px;
@@ -651,6 +650,7 @@ body.dark {
 			}
 		}
 	}
+
 	.slideshow {
 		position: fixed;
 		background: rgba(0, 0, 0, 0.85);
@@ -851,7 +851,7 @@ body.dark {
 	.carousel-container {
 		position: relative;
 		width: 100%;
-		height: 250px;
+		height: 233px;
 		overflow: hidden;
 
 		&.modal-carousel {
@@ -905,7 +905,7 @@ body.dark {
 
 	.video-container {
 		width: 100%;
-		height: 250px;
+		height: 229px;
 		overflow: hidden;
 
 		&.modal-video {

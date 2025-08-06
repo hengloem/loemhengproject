@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import { GridGalleryService } from '@app/core/services/grid-gallery.service';
+import { Component, OnInit } from '@angular/core';
 import { HeaderTitleService } from '@app/core/services/header-title.service';
 import { lh_portfolioList } from '@app/data/js/static-data';
 
@@ -8,10 +7,8 @@ import { lh_portfolioList } from '@app/data/js/static-data';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class PortfolioComponent implements OnInit {
   lh_portfolioItems: any = [];
-
-  @ViewChild('gridGallery') gridGallery!: ElementRef;
 
   // For carousel functionality
   currentSlideIndex = 0;
@@ -20,11 +17,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   selectedItem: any = null;
 
   constructor(
-    private headerTitleService: HeaderTitleService,
-    private gridGalleryService: GridGalleryService,
-    private renderer: Renderer2
+    private headerTitleService: HeaderTitleService
   ) {
-    
+
   }
 
   ngOnInit(): void {
@@ -36,13 +31,6 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     });
 
     this.lh_portfolioItems = lh_portfolioList;
-  }
-
-  ngAfterViewInit(): void {
-    // Initialize grid gallery if it exists
-    if (this.gridGallery) {
-      this.gridGalleryService.initialize(this.gridGallery, this.renderer);
-    }
   }
 
   // Carousel controls
@@ -73,5 +61,24 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   closeDetails(): void {
     this.selectedItem = null;
+  }
+
+  getYoutubeEmbedUrl(src: string, cc: boolean = false): string {
+    const url = new URL(src);
+    if (cc) {
+      url.searchParams.set('cc_load_policy', '1'); // Enable CC
+    }
+    url.searchParams.set('autoplay', '1'); // Autoplay when clicked
+    return url.toString();
+  }
+
+  playVideo() {
+    console.log('Playing video:', this.selectedItem.url);
+    this.selectedItem.playing = true;
+  }
+
+  onVideoError(event: any) {
+    console.error('Video error:', event);
+    this.selectedItem.playing = false;
   }
 }

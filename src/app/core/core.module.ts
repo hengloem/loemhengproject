@@ -4,8 +4,6 @@ import { AuthGuard } from './guard/auth.guard';
 import { NoAuthGuard } from './guard/no-auth.guard';
 import { throwIfAlreadyLoaded } from './guard/module-import.guard';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
-import { VideoService } from './services/video.service';
-import { GridGalleryService } from './services/grid-gallery.service';
 import { ContactFormService } from './services/contact-form.service';
 import { HoverEffectDirective } from './directives/hover-effect.directive';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
@@ -22,8 +20,6 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
   providers: [
     AuthGuard,
     NoAuthGuard,
-    VideoService,
-    GridGalleryService,
     ContactFormService
   ],
   exports: [
