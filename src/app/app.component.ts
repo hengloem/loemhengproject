@@ -71,6 +71,8 @@ export class AppComponent implements OnInit {
         this.updateBodyClass(); // Always applies the current theme
       }
     });
+
+    this.setSeoData();
   }
 
   toggleTheme(): void {
