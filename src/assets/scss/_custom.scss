@@ -1,3 +1,5 @@
+@import "./_colors.scss";
+
 .lh_logo {
     width: 100%;
     display: flex;
@@ -21,4 +23,15 @@ li > p {
 
 .lh_no_padding {
     padding: 0 !important;
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  color: $color-green;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }

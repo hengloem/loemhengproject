@@ -295,7 +295,7 @@ export const lh_portfolioList = [
     {
       title: 'GTL Portal',
       type: 'image',
-      src: '/assets/img/projects/gtl-portal.png',
+      src: 'https://dummyimage.com/895x552?text=GTL+Portal',
       details: [
         { label: 'Project', value: 'Job Applicant Tracking System', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'Fortune Life Insurance PLC', icon: 'fa fa-user-o' },
@@ -305,9 +305,13 @@ export const lh_portfolioList = [
     },
       {
       title: 'HTML Code Editor',
-      type: 'image',
+      type: 'carousel',
       src: 'https://dummyimage.com/895x552?text=HTML+Code+Editor',
-      url: `${ environment.baseUrl }` + 'html-code-editor',
+      slides: [
+        { src: 'https://dummyimage.com/895x552?text=HTML+Code+Editor+1' },
+        { src: 'https://dummyimage.com/895x552?text=HTML+Code+Editor+2' },
+        { src: 'https://dummyimage.com/895x552?text=HTML+Code+Editor+3' }
+      ],
       details: [
         { label: 'Project', value: 'HTML Code Editor', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'Personal Project', icon: 'fa fa-user-o' },
@@ -449,8 +453,9 @@ export const lh_portfolioList = [
     },
     {
       title: 'United Security Provider',
-      type: 'image',
+      type: 'none-youtube',
       src: 'https://dummyimage.com/895x552?text=United+Security+Provider',
+      url: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
       details: [
         { label: 'Project', value: 'Corporate Website', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'Heng Coding Service', icon: 'fa fa-user-o' },
@@ -471,8 +476,9 @@ export const lh_portfolioList = [
     },
     {
       title: 'Internship FollowUp System',
-      type: 'image',
-      src: '/assets/img/projects/internship-follow-up-system.png',
+      type: 'youtube',
+      src: 'https://dummyimage.com/895x552?text=Internship+FollowUp+System',
+      url: 'https://www.youtube.com/embed/qq0f0Aevlgg',
       details: [
         { label: 'Project', value: 'Internship Follow Up System', icon: 'fa fa-file-text-o' },
         { label: 'Client', value: 'PNC Final Project', icon: 'fa fa-user-o' },

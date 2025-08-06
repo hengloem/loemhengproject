@@ -10,49 +10,14 @@
     <div id="grid-gallery" class="container grid-gallery">
         <!-- Portfolio Grid Starts -->
         <section class="grid-wrap">
-            <ul #gridGallery class="row grid">
-                <!-- Portfolio Items -->
+            <ul class="row grid">
                 <li *ngFor="let item of lh_portfolioItems" (click)="showDetails(item)" class="item" ngsReveal>
                     <figure>
-                        <!-- Image Type -->
-                        <ng-container *ngIf="item.type === 'image'">
-                            <img [src]="item.src | safeUrl" [alt]="item.title" />
-                        </ng-container>
+                        <img [src]="item.src | safeUrl" [alt]="item.title" />
 
-                        <!-- Carousel Type -->
-                        <ng-container *ngIf="item.type === 'carousel'">
-                            <div class="carousel-container" data-bs-ride="carousel">
-                                <div class="carousel-item carousel-slide"
-                                    *ngFor="let slide of item.slides; let i = index"
-                                    [ngClass]="{'active': i === currentSlideIndex}" data-bs-interval="5000">
-                                    <img [src]="slide.src | safeUrl" [alt]="item.title + ' slide ' + i" />
-                                </div>
-                            </div>
-                        </ng-container>
-
-                        <!-- YouTube Video Type -->
-                        <ng-container *ngIf="item.type === 'video' && item.platform === 'youtube'">
-                            <div class="video-container">
-                                <iframe width="100%" height="315" [src]="item.src | safeUrl" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen (click)="$event.stopPropagation()">
-                                </iframe>
-                            </div>
-                        </ng-container>
-
-                        <!-- Local Video Type -->
-                        <ng-container *ngIf="item.type === 'video' && item.platform === 'local'">
-                            <div class="video-container">
-                                <video width="100%" controls [poster]="item.poster | safeUrl"
-                                    (click)="$event.stopPropagation()">
-                                    <source [src]="item.src | safeUrl" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </ng-container>
-
-                        <!-- Common Title Overlay -->
-                        <!-- <div><span>{{ item.title }}</span></div> -->
+                        <div class="lh_portfolio-title">
+                            <span>{{ item.title }}</span>
+                        </div>
                     </figure>
                 </li>
             </ul>
@@ -73,9 +38,9 @@
 
                     <!-- Carousel Type -->
                     <ng-container *ngIf="selectedItem.type === 'carousel'">
-                        <div class="carousel-container modal-carousel">
+                        <div class="carousel-container modal-carousel" data-bas-ride="carousel">
                             <div class="carousel-slide" *ngFor="let slide of selectedItem.slides; let i = index"
-                                [ngClass]="{'active': i === currentSlideIndex}">
+                                [ngClass]="{'active': i === currentSlideIndex}" data-bs-interval="5000">
                                 <img [src]="slide.src | safeUrl" [alt]="selectedItem.title + ' slide ' + i" />
                             </div>
                             <div class="carousel-controls"
@@ -91,9 +56,18 @@
                     </ng-container>
 
                     <!-- YouTube Video Type -->
-                    <ng-container *ngIf="selectedItem.type === 'video' && selectedItem.platform === 'youtube'">
+                    <ng-container *ngIf="selectedItem.type === 'youtube'">
                         <div class="video-container modal-video">
-                            <iframe width="100%" height="315" [src]="selectedItem.src | safeUrl" frameborder="0"
+                            <div *ngIf="!selectedItem.playing" class="video-poster"
+                                (click)="selectedItem.playing = true">
+                                <img [src]="selectedItem.src" alt="Video thumbnail" />
+                                <div class="play-button">
+                                    <i class="fa fa-play-circle"></i>
+                                </div>
+                            </div>
+
+                            <iframe *ngIf="selectedItem.playing" width="100%" height="315"
+                                [src]="getYoutubeEmbedUrl(selectedItem.url, true) | safeUrl" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen>
                             </iframe>
@@ -101,10 +75,19 @@
                     </ng-container>
 
                     <!-- Local Video Type -->
-                    <ng-container *ngIf="selectedItem.type === 'video' && selectedItem.platform === 'local'">
+                    <ng-container *ngIf="selectedItem.type === 'none-youtube'">
                         <div class="video-container modal-video">
-                            <video width="100%" controls [poster]="selectedItem.poster | safeUrl">
-                                <source [src]="selectedItem.src | safeUrl" type="video/mp4">
+                            <div *ngIf="!selectedItem.playing" class="video-poster" (click)="playVideo()">
+                                <img [src]="selectedItem.src | safeUrl" alt="Video poster" />
+                                <div class="play-button">
+                                    <i class="fa fa-play-circle"></i>
+                                </div>
+                            </div>
+
+                            <video *ngIf="selectedItem.playing" #videoPlayer width="100%" controls autoplay
+                                controlsList="nodownload noremoteplayback nofullscreen" disablePictureInPicture
+                                [src]="selectedItem.url | safeUrl" (error)="onVideoError($event)"
+                                (click)="$event.stopPropagation()">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -116,7 +99,7 @@
                     <ul class="details-list">
                         <li *ngFor="let detail of selectedItem.details">
                             <i [class]="detail.icon"></i>
-                            <strong>{{ detail.label }}:</strong>
+                            <strong class="d-none d-lg-block">{{ detail.label }}:</strong>
                             <span *ngIf="detail.label !== 'Preview'">{{ detail.value }}</span>
                             <a *ngIf="detail.label === 'Preview'" [href]="'https://' + detail.value" target="_blank">
                                 {{ detail.value }}
